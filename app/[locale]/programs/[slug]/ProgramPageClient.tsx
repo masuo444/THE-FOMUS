@@ -118,44 +118,24 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             <div className={`cg-incl__header reveal${inclInView ? ' is-in-view' : ''}`}>
               <p className="cg-incl__eyebrow">{t(key('includes.label'))}</p>
             </div>
-            <ol className="cg-incl__list">
+            <ul className="cg-incl__list">
               {includesItems.map((item, i) => (
                 <li
                   key={i}
                   className={`cg-incl__item reveal reveal-delay-${Math.min(i + 1, 5)}${inclInView ? ' is-in-view' : ''}`}
                 >
-                  <span className="cg-incl__num">{String(i + 1).padStart(2, '0')}</span>
                   <span className="cg-incl__text">{item}</span>
                 </li>
               ))}
-            </ol>
-          </div>
-        </section>
-
-        {/* ── For Whom ── */}
-        <section ref={forWhomRef} className="cg-forwhom">
-          <div className="cg-forwhom__inner">
-            <div className={`cg-forwhom__header reveal${forWhomInView ? ' is-in-view' : ''}`}>
-              <p className="cg-forwhom__label">{t(key('forWhom.label'))}</p>
-            </div>
-            <div className="cg-forwhom__list">
-              {forWhomItems.map((item, i) => (
-                <div
-                  key={i}
-                  className={`cg-forwhom__item reveal reveal-delay-${Math.min(i + 1, 4)}${forWhomInView ? ' is-in-view' : ''}`}
-                >
-                  <span className="cg-forwhom__num">{String(i + 1).padStart(2, '0')}</span>
-                  <p className="cg-forwhom__text">{item}</p>
-                </div>
-              ))}
-            </div>
+            </ul>
           </div>
         </section>
 
         {/* ── CTA ── */}
         <section ref={ctaRef} className="cg-cta">
           <div className={`cg-cta__inner reveal${ctaInView ? ' is-in-view' : ''}`}>
-            <Link href={contactHref} className="cg-cta__btn">
+            <p className="cg-cta__note">{t('enquireCtaHeadline')}</p>
+            <Link href={contactHref} className="cg-cta__link">
               {t('enquireCta')}
             </Link>
           </div>
@@ -373,19 +353,8 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           .cg-incl__item {
             display: flex;
             align-items: baseline;
-            gap: 2rem;
-            padding: 1.625rem 0;
+            padding: 1.5rem 0;
             border-bottom: 1px solid var(--color-line);
-          }
-          .cg-incl__num {
-            font-family: var(--font-jost), Jost, sans-serif;
-            font-weight: 400;
-            font-size: 0.625rem;
-            letter-spacing: 0.14em;
-            color: var(--color-accent);
-            opacity: 0.6;
-            flex-shrink: 0;
-            min-width: 1.5rem;
           }
           .cg-incl__text {
             font-family: var(--font-noto-serif-jp), sans-serif;
@@ -396,95 +365,55 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             color: var(--color-ink);
           }
 
-          /* ── For Whom ──────────────────────────────────────────────── */
-          .cg-forwhom {
-            background: #F5F4F2;
-            padding: clamp(5rem, 9vw, 8rem) 0;
-          }
-          .cg-forwhom__inner {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 clamp(2rem, 6vw, 5rem);
-          }
-          .cg-forwhom__header {
-            margin-bottom: clamp(3rem, 5vw, 4.5rem);
-          }
-          .cg-forwhom__label {
-            font-family: var(--font-jost), Jost, sans-serif;
-            font-weight: 400;
-            font-size: 0.6875rem;
-            letter-spacing: 0.46em;
-            text-transform: uppercase;
-            color: var(--color-ink-mute);
-            opacity: 0.62;
-            margin: 0;
-          }
-          .cg-forwhom__list {
-            display: flex;
-            flex-direction: column;
-          }
-          .cg-forwhom__item {
-            display: grid;
-            grid-template-columns: 3.5rem 1fr;
-            gap: 1.5rem;
-            padding: clamp(2rem, 3.5vw, 3rem) 0;
-            border-bottom: 1px solid rgba(0,0,0,0.07);
-            align-items: start;
-          }
-          .cg-forwhom__item:first-child {
-            border-top: 1px solid rgba(0,0,0,0.07);
-          }
-          .cg-forwhom__num {
-            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
-            font-style: italic;
-            font-weight: 400;
-            font-size: 1.875rem;
-            line-height: 1;
-            color: var(--color-accent);
-            opacity: 0.28;
-            padding-top: 0.35rem;
-          }
-          .cg-forwhom__text {
-            font-family: var(--font-noto-serif-jp), sans-serif;
-            font-weight: 400;
-            font-size: 0.9375rem;
-            line-height: 2.25;
-            letter-spacing: 0.04em;
-            color: #444;
-            margin: 0;
-          }
-
           /* ── CTA ───────────────────────────────────────────────────── */
           .cg-cta {
             background: var(--color-white);
             border-top: 1px solid var(--color-line);
-            padding: clamp(5rem, 9vw, 7.5rem) clamp(2rem, 6vw, 5rem);
+            padding: clamp(5rem, 9vw, 7.5rem) clamp(2rem, 6vw, 5.5rem);
             display: flex;
             align-items: center;
             justify-content: center;
           }
           .cg-cta__inner {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            gap: 2.5rem;
+            text-align: center;
           }
-          .cg-cta__btn {
-            display: inline-block;
-            font-family: var(--font-jost), Jost, sans-serif;
+          .cg-cta__note {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
             font-weight: 400;
-            font-size: 0.8125rem;
-            letter-spacing: 0.34em;
-            text-transform: uppercase;
+            font-size: clamp(0.875rem, 1.2vw, 1rem);
+            letter-spacing: 0.1em;
+            color: var(--color-ink-mute);
+            margin: 0;
+            line-height: 2;
+          }
+          .cg-cta__link {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.375rem, 2.2vw, 1.75rem);
             color: var(--color-ink);
             text-decoration: none;
-            padding: 1.125rem 3.25rem;
-            border: 1px solid var(--color-ink);
-            transition: background 0.3s ease, color 0.3s ease;
+            letter-spacing: 0.03em;
+            position: relative;
+            padding-bottom: 0.25rem;
+            transition: color 0.35s ease;
           }
-          .cg-cta__btn:hover {
-            background: var(--color-ink);
-            color: var(--color-white);
+          .cg-cta__link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--color-line-dark);
+            transition: background 0.35s ease;
           }
+          .cg-cta__link:hover { color: var(--color-accent); }
+          .cg-cta__link:hover::after { background: var(--color-accent); }
 
           /* ── Responsive ────────────────────────────────────────────── */
           @media (max-width: 900px) {
@@ -1010,6 +939,754 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           @media (max-width: 640px) {
             .sm-hero { height: 80vh; }
             .sm-hero__name { font-size: clamp(2.75rem, 13vw, 4.5rem); }
+          }
+        `}</style>
+      </main>
+    );
+  }
+
+  /* ── CULTURAL SPACE: architectural, full-bleed, editorial ───────── */
+  if (programKey === 'culturalSpace') {
+    return (
+      <main className="cs-main">
+
+        {/* ── Hero ── */}
+        <div ref={heroRef} className="cs-hero">
+          <div
+            className="cs-hero__photo"
+            style={{ backgroundImage: `url(${hero.src})`, backgroundPosition: hero.pos }}
+          />
+          <div className="cs-hero__overlay" />
+          <Link href={servicesHref} className="cs-back">← {t('backLabel')}</Link>
+          <div className={`cs-hero__content reveal${heroInView ? ' is-in-view' : ''}`}>
+            <p className="cs-hero__label">{t(key('label'))}</p>
+            <h1 className="cs-hero__name">{t(key('name'))}</h1>
+            <p className="cs-hero__sub">{t(key('nameJa'))}</p>
+          </div>
+          <div className="cs-hero__scroll" aria-hidden="true">↓</div>
+        </div>
+
+        {/* ── Lead statement: full-width centered ── */}
+        <section ref={editRef} className="cs-lead">
+          <div className={`cs-lead__inner reveal${editInView ? ' is-in-view' : ''}`}>
+            <p className="cs-lead__text">{t(key('lead'))}</p>
+          </div>
+        </section>
+
+        {/* ── Three body sections with alternating full-bleed ── */}
+        <section className="cs-body-section">
+          {bodyParagraphs.map((para, i) => (
+            <div key={i} className={`cs-para-block${i % 2 !== 0 ? ' cs-para-block--alt' : ''}`}>
+              <div className="cs-para-block__accent" aria-hidden="true" />
+              <p className="cs-para-block__text">{para}</p>
+            </div>
+          ))}
+        </section>
+
+        {/* ── Space types grid ── */}
+        <section ref={spacesRef} className="cs-spaces">
+          <div className={`cs-spaces__header reveal${spacesInView ? ' is-in-view' : ''}`}>
+            <p className="cs-spaces__eyebrow">Space Contexts</p>
+            <h2 className="cs-spaces__title">対応可能な空間</h2>
+          </div>
+          <div className="cs-spaces__grid">
+            {SPACE_TYPES.map(({ en, ja }, i) => (
+              <div
+                key={i}
+                className={`cs-space-item reveal reveal-delay-${Math.min(i + 1, 5)}${spacesInView ? ' is-in-view' : ''}`}
+              >
+                <span className="cs-space-en">{en}</span>
+                <span className="cs-space-ja">{ja}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Scope ── */}
+        <section ref={inclRef} className="cs-scope">
+          <div className={`cs-scope__inner reveal${inclInView ? ' is-in-view' : ''}`}>
+            <p className="cs-scope__eyebrow">{t(key('includes.label'))}</p>
+            <ul className="cs-scope__list">
+              {includesItems.map((item, i) => (
+                <li
+                  key={i}
+                  className={`cs-scope__item reveal reveal-delay-${Math.min(i + 1, 5)}${inclInView ? ' is-in-view' : ''}`}
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* ── CTA ── */}
+        <section ref={ctaRef} className="cs-cta">
+          <div className="cs-cta__photo" style={{ backgroundImage: `url(${accent.src})` }} />
+          <div className="cs-cta__overlay" />
+          <div className={`cs-cta__inner reveal${ctaInView ? ' is-in-view' : ''}`}>
+            <p className="cs-cta__note">{t('enquireCtaHeadline')}</p>
+            <Link href={contactHref} className="cs-cta__link">{t('enquireCta')}</Link>
+          </div>
+        </section>
+
+        <style>{`
+          .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1),
+                        transform 0.9s cubic-bezier(0.22,1,0.36,1);
+          }
+          .reveal.is-in-view { opacity: 1; transform: translateY(0); }
+          .reveal-delay-1 { transition-delay: 0.10s; }
+          .reveal-delay-2 { transition-delay: 0.20s; }
+          .reveal-delay-3 { transition-delay: 0.30s; }
+          .reveal-delay-4 { transition-delay: 0.40s; }
+          .reveal-delay-5 { transition-delay: 0.50s; }
+
+          .cs-main { background: var(--color-ink); padding-top: 64px; }
+
+          .cs-back {
+            position: absolute;
+            top: 2.25rem;
+            left: clamp(2rem, 6vw, 5rem);
+            z-index: 3;
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-size: 0.8125rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: rgba(240,240,238,0.32);
+            text-decoration: none;
+            transition: color 0.3s ease;
+          }
+          .cs-back:hover { color: var(--color-accent); }
+
+          .cs-hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+          }
+          .cs-hero__photo {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            transition: transform 22s ease;
+          }
+          .cs-hero:hover .cs-hero__photo { transform: scale(1.04); }
+          .cs-hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+              to top,
+              rgba(6,5,4,0.98) 0%,
+              rgba(6,5,4,0.60) 45%,
+              rgba(6,5,4,0.15) 100%
+            );
+          }
+          .cs-hero__content {
+            position: relative;
+            z-index: 2;
+            padding: 0 clamp(2rem, 6vw, 5rem) clamp(4rem, 7vw, 6rem);
+            width: 100%;
+          }
+          .cs-hero__label {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-size: 0.625rem;
+            letter-spacing: 0.6em;
+            text-transform: uppercase;
+            color: rgba(240,240,238,0.30);
+            margin: 0 0 2rem;
+          }
+          .cs-hero__name {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(4rem, 10vw, 9rem);
+            line-height: 0.87;
+            color: #F0F0EE;
+            letter-spacing: -0.02em;
+            margin: 0 0 2rem;
+          }
+          .cs-hero__sub {
+            font-family: var(--font-noto-serif-jp), sans-serif;
+            font-weight: 300;
+            font-size: 0.8125rem;
+            letter-spacing: 0.3em;
+            color: rgba(240,240,238,0.22);
+            margin: 0;
+          }
+          .cs-hero__scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            right: clamp(2rem, 6vw, 5rem);
+            z-index: 2;
+            font-size: 0.875rem;
+            color: rgba(240,240,238,0.25);
+            animation: cs-bob 3.5s ease-in-out infinite;
+          }
+          @keyframes cs-bob {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(8px); }
+          }
+
+          /* Lead statement */
+          .cs-lead {
+            background: var(--color-ink);
+            padding: clamp(7rem, 13vw, 12rem) clamp(2rem, 8vw, 10rem);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+          }
+          .cs-lead__inner { max-width: 900px; }
+          .cs-lead__text {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.75rem, 3.5vw, 3rem);
+            line-height: 1.45;
+            color: rgba(240,240,238,0.9);
+            letter-spacing: 0.01em;
+            margin: 0;
+          }
+
+          /* Body paragraphs — alternating rhythm */
+          .cs-body-section {
+            background: var(--color-ink);
+          }
+          .cs-para-block {
+            display: grid;
+            grid-template-columns: 6px 1fr;
+            gap: 0 clamp(3rem, 6vw, 6rem);
+            padding: clamp(4rem, 7vw, 6rem) clamp(2rem, 8vw, 10rem);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            max-width: 900px;
+          }
+          .cs-para-block--alt {
+            margin-left: auto;
+            grid-template-columns: 1fr 6px;
+          }
+          .cs-para-block__accent {
+            background: var(--color-accent);
+            opacity: 0.35;
+            flex-shrink: 0;
+          }
+          .cs-para-block--alt .cs-para-block__accent {
+            order: 2;
+          }
+          .cs-para-block__text {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 300;
+            font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+            line-height: 2.4;
+            letter-spacing: 0.05em;
+            color: rgba(240,240,238,0.65);
+            margin: 0;
+          }
+
+          /* Space contexts grid */
+          .cs-spaces {
+            background: var(--color-ink);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: clamp(5rem, 9vw, 8rem) clamp(2rem, 6vw, 5rem);
+          }
+          .cs-spaces__header {
+            max-width: 1200px;
+            margin: 0 auto clamp(3rem, 5vw, 5rem);
+          }
+          .cs-spaces__eyebrow {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-size: 0.625rem;
+            letter-spacing: 0.46em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            opacity: 0.65;
+            margin: 0 0 1rem;
+          }
+          .cs-spaces__title {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            line-height: 1;
+            color: rgba(240,240,238,0.5);
+            margin: 0;
+            letter-spacing: 0.04em;
+          }
+          .cs-spaces__grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid rgba(255,255,255,0.1);
+          }
+          .cs-space-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            padding: clamp(2rem, 3vw, 2.75rem);
+            border-right: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            transition: background 0.4s ease;
+          }
+          .cs-space-item:nth-child(3n) { border-right: none; }
+          .cs-space-item:hover { background: rgba(255,255,255,0.03); }
+          .cs-space-en {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+            line-height: 1.1;
+            color: rgba(240,240,238,0.8);
+          }
+          .cs-space-ja {
+            font-family: var(--font-noto-serif-jp), sans-serif;
+            font-weight: 300;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: rgba(240,240,238,0.3);
+            line-height: 1.7;
+          }
+
+          /* Scope */
+          .cs-scope {
+            background: var(--color-ink);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: clamp(4.5rem, 8vw, 7rem) 0;
+          }
+          .cs-scope__inner {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 clamp(2rem, 6vw, 5rem);
+          }
+          .cs-scope__eyebrow {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-size: 0.6875rem;
+            letter-spacing: 0.46em;
+            text-transform: uppercase;
+            color: rgba(240,240,238,0.25);
+            margin: 0 0 2.5rem;
+          }
+          .cs-scope__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+          .cs-scope__item {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 300;
+            font-size: clamp(0.875rem, 1.1vw, 1rem);
+            line-height: 1.75;
+            letter-spacing: 0.04em;
+            color: rgba(240,240,238,0.45);
+            padding: 1.1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+          }
+          .cs-scope__item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+
+          /* CTA */
+          .cs-cta {
+            position: relative;
+            overflow: hidden;
+            padding: clamp(8rem, 14vw, 12rem) clamp(2rem, 8vw, 10rem);
+          }
+          .cs-cta__photo {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 12s ease;
+          }
+          .cs-cta:hover .cs-cta__photo { transform: scale(1.04); }
+          .cs-cta__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(6,5,4,0.94) 0%, rgba(20,16,10,0.96) 100%);
+          }
+          .cs-cta__inner {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+          }
+          .cs-cta__note {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 300;
+            font-size: clamp(0.875rem, 1.2vw, 1rem);
+            letter-spacing: 0.1em;
+            color: rgba(240,240,238,0.38);
+            margin: 0;
+            line-height: 2;
+          }
+          .cs-cta__link {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.375rem, 2.2vw, 1.875rem);
+            color: rgba(240,240,238,0.85);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding-bottom: 0.25rem;
+            transition: color 0.35s ease;
+            align-self: flex-start;
+          }
+          .cs-cta__link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: rgba(240,240,238,0.3);
+            transition: background 0.35s ease;
+          }
+          .cs-cta__link:hover { color: #ffffff; }
+          .cs-cta__link:hover::after { background: rgba(255,255,255,0.7); }
+
+          @media (max-width: 768px) {
+            .cs-spaces__grid { grid-template-columns: 1fr 1fr; }
+            .cs-space-item:nth-child(3n) { border-right: 1px solid rgba(255,255,255,0.08); }
+            .cs-space-item:nth-child(2n) { border-right: none; }
+          }
+          @media (max-width: 640px) {
+            .cs-hero { height: 80vh; }
+            .cs-spaces__grid { grid-template-columns: 1fr; }
+            .cs-space-item { border-right: none !important; }
+            .cs-para-block { grid-template-columns: 1fr; }
+            .cs-para-block__accent { display: none; }
+          }
+        `}</style>
+      </main>
+    );
+  }
+
+  /* ── HOTEL BRANDING: warm, hospitality, intimate editorial ─────── */
+  if (programKey === 'hotelBranding') {
+    return (
+      <main className="hb-main">
+
+        {/* ── Hero ── */}
+        <div ref={heroRef} className="hb-hero">
+          <div
+            className="hb-hero__photo"
+            style={{ backgroundImage: `url(${hero.src})`, backgroundPosition: hero.pos }}
+          />
+          <div className="hb-hero__overlay" />
+          <Link href={servicesHref} className="hb-back">← {t('backLabel')}</Link>
+          <div className={`hb-hero__content reveal${heroInView ? ' is-in-view' : ''}`}>
+            <p className="hb-hero__label">{t(key('label'))}</p>
+            <h1 className="hb-hero__name">{t(key('name'))}</h1>
+            <p className="hb-hero__sub">{t(key('nameJa'))}</p>
+          </div>
+          <div className="hb-hero__scroll" aria-hidden="true">↓</div>
+        </div>
+
+        {/* ── Lead: right-aligned, generous white space ── */}
+        <section ref={editRef} className="hb-lead-section">
+          <div className={`hb-lead__inner reveal${editInView ? ' is-in-view' : ''}`}>
+            <p className="hb-lead__text">{t(key('lead'))}</p>
+          </div>
+        </section>
+
+        {/* ── Body: narrow editorial column, image panel ── */}
+        <section className="hb-story">
+          <div className="hb-story__photo-panel"
+            style={{ backgroundImage: `url(${accent.src})` }}
+          />
+          <div className="hb-story__text-panel">
+            {bodyParagraphs.map((para, i) => (
+              <p key={i} className="hb-story__para">{para}</p>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Scope ── */}
+        <section ref={inclRef} className="hb-scope">
+          <div className={`hb-scope__inner reveal${inclInView ? ' is-in-view' : ''}`}>
+            <p className="hb-scope__eyebrow">{t(key('includes.label'))}</p>
+            <ul className="hb-scope__list">
+              {includesItems.map((item, i) => (
+                <li
+                  key={i}
+                  className={`hb-scope__item reveal reveal-delay-${Math.min(i + 1, 5)}${inclInView ? ' is-in-view' : ''}`}
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* ── CTA ── */}
+        <section ref={ctaRef} className="hb-cta">
+          <div className={`hb-cta__inner reveal${ctaInView ? ' is-in-view' : ''}`}>
+            <p className="hb-cta__note">{t('enquireCtaHeadline')}</p>
+            <Link href={contactHref} className="hb-cta__link">{t('enquireCta')}</Link>
+          </div>
+        </section>
+
+        <style>{`
+          .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1),
+                        transform 0.9s cubic-bezier(0.22,1,0.36,1);
+          }
+          .reveal.is-in-view { opacity: 1; transform: translateY(0); }
+          .reveal-delay-1 { transition-delay: 0.10s; }
+          .reveal-delay-2 { transition-delay: 0.20s; }
+          .reveal-delay-3 { transition-delay: 0.30s; }
+          .reveal-delay-4 { transition-delay: 0.40s; }
+          .reveal-delay-5 { transition-delay: 0.50s; }
+
+          .hb-main { background: var(--color-white); padding-top: 64px; }
+
+          .hb-back {
+            position: absolute;
+            top: 2.25rem;
+            left: clamp(2rem, 6vw, 5rem);
+            z-index: 3;
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-size: 0.8125rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: rgba(240,240,238,0.32);
+            text-decoration: none;
+            transition: color 0.3s ease;
+          }
+          .hb-back:hover { color: var(--color-accent); }
+
+          .hb-hero {
+            position: relative;
+            height: 100vh;
+            min-height: 580px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+          }
+          .hb-hero__photo {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            transition: transform 20s ease;
+          }
+          .hb-hero:hover .hb-hero__photo { transform: scale(1.04); }
+          .hb-hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+              to left,
+              rgba(6,5,4,0.92) 0%,
+              rgba(6,5,4,0.55) 50%,
+              rgba(6,5,4,0.08) 100%
+            );
+          }
+          .hb-hero__content {
+            position: relative;
+            z-index: 2;
+            padding: 0 clamp(2rem, 6vw, 5.5rem) 0;
+            width: 55%;
+            max-width: 650px;
+            text-align: right;
+          }
+          .hb-hero__label {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-size: 0.625rem;
+            letter-spacing: 0.6em;
+            text-transform: uppercase;
+            color: rgba(240,240,238,0.35);
+            margin: 0 0 2rem;
+          }
+          .hb-hero__name {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(3.5rem, 9vw, 8rem);
+            line-height: 0.88;
+            color: #F0F0EE;
+            letter-spacing: -0.02em;
+            margin: 0 0 2rem;
+          }
+          .hb-hero__sub {
+            font-family: var(--font-noto-serif-jp), sans-serif;
+            font-weight: 300;
+            font-size: 0.8125rem;
+            letter-spacing: 0.28em;
+            color: rgba(240,240,238,0.28);
+            margin: 0;
+          }
+          .hb-hero__scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: clamp(2rem, 6vw, 5rem);
+            z-index: 2;
+            font-size: 0.875rem;
+            color: rgba(240,240,238,0.22);
+            animation: hb-bob 3.5s ease-in-out infinite;
+          }
+          @keyframes hb-bob {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(8px); }
+          }
+
+          /* Lead */
+          .hb-lead-section {
+            padding: clamp(7rem, 12vw, 11rem) clamp(2rem, 8vw, 10rem);
+            border-bottom: 1px solid var(--color-line);
+            display: flex;
+            justify-content: flex-end;
+          }
+          .hb-lead__inner { max-width: 760px; }
+          .hb-lead__text {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.5rem, 3vw, 2.75rem);
+            line-height: 1.5;
+            color: var(--color-ink);
+            letter-spacing: 0.01em;
+            margin: 0;
+          }
+
+          /* Story: photo + text */
+          .hb-story {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 680px;
+            border-bottom: 1px solid var(--color-line);
+          }
+          .hb-story__photo-panel {
+            background-size: cover;
+            background-position: center;
+          }
+          .hb-story__text-panel {
+            padding: clamp(5rem, 8vw, 8rem) clamp(3rem, 5vw, 5.5rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2.5rem;
+            border-left: 1px solid var(--color-line);
+            background: #FDFCFA;
+          }
+          .hb-story__para {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 300;
+            font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+            line-height: 2.4;
+            letter-spacing: 0.05em;
+            color: var(--color-ink-light);
+            margin: 0;
+          }
+
+          /* Scope */
+          .hb-scope {
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-line);
+            padding: clamp(4.5rem, 8vw, 7rem) 0;
+          }
+          .hb-scope__inner {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 clamp(2rem, 6vw, 5rem);
+          }
+          .hb-scope__eyebrow {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-size: 0.6875rem;
+            letter-spacing: 0.46em;
+            text-transform: uppercase;
+            color: var(--color-ink-mute);
+            opacity: 0.55;
+            margin: 0 0 2.5rem;
+          }
+          .hb-scope__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+          .hb-scope__item {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 400;
+            font-size: clamp(0.875rem, 1.1vw, 1rem);
+            line-height: 1.75;
+            letter-spacing: 0.04em;
+            color: var(--color-ink-light);
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--color-line);
+          }
+          .hb-scope__item:first-child { border-top: 1px solid var(--color-line); }
+
+          /* CTA */
+          .hb-cta {
+            padding: clamp(6rem, 11vw, 9rem) clamp(2rem, 8vw, 8rem);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .hb-cta__inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+            text-align: center;
+          }
+          .hb-cta__note {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 400;
+            font-size: clamp(0.875rem, 1.2vw, 1rem);
+            letter-spacing: 0.1em;
+            color: var(--color-ink-mute);
+            margin: 0;
+            line-height: 2;
+          }
+          .hb-cta__link {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.375rem, 2.2vw, 1.75rem);
+            color: var(--color-ink);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            position: relative;
+            padding-bottom: 0.25rem;
+            transition: color 0.35s ease;
+          }
+          .hb-cta__link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--color-line-dark);
+            transition: background 0.35s ease;
+          }
+          .hb-cta__link:hover { color: var(--color-accent); }
+          .hb-cta__link:hover::after { background: var(--color-accent); }
+
+          @media (max-width: 900px) {
+            .hb-story {
+              grid-template-columns: 1fr;
+            }
+            .hb-story__photo-panel {
+              min-height: 55vw;
+            }
+            .hb-story__text-panel {
+              border-left: none;
+              border-top: 1px solid var(--color-line);
+            }
+            .hb-hero__content {
+              width: 75%;
+              text-align: left;
+            }
+          }
+          @media (max-width: 640px) {
+            .hb-hero { height: 80vh; align-items: flex-end; }
+            .hb-hero__content { width: 100%; padding-bottom: clamp(4rem, 7vw, 6rem); }
+            .hb-hero__overlay {
+              background: linear-gradient(to top, rgba(6,5,4,0.95) 0%, rgba(6,5,4,0.40) 60%, rgba(6,5,4,0.05) 100%);
+            }
           }
         `}</style>
       </main>

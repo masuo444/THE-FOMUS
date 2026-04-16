@@ -228,8 +228,8 @@ export default function CraftPageClient() {
           margin: 0 0 2rem;
         }
         .cp-section__body {
-          font-family: var(--font-noto-serif-jp), "Noto Sans JP", sans-serif;
-          font-weight: 400;
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
           font-size: 1rem;
           line-height: 2.2;
           letter-spacing: 0.05em;

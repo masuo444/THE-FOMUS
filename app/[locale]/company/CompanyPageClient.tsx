@@ -113,7 +113,7 @@ export default function CompanyPageClient({ locale }: { locale: string }) {
           font-size: 0.75rem;
           letter-spacing: 0.40em;
           text-transform: uppercase;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           margin: 0 0 1.25rem;
         }
         .co-heading__title {

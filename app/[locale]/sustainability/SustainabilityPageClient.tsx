@@ -211,7 +211,7 @@ export default function SustainabilityPageClient() {
           font-size: 0.75rem;
           letter-spacing: 0.32em;
           text-transform: uppercase;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           margin: 0 0 1.25rem;
         }
         .sp-section__title {
@@ -224,8 +224,8 @@ export default function SustainabilityPageClient() {
           margin: 0 0 2rem;
         }
         .sp-section__body {
-          font-family: var(--font-noto-serif-jp), "Noto Sans JP", sans-serif;
-          font-weight: 400;
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
           font-size: 1rem;
           line-height: 2.3;
           letter-spacing: 0.05em;
