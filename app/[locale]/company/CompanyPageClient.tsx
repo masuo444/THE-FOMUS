@@ -1,24 +1,43 @@
 'use client';
 
 import Link from 'next/link';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { useInView } from '@/lib/useInView';
+
+interface DetailItem {
+  label: string;
+  value: string;
+}
+
+interface GlobalItem {
+  city: string;
+  role: string;
+  description: string;
+}
+
+interface Representative {
+  name: string;
+  nameRoman: string;
+  title: string;
+  bio: string;
+}
 
 export default function CompanyPageClient({ locale }: { locale: string }) {
   const t = useTranslations('companyPage');
   const homeHref    = locale === 'en' ? '/en' : '/';
   const contactHref = locale === 'en' ? '/en/contact' : '/contact';
+  const founderHref = locale === 'en' ? '/en/founder' : '/founder';
 
-  const body    = t.raw('body') as string[];
-  const { ref: layoutRef, inView: layoutInView } = useInView<HTMLDivElement>();
-  const { ref: detailRef, inView: detailInView } = useInView<HTMLDivElement>();
+  const about          = t.raw('about') as string[];
+  const details        = t.raw('details') as DetailItem[];
+  const global         = t.raw('global') as GlobalItem[];
+  const representative = t.raw('representative') as Representative;
 
-  const details = [
-    { label: t('details.name.label'),     value: t('details.name.value') },
-    { label: t('details.founded.label'),  value: t('details.founded.value') },
-    { label: t('details.location.label'), value: t('details.location.value') },
-    { label: t('details.business.label'), value: t('details.business.value') },
-  ];
+  const { ref: aboutRef,   inView: aboutInView }   = useInView<HTMLDivElement>();
+  const { ref: detailRef,  inView: detailInView }   = useInView<HTMLDivElement>();
+  const { ref: globalRef,  inView: globalInView }   = useInView<HTMLDivElement>();
+  const { ref: repRef,     inView: repInView }       = useInView<HTMLDivElement>();
+  const { ref: ctaRef,     inView: ctaInView }       = useInView<HTMLDivElement>();
 
   return (
     <main className="co-main">
@@ -34,17 +53,18 @@ export default function CompanyPageClient({ locale }: { locale: string }) {
         <div className="co-heading__rule" />
       </div>
 
-      {/* ── Body text ───────────────────────────── */}
-      <div ref={layoutRef} className={`co-body reveal${layoutInView ? ' is-in-view' : ''}`}>
-        {body.map((para, i) => (
-          <p key={i} className="co-body__para">{para}</p>
+      {/* ── About ───────────────────────────────── */}
+      <div ref={aboutRef} className={`co-about reveal${aboutInView ? ' is-in-view' : ''}`}>
+        <p className="co-about__label">{t('aboutLabel')}</p>
+        {about.map((para, i) => (
+          <p key={i} className="co-about__para">{para}</p>
         ))}
       </div>
 
-      {/* ── Company details ─────────────────────── */}
+      {/* ── Company Information ──────────────────── */}
       <div ref={detailRef} className="co-details">
         <p className={`co-details__label reveal${detailInView ? ' is-in-view' : ''}`}>
-          {t('details.label')}
+          {t('detailsLabel')}
         </p>
         <dl className="co-details__list">
           {details.map(({ label, value }, i) => (
@@ -53,18 +73,56 @@ export default function CompanyPageClient({ locale }: { locale: string }) {
               className={`co-details__row reveal reveal-delay-${Math.min(i + 1, 4)}${detailInView ? ' is-in-view' : ''}`}
             >
               <dt className="co-details__term">{label}</dt>
-              <dd className="co-details__def">{value}</dd>
+              <dd className="co-details__def">
+                {value.includes('\n')
+                  ? value.split('\n').map((line, j) => (
+                      <span key={j}>
+                        {line}
+                        {j < value.split('\n').length - 1 && <br />}
+                      </span>
+                    ))
+                  : value}
+              </dd>
             </div>
           ))}
         </dl>
       </div>
 
+      {/* ── Global Presence ──────────────────────── */}
+      <div ref={globalRef} className={`co-global reveal${globalInView ? ' is-in-view' : ''}`}>
+        <p className="co-global__label">{t('globalLabel')}</p>
+        <div className="co-global__grid">
+          {global.map((item, i) => (
+            <div key={i} className={`co-global__card reveal reveal-delay-${Math.min(i + 1, 4)}${globalInView ? ' is-in-view' : ''}`}>
+              <h3 className="co-global__city">{item.city}</h3>
+              <p className="co-global__role">{item.role}</p>
+              <p className="co-global__desc">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Representative ───────────────────────── */}
+      <div ref={repRef} className={`co-rep reveal${repInView ? ' is-in-view' : ''}`}>
+        <p className="co-rep__label">{t('representativeLabel')}</p>
+        <div className="co-rep__layout">
+          <div className="co-rep__photo" />
+          <div className="co-rep__info">
+            <p className="co-rep__name">{representative.name}</p>
+            <p className="co-rep__name-roman">{representative.nameRoman}</p>
+            <p className="co-rep__title">{representative.title}</p>
+            <p className="co-rep__bio">{representative.bio}</p>
+            <Link href={founderHref} className="co-rep__link">
+              {locale === 'en' ? 'Read more' : '詳しく見る'}
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* ── CTA ─────────────────────────────────── */}
-      <div className="co-cta">
-        <p className="co-cta__question">{t('ctaQuestion')}</p>
-        <p className="co-cta__note">{t('ctaNote')}</p>
-        <Link href={contactHref} className="co-cta__link">
-          <span>{t('cta')}</span>
+      <div ref={ctaRef} className={`co-cta reveal${ctaInView ? ' is-in-view' : ''}`}>
+        <Link href={contactHref} className="co-cta__button">
+          {t('cta')}
         </Link>
       </div>
 
@@ -131,12 +189,12 @@ export default function CompanyPageClient({ locale }: { locale: string }) {
         .co-heading__rule {
           width: 2.5rem;
           height: 1px;
-          background: var(--color-accent);
+          background: var(--color-ink-mute);
           opacity: 0.45;
         }
 
-        /* Body */
-        .co-body {
+        /* About */
+        .co-about {
           padding: clamp(4rem, 7vw, 6.5rem) clamp(2rem, 8vw, 8rem);
           border-bottom: 1px solid var(--color-line);
           max-width: 860px;
@@ -144,9 +202,18 @@ export default function CompanyPageClient({ locale }: { locale: string }) {
           flex-direction: column;
           gap: 2rem;
         }
-        .co-body__para {
-          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+        .co-about__label {
+          font-family: var(--font-jost), Jost, sans-serif;
           font-weight: 400;
+          font-size: 0.6875rem;
+          letter-spacing: 0.40em;
+          text-transform: uppercase;
+          color: var(--color-ink-mute);
+          margin: 0 0 0.5rem;
+        }
+        .co-about__para {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
           font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
           line-height: 2.2;
           letter-spacing: 0.04em;
@@ -158,7 +225,7 @@ export default function CompanyPageClient({ locale }: { locale: string }) {
         .co-details {
           padding: clamp(4rem, 7vw, 6.5rem) clamp(2rem, 8vw, 8rem);
           border-bottom: 1px solid var(--color-line);
-          max-width: 700px;
+          max-width: 780px;
         }
         .co-details__label {
           font-family: var(--font-jost), Jost, sans-serif;
@@ -167,7 +234,6 @@ export default function CompanyPageClient({ locale }: { locale: string }) {
           letter-spacing: 0.40em;
           text-transform: uppercase;
           color: var(--color-ink-mute);
-          opacity: 0.6;
           margin: 0 0 2.5rem;
         }
         .co-details__list {
@@ -176,7 +242,7 @@ export default function CompanyPageClient({ locale }: { locale: string }) {
         }
         .co-details__row {
           display: grid;
-          grid-template-columns: 8rem 1fr;
+          grid-template-columns: 10rem 1fr;
           gap: 1.5rem;
           padding: 1.25rem 0;
           border-bottom: 1px solid var(--color-line);
@@ -195,66 +261,181 @@ export default function CompanyPageClient({ locale }: { locale: string }) {
         }
         .co-details__def {
           font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
-          font-weight: 400;
+          font-weight: 300;
           font-size: 1rem;
           letter-spacing: 0.04em;
           color: var(--color-ink);
           margin: 0;
           line-height: 1.75;
+          white-space: pre-line;
+        }
+
+        /* Global Presence */
+        .co-global {
+          padding: clamp(4rem, 7vw, 6.5rem) clamp(2rem, 8vw, 8rem);
+          border-bottom: 1px solid var(--color-line);
+        }
+        .co-global__label {
+          font-family: var(--font-jost), Jost, sans-serif;
+          font-weight: 400;
+          font-size: 0.6875rem;
+          letter-spacing: 0.40em;
+          text-transform: uppercase;
+          color: var(--color-ink-mute);
+          margin: 0 0 2.5rem;
+        }
+        .co-global__grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 3rem;
+        }
+        .co-global__card {
+          border-top: 1px solid var(--color-line);
+          padding-top: 1.5rem;
+        }
+        .co-global__city {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1.5rem, 2.5vw, 2rem);
+          color: var(--color-ink);
+          margin: 0;
+          line-height: 1.2;
+        }
+        .co-global__role {
+          font-family: var(--font-jost), Jost, sans-serif;
+          font-weight: 400;
+          font-size: 0.6875rem;
+          letter-spacing: 0.26em;
+          text-transform: uppercase;
+          color: var(--color-ink-mute);
+          margin: 0.25rem 0 0;
+        }
+        .co-global__desc {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
+          font-size: clamp(0.875rem, 1.1vw, 0.9375rem);
+          line-height: 2;
+          color: var(--color-ink-light);
+          margin: 1rem 0 0;
+        }
+
+        /* Representative */
+        .co-rep {
+          padding: clamp(4rem, 7vw, 6.5rem) clamp(2rem, 8vw, 8rem);
+          border-bottom: 1px solid var(--color-line);
+        }
+        .co-rep__label {
+          font-family: var(--font-jost), Jost, sans-serif;
+          font-weight: 400;
+          font-size: 0.6875rem;
+          letter-spacing: 0.40em;
+          text-transform: uppercase;
+          color: var(--color-ink-mute);
+          margin: 0 0 2.5rem;
+        }
+        .co-rep__layout {
+          display: grid;
+          grid-template-columns: 200px 1fr;
+          gap: 3rem;
+          align-items: start;
+        }
+        .co-rep__photo {
+          width: 100%;
+          aspect-ratio: 3 / 4;
+          background-image: url(/images/founder.png);
+          background-size: cover;
+          background-position: center top;
+        }
+        .co-rep__info {
+          display: flex;
+          flex-direction: column;
+        }
+        .co-rep__name {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 400;
+          font-size: clamp(1.25rem, 2vw, 1.5rem);
+          color: var(--color-ink);
+          letter-spacing: 0.1em;
+          margin: 0;
+        }
+        .co-rep__name-roman {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(0.9rem, 1.3vw, 1rem);
+          color: var(--color-ink-mute);
+          margin: 0.35rem 0 0;
+        }
+        .co-rep__title {
+          font-family: var(--font-jost), Jost, sans-serif;
+          font-weight: 400;
+          font-size: 0.75rem;
+          letter-spacing: 0.26em;
+          text-transform: uppercase;
+          color: var(--color-ink-mute);
+          margin: 0.5rem 0 0;
+        }
+        .co-rep__bio {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
+          font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
+          line-height: 2.2;
+          color: var(--color-ink-light);
+          margin: 1.5rem 0 0;
+        }
+        .co-rep__link {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1rem, 1.5vw, 1.125rem);
+          color: var(--color-ink);
+          text-decoration: none;
+          padding-bottom: 0.2rem;
+          border-bottom: 1px solid var(--color-line-dark, var(--color-ink));
+          margin: 1.5rem 0 0;
+          align-self: flex-start;
+          transition: color 0.35s ease, border-color 0.35s ease;
+        }
+        .co-rep__link:hover {
+          color: var(--color-accent);
+          border-color: var(--color-accent);
         }
 
         /* CTA */
         .co-cta {
-          padding: clamp(5rem, 9vw, 8rem) clamp(2rem, 8vw, 8rem);
+          padding: clamp(4rem, 7vw, 6rem);
           display: flex;
-          flex-direction: column;
-          gap: 1.75rem;
-          max-width: 720px;
+          justify-content: center;
         }
-        .co-cta__question {
-          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: clamp(1.5rem, 3vw, 2.5rem);
-          line-height: 1.4;
-          color: var(--color-ink);
-          margin: 0;
-          letter-spacing: 0.01em;
-        }
-        .co-cta__note {
-          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
-          font-weight: 400;
-          font-size: clamp(0.875rem, 1.1vw, 1rem);
-          line-height: 2;
-          letter-spacing: 0.06em;
-          color: var(--color-ink-mute);
-          margin: 0;
-        }
-        .co-cta__link {
+        .co-cta__button {
           font-family: var(--font-cormorant), "Cormorant Garamond", serif;
           font-style: italic;
           font-weight: 400;
           font-size: clamp(1.25rem, 2vw, 1.625rem);
           color: var(--color-ink);
           text-decoration: none;
-          letter-spacing: 0.02em;
-          position: relative;
           padding-bottom: 0.2rem;
-          transition: color 0.35s ease;
+          border-bottom: 1px solid var(--color-ink);
+          transition: color 0.35s ease, border-color 0.35s ease;
         }
-        .co-cta__link::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 1px;
-          background: var(--color-line-dark);
-          transition: background 0.35s ease;
+        .co-cta__button:hover {
+          color: var(--color-accent);
+          border-color: var(--color-accent);
         }
-        .co-cta__link:hover { color: var(--color-accent); }
-        .co-cta__link:hover::after { background: var(--color-accent); }
 
+        /* Mobile */
+        @media (max-width: 768px) {
+          .co-global__grid { grid-template-columns: 1fr; }
+          .co-rep__layout {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+          .co-rep__photo {
+            max-width: 200px;
+            margin: 0 auto;
+          }
+        }
         @media (max-width: 640px) {
           .co-details__row { grid-template-columns: 1fr; gap: 0.4rem; }
         }

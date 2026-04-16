@@ -282,36 +282,73 @@
   "companyPage": {
     "meta": {
       "title": "Company — THE FOMUS",
-      "description": "About THE FOMUS. FOMUS LLC. Redefining the masu as a vessel for cultural experience, serving corporations, hotels, and embassies."
+      "description": "About THE FOMUS. FOMUS LLC. We redefine the masu as a vessel for cultural experience, designing and delivering bespoke programmes for corporations, hotels, and embassies."
     },
     "label": "COMPANY",
-    "headline": "About THE FOMUS",
-    "body": [
-      "THE FOMUS is a brand that redefines the traditional Japanese craft of the masu as a vessel for cultural experience — designing and delivering fully bespoke experience programmes for corporations, hotels, and embassies.",
-      "The artisan craft of hinoki cypress and the essence of Japanese culture, arriving before words. Each programme is shaped by sensibilities refined across 40+ countries of diplomatic experience, and the hand-work of Gifu's master craftspeople."
+    "headline": "Company",
+    "aboutLabel": "ABOUT",
+    "about": [
+      "THE FOMUS is a brand that redefines the traditional Japanese masu as a vessel for cultural experience, designing and delivering fully bespoke experience programmes for corporations, hotels, and embassies.",
+      "We design the artisan craft and cultural essence held within each domestic hinoki masu as an experience that arrives before words. The sensibility cultivated across more than 40 countries of international exchange, combined with the hand-work of Gifu's master craftspeople, is dedicated to every commission we undertake.",
+      "Through four programmes — Corporate Gift, Cultural Space, Hotel Branding, and Bespoke — we design the kind of memory that recipients carry home and speak of for years to come."
     ],
-    "details": {
-      "label": "Company Information",
-      "name": {
-        "label": "Name",
+    "detailsLabel": "COMPANY INFORMATION",
+    "details": [
+      {
+        "label": "Legal Name",
         "value": "FOMUS LLC"
       },
-      "founded": {
+      {
         "label": "Founded",
         "value": "2024"
       },
-      "location": {
-        "label": "Location",
+      {
+        "label": "Representative",
+        "value": "Keisuke Masuo"
+      },
+      {
+        "label": "Head Office",
         "value": "Tokyo, Japan"
       },
-      "business": {
+      {
+        "label": "International Offices",
+        "value": "Dubai (incorporated) / Ireland (operational base)"
+      },
+      {
         "label": "Business",
-        "value": "Design and delivery of cultural experience programmes using masu"
+        "value": "Design and delivery of bespoke cultural experience programmes using masu\nCorporate Gift / Cultural Space / Hotel Branding / Bespoke"
+      },
+      {
+        "label": "Manufacturing Partner",
+        "value": "Specialist masu manufacturer in Ōgaki, Gifu Prefecture (est. 1950, approx. 80% of Japan's masu production)"
       }
+    ],
+    "globalLabel": "GLOBAL PRESENCE",
+    "global": [
+      {
+        "city": "Tokyo",
+        "role": "Head Office",
+        "description": "The operational headquarters of the company, where programme planning, design, and client relations are managed."
+      },
+      {
+        "city": "Dublin",
+        "role": "Operational Base",
+        "description": "Based in Ireland, we plan and deliver more than 45 international cultural exchange events each year. We hold an established partnership with the Embassy of Ireland."
+      },
+      {
+        "city": "Dubai",
+        "role": "Corporate Entity",
+        "description": "A company established as an international business hub connecting the Middle East, Europe, and Asia, forming the foundation of our global operations."
+      }
+    ],
+    "representativeLabel": "REPRESENTATIVE",
+    "representative": {
+      "name": "増尾圭亮",
+      "nameRoman": "Keisuke Masuo",
+      "title": "Founder & CEO",
+      "bio": "Following a career in hospitality at a luxury hotel, Keisuke Masuo founded THE FOMUS — combining the sensibility cultivated across more than 40 countries of international exchange with the craft of Japan's masu artisans."
     },
-    "cta": "Begin the conversation →",
-    "ctaQuestion": "One conversation is where everything begins.",
-    "ctaNote": "Share your vision with us. No cost, no obligation."
+    "cta": "Contact"
   },
   "programPages": {
     "meta": {
