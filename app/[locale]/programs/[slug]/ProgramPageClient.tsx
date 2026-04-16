@@ -553,13 +553,6 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           </div>
         </div>
 
-        {/* ── Statement: large typographic anchor ── */}
-        <section ref={editRef} className="be-statement">
-          <div className={`be-statement__inner reveal${editInView ? ' is-in-view' : ''}`}>
-            <p className="be-statement__text">{t(key('lead'))}</p>
-          </div>
-        </section>
-
         {/* ── Body: narrow centered column ── */}
         <section className="be-body-section">
           <div className="be-body-inner">
@@ -867,11 +860,10 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           <div className="sm-hero__scroll" aria-hidden="true">↓</div>
         </div>
 
-        {/* ── Ceremony: centered lead + body ── */}
+        {/* ── Ceremony: body ── */}
         <section ref={editRef} className="sm-ceremony">
           <div className={`sm-ceremony__inner reveal${editInView ? ' is-in-view' : ''}`}>
             <p className="sm-ceremony__eyebrow">{t(key('label'))}</p>
-            <p className="sm-ceremony__lead">{t(key('lead'))}</p>
             <div className="sm-ceremony__rule" aria-hidden="true" />
             {bodyParagraphs.map((para, i) => (
               <p key={i} className="sm-ceremony__body">{para}</p>
@@ -1262,13 +1254,6 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           </div>
           <div className="cs-hero__scroll" aria-hidden="true">↓</div>
         </div>
-
-        {/* ── Lead statement: full-width centered ── */}
-        <section ref={editRef} className="cs-lead">
-          <div className={`cs-lead__inner reveal${editInView ? ' is-in-view' : ''}`}>
-            <p className="cs-lead__text">{t(key('lead'))}</p>
-          </div>
-        </section>
 
         {/* ── Three body sections with alternating full-bleed ── */}
         <section className="cs-body-section">
@@ -1767,13 +1752,6 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           </div>
           <div className="hb-hero__scroll" aria-hidden="true">↓</div>
         </div>
-
-        {/* ── Lead: right-aligned, generous white space ── */}
-        <section ref={editRef} className="hb-lead-section">
-          <div className={`hb-lead__inner reveal${editInView ? ' is-in-view' : ''}`}>
-            <p className="hb-lead__text">{t(key('lead'))}</p>
-          </div>
-        </section>
 
         {/* ── Body: narrow editorial column, image panel ── */}
         <section className="hb-story">
