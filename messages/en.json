@@ -19,16 +19,25 @@
   "hero": {
     "tagline": "Japanese tradition\nneeds no translation.",
     "slides": [
-      { "label": "THE FOMUS",    "title": "Japanese culture,\ndelivered as experience." },
-      { "label": "THE CRAFT",    "title": "The artisan's hand,\nin every memory." },
-      { "label": "THE MATERIAL", "title": "The scent of hinoki,\nleaves a mark." }
+      {
+        "label": "THE FOMUS",
+        "title": "Japanese culture,\ndelivered as experience."
+      },
+      {
+        "label": "THE CRAFT",
+        "title": "The artisan's hand,\nin every memory."
+      },
+      {
+        "label": "THE MATERIAL",
+        "title": "The scent of hinoki,\nleaves a mark."
+      }
     ],
     "masuAlt": "Masu silhouette"
   },
   "statement": {
-    "line1": "Japanese tradition carries a force that needs no translation.",
-    "line2": "Time held in a craftsman's hands. The scent of hinoki. The weight of a masu, filled to the brim — this force is felt before it is understood.",
-    "line3": "THE FOMUS designs that moment.",
+    "line1": "THE FOMUS is a brand that redefines the Japanese masu as a vessel for cultural experience.",
+    "line2": "Fully bespoke experience programmes for corporations, hotels, and embassies — designed with artisan craft and diplomatic sensibility.",
+    "line3": "Corporate gifting, hotel branding, cultural space direction — five programmes delivering Japanese tradition as lived experience.",
     "line4": "Until the giver's intent becomes the recipient's memory."
   },
   "programs": {
@@ -239,10 +248,22 @@
     ],
     "details": {
       "label": "Company Information",
-      "name": { "label": "Name", "value": "FOMUS LLC" },
-      "founded": { "label": "Founded", "value": "2024" },
-      "location": { "label": "Location", "value": "Tokyo, Japan" },
-      "business": { "label": "Business", "value": "Design and delivery of cultural experience programmes using masu" }
+      "name": {
+        "label": "Name",
+        "value": "FOMUS LLC"
+      },
+      "founded": {
+        "label": "Founded",
+        "value": "2024"
+      },
+      "location": {
+        "label": "Location",
+        "value": "Tokyo, Japan"
+      },
+      "business": {
+        "label": "Business",
+        "value": "Design and delivery of cultural experience programmes using masu"
+      }
     },
     "cta": "Begin the conversation →"
   },
@@ -533,9 +554,18 @@
     "heroCaption": "A vessel shaped by craft, carried by culture",
     "lead": "Born as a measure, the masu has become, over 1,300 years, a vessel for culture. The scent of hinoki and the weight in the hand leave a memory the moment it is given.",
     "stats": [
-      { "value": "1,300 years", "label": "of masu history" },
-      { "value": "No.1 in Japan", "label": "our manufacturing partner" },
-      { "value": "14 stages", "label": "of artisan craft" }
+      {
+        "value": "1,300 years",
+        "label": "of masu history"
+      },
+      {
+        "value": "No.1 in Japan",
+        "label": "our manufacturing partner"
+      },
+      {
+        "value": "14 stages",
+        "label": "of artisan craft"
+      }
     ],
     "sections": {
       "history": {
@@ -589,12 +619,36 @@
       "title": "Fourteen Stages",
       "caption": "Eye and hand verification at every step",
       "steps": [
-        { "num": "01", "title": "Timber & Drying", "body": "Natural domestic hinoki offcuts are sourced, dried, and milled into components sized for each piece." },
-        { "num": "02", "title": "Cutting", "body": "Side panels and base are cut to precise dimensions. Consistent thickness determines the quality of the finished form." },
-        { "num": "03", "title": "Mortising & Assembly", "body": "Components are mortised and assembled. Each stage is verified by eye and by hand throughout." },
-        { "num": "04", "title": "Base Attachment", "body": "The base is attached using a heat-compression machine, producing consistent quality at scale." },
-        { "num": "05", "title": "Finishing & Beveling", "body": "Surfaces are finished and edges beveled to produce a smooth, clean hand. The grain of the wood is brought forward." },
-        { "num": "06", "title": "Marking", "body": "Branding iron, laser engraving, or silk-screen print — all handled in-house, suited to the mark and the volume." }
+        {
+          "num": "01",
+          "title": "Timber & Drying",
+          "body": "Natural domestic hinoki offcuts are sourced, dried, and milled into components sized for each piece."
+        },
+        {
+          "num": "02",
+          "title": "Cutting",
+          "body": "Side panels and base are cut to precise dimensions. Consistent thickness determines the quality of the finished form."
+        },
+        {
+          "num": "03",
+          "title": "Mortising & Assembly",
+          "body": "Components are mortised and assembled. Each stage is verified by eye and by hand throughout."
+        },
+        {
+          "num": "04",
+          "title": "Base Attachment",
+          "body": "The base is attached using a heat-compression machine, producing consistent quality at scale."
+        },
+        {
+          "num": "05",
+          "title": "Finishing & Beveling",
+          "body": "Surfaces are finished and edges beveled to produce a smooth, clean hand. The grain of the wood is brought forward."
+        },
+        {
+          "num": "06",
+          "title": "Marking",
+          "body": "Branding iron, laser engraving, or silk-screen print — all handled in-house, suited to the mark and the volume."
+        }
       ]
     },
     "history": {
