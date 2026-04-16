@@ -69,13 +69,8 @@ export default function FounderPageClient() {
           </div>
         </div>
 
-        {/* THE FOMUS 事業 — 同じ流れの中で */}
+        {/* THE FOMUS 事業 — ラベルなしで自然に続く */}
         <div ref={bizRef} className={`fp-prose fp-prose--biz reveal${bizInView ? ' is-in-view' : ''}`}>
-          <p className="fp-section-label">
-            <span className="fp-section-label__en">{t('businessLabel')}</span>
-            <span className="fp-section-label__sep">{' | '}</span>
-            <span className="fp-section-label__en">{t('businessLabelSub')}</span>
-          </p>
           {business.map((para, i) => (
             <p key={`b${i}`} className="fp-prose__para">{para}</p>
           ))}
@@ -221,10 +216,10 @@ export default function FounderPageClient() {
           border-top: 1px solid var(--color-line);
         }
 
-        /* ビジネス前の余白 */
+        /* ビジネス — ラベルなし、メッセージから自然に続く */
         .fp-prose--biz {
-          padding-top: clamp(2.5rem, 4vw, 3.5rem);
-          border-top: 1px solid var(--color-line);
+          padding-top: 0;
+          border-top: none;
         }
 
         /* ── セクションラベル（小見出し）────── */
