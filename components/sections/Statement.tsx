@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useInView } from '@/lib/useInView';
 
@@ -8,73 +9,137 @@ export default function Statement() {
   const { ref, inView } = useInView<HTMLDivElement>();
 
   return (
-    <section
-      className="section-gap"
-      style={{ backgroundColor: 'var(--color-white)' }}
-    >
-      <div ref={ref} className="container-narrow" style={{ maxWidth: '780px' }}>
-        {/* 上部の金ライン（スライドイン） */}
-        <div aria-hidden="true" style={{ marginBottom: '3.25rem' }}>
-          <span
-            className={`gold-hairline reveal-line${inView ? ' is-in-view' : ''}`}
+    <section style={{ backgroundColor: 'var(--color-white)' }}>
+      <div ref={ref} className="st-wrap">
+
+        {/* ── Left: Image ─────────────────────── */}
+        <div className={`st-img-col reveal${inView ? ' is-in-view' : ''}`}>
+          <Image
+            src="/images/masukame.jpg"
+            alt="THE FOMUS"
+            fill
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            sizes="(max-width: 768px) 100vw, 55vw"
+            priority
           />
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-          {/* eyebrow */}
-          <p
-            className={`reveal reveal-delay-1${inView ? ' is-in-view' : ''}`}
-            style={{
-              fontFamily: 'var(--font-jost), Jost, sans-serif',
-              fontWeight: 400,
-              fontSize: '0.8125rem',
-              letterSpacing: '0.32em',
-              textTransform: 'uppercase',
-              color: 'var(--color-accent)',
-              margin: 0,
-            }}
-          >
+        {/* ── Right: Text ─────────────────────── */}
+        <div className="st-text-col">
+          <p className={`st-eyebrow reveal reveal-delay-1${inView ? ' is-in-view' : ''}`}>
             {t('eyebrow')}
           </p>
 
-          {/* body */}
-          <p
-            className={`reveal reveal-delay-2${inView ? ' is-in-view' : ''}`}
-            style={{
-              fontFamily: 'var(--font-noto-serif-jp), "Noto Serif JP", serif',
-              fontWeight: 300,
-              fontSize: 'clamp(1.0625rem, 1.85vw, 1.3125rem)',
-              lineHeight: 2.25,
-              color: 'var(--color-ink)',
-              letterSpacing: '0.075em',
-              margin: 0,
-            }}
-          >
+          <h2 className={`st-heading reveal reveal-delay-2${inView ? ' is-in-view' : ''}`}>
+            {t('heading')}
+          </h2>
+
+          <p className={`st-body reveal reveal-delay-3${inView ? ' is-in-view' : ''}`}>
             {t('body')}
           </p>
 
-          {/* closing lines */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingTop: '0.5rem' }}>
-            {(['closing1', 'closing2'] as const).map((key, i) => (
-              <p
-                key={key}
-                className={`reveal reveal-delay-${i + 3}${inView ? ' is-in-view' : ''}`}
-                style={{
-                  fontFamily: 'var(--font-noto-serif-jp), "Noto Serif JP", serif',
-                  fontWeight: 300,
-                  fontSize: 'clamp(0.9375rem, 1.5vw, 1.125rem)',
-                  lineHeight: 2,
-                  color: 'var(--color-ink-mute)',
-                  letterSpacing: '0.075em',
-                  margin: 0,
-                }}
-              >
-                {t(key)}
-              </p>
-            ))}
-          </div>
+          <p className={`st-closing1 reveal reveal-delay-4${inView ? ' is-in-view' : ''}`}>
+            {t('closing1')}
+          </p>
+
+          <p className={`st-closing2 reveal reveal-delay-5${inView ? ' is-in-view' : ''}`}>
+            {t('closing2')}
+          </p>
         </div>
+
       </div>
+
+      <style>{`
+        .st-wrap {
+          display: grid;
+          grid-template-columns: 55fr 45fr;
+          min-height: 600px;
+          border-top: 1px solid var(--color-line);
+          border-bottom: 1px solid var(--color-line);
+          margin-top: -1px;
+        }
+
+        /* ── Image column ───────────────────── */
+        .st-img-col {
+          position: relative;
+          overflow: hidden;
+          min-height: 480px;
+        }
+
+        /* ── Text column ────────────────────── */
+        .st-text-col {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: clamp(3rem, 6vw, 5rem) clamp(2.5rem, 5vw, 4.5rem);
+          border-left: 1px solid var(--color-line);
+        }
+
+        .st-eyebrow {
+          font-family: var(--font-jost), Jost, sans-serif;
+          font-weight: 400;
+          font-size: 0.8125rem;
+          letter-spacing: 0.32em;
+          text-transform: uppercase;
+          color: var(--color-accent);
+          margin: 0 0 1.75rem;
+        }
+
+        .st-heading {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1.875rem, 3.2vw, 2.75rem);
+          line-height: 1.25;
+          color: var(--color-ink);
+          letter-spacing: 0.01em;
+          margin: 0 0 2rem;
+        }
+
+        .st-body {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
+          font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
+          line-height: 2.2;
+          color: var(--color-ink);
+          letter-spacing: 0.06em;
+          margin: 0 0 2rem;
+        }
+
+        .st-closing1 {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
+          font-size: clamp(0.875rem, 1.2vw, 1rem);
+          line-height: 2;
+          color: var(--color-ink-mute);
+          letter-spacing: 0.06em;
+          margin: 0 0 0.5rem;
+        }
+
+        .st-closing2 {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
+          font-size: clamp(0.875rem, 1.2vw, 1rem);
+          line-height: 2;
+          color: var(--color-ink-mute);
+          letter-spacing: 0.06em;
+          margin: 0;
+        }
+
+        /* ── Responsive ─────────────────────── */
+        @media (max-width: 768px) {
+          .st-wrap {
+            grid-template-columns: 1fr;
+          }
+          .st-img-col {
+            min-height: 300px;
+          }
+          .st-text-col {
+            border-left: none;
+            border-top: 1px solid var(--color-line);
+          }
+        }
+      `}</style>
     </section>
   );
 }
