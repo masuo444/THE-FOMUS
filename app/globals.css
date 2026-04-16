@@ -42,7 +42,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   font-size: 17px; /* base: 1rem = 17px */
 }
 
