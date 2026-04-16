@@ -266,7 +266,9 @@
         "value": "Design and delivery of cultural experience programmes using masu"
       }
     },
-    "cta": "Begin the conversation →"
+    "cta": "Begin the conversation →",
+    "ctaQuestion": "One conversation is where everything begins.",
+    "ctaNote": "Share your vision with us. No cost, no obligation."
   },
   "programPages": {
     "meta": {
@@ -323,7 +325,8 @@
             "A merger, a centenary, a treaty signed — the occasion will not come again. This time, the gift must be equal to the moment. It is not a question of budget. It is a question of what, exactly, is placed in the other person's hands.",
             "Each time you select from a catalogue, the same thought surfaces: this is not quite right. Your organisation has a philosophy. The gift should embody it. You have been looking for the right way to do that."
           ]
-        }
+        },
+        "ctaQuestion": "Still on the desk, ten years later."
       },
       "culturalSpace": {
         "label": "PROGRAMME 02",
@@ -354,7 +357,8 @@
             "Your embassy, government institution, or cultural body requires a reception space that carries genuine depth — not decorative objects, but a space that communicates Japanese culture before the conversation begins.",
             "A lobby or floor renovation is approaching. This time, you want to design the space properly — not as a cost exercise, but as a declaration of the organisation's character. You want it to be remembered."
           ]
-        }
+        },
+        "ctaQuestion": "Trust is decided before words begin."
       },
       "hotelBranding": {
         "label": "PROGRAMME 03",
@@ -385,7 +389,8 @@
             "You want returning guests to find something new at each visit — not new content or a changed menu, but a property whose aesthetic sensibility keeps evolving. You are looking for the mechanism to do that.",
             "An opening, a rebrand, a renovation: the moment is approaching to design the defining experiential element of your property from the ground up. The amenity supplier catalogues have not given you what you need."
           ]
-        }
+        },
+        "ctaQuestion": "Still thinking of your property the morning after checkout."
       },
       "sakeMasu": {
         "label": "PROGRAMME 04",
@@ -417,7 +422,8 @@
             "You are planning a product launch, brand activation, or press event and wish to anchor the occasion in a cultural gesture that guests will remember and recount.",
             "You are responsible for international conferences, summits, or business forums and need a side programme that participants will recount long after they return home."
           ]
-        }
+        },
+        "ctaQuestion": "An experience they will speak of long after they've returned home."
       },
       "bespoke": {
         "label": "PROGRAMME 05",
@@ -448,9 +454,28 @@
             "A centenary, an IPO, a cultural diplomatic initiative — the moment will not come again. You do not want to look back and wonder why you did not act with the full weight of the occasion. You are in a position to make decisions based on what endures.",
             "You are building something over years, not commissioning a single deliverable. You are looking for a partner who will think with you for the long term — not execute a brief, but help form one."
           ]
-        }
+        },
+        "ctaQuestion": "One piece in the world. Designed from nothing.",
+        "exclusivity": "Annual intake: 3 projects"
       }
-    }
+    },
+    "processLabel": "How It Works",
+    "process": {
+      "step1": {
+        "label": "Consultation",
+        "body": "Share your vision with us — online or in person. No cost, no obligation."
+      },
+      "step2": {
+        "label": "Design & Craft",
+        "body": "Your dedicated lead designs the concept and works with our artisans. You receive regular updates."
+      },
+      "step3": {
+        "label": "Delivery & Support",
+        "body": "Delivered on time, with follow-up support as needed."
+      }
+    },
+    "ctaBodyNote": "Share your vision with us. No cost, no obligation.",
+    "ctaLinkLabel": "Begin the conversation →"
   },
   "about": {
     "short": "THE FOMUS redefines the traditional Japanese masu as a vessel for cultural experience, designing bespoke programmes for corporations, luxury hotels, and embassies worldwide."
@@ -520,7 +545,9 @@
       }
     },
     "ctaHeadline": "Discuss our sustainability approach.",
-    "cta": "Begin a conversation →"
+    "cta": "Begin a conversation →",
+    "ctaQuestion": "Objects made to last. Given to be kept.",
+    "ctaNote": "Share your vision with us. No cost, no obligation."
   },
   "legacySection": {
     "sectionLabel": "SUSTAINABILITY",
@@ -662,6 +689,8 @@
       ]
     },
     "ctaHeadline": "Discuss the masu with us.",
-    "cta": "Begin a conversation →"
+    "cta": "Begin a conversation →",
+    "ctaQuestion": "Craftsmanship that speaks before words do.",
+    "ctaNote": "Share your vision with us. No cost, no obligation."
   }
 }

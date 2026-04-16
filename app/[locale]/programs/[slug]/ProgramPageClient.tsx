@@ -131,12 +131,29 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           </div>
         </section>
 
+        {/* ── Process ── */}
+        <section className="cg-process">
+          <div className="cg-process__inner">
+            <p className="cg-process__label">{t('processLabel')}</p>
+            <div className="cg-process__steps">
+              {(['step1','step2','step3'] as const).map((step) => (
+                <div key={step} className="cg-process__step">
+                  <div className="cg-process__dot" aria-hidden="true" />
+                  <p className="cg-process__step-label">{t(`process.${step}.label` as Parameters<typeof t>[0])}</p>
+                  <p className="cg-process__step-body">{t(`process.${step}.body` as Parameters<typeof t>[0])}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA ── */}
         <section ref={ctaRef} className="cg-cta">
           <div className={`cg-cta__inner reveal${ctaInView ? ' is-in-view' : ''}`}>
-            <p className="cg-cta__note">{t('enquireCtaHeadline')}</p>
+            <p className="cg-cta__question">{t(key('ctaQuestion'))}</p>
+            <p className="cg-cta__note">{t('ctaBodyNote')}</p>
             <Link href={contactHref} className="cg-cta__link">
-              {t('enquireCta')}
+              {t('ctaLinkLabel')}
             </Link>
           </div>
         </section>
@@ -365,11 +382,75 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             color: var(--color-ink);
           }
 
+          /* ── Process ──────────────────────────────────────────────── */
+          .cg-process {
+            background: var(--color-white);
+            border-top: 1px solid var(--color-line);
+            padding: clamp(5rem, 9vw, 7rem) clamp(2rem, 6vw, 5.5rem);
+          }
+          .cg-process__inner {
+            max-width: 1000px;
+            margin: 0 auto;
+          }
+          .cg-process__label {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-weight: 400;
+            font-size: 0.6875rem;
+            letter-spacing: 0.46em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            opacity: 0.72;
+            margin: 0 0 3rem;
+          }
+          .cg-process__steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+          }
+          .cg-process__step {
+            padding: 0 clamp(1.5rem, 3vw, 3rem) 0 0;
+            position: relative;
+          }
+          .cg-process__step:not(:first-child) {
+            padding-left: clamp(1.5rem, 3vw, 3rem);
+            border-left: 1px solid var(--color-line);
+          }
+          .cg-process__dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            opacity: 0.6;
+            margin-bottom: 1.25rem;
+          }
+          .cg-process__step-label {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.25rem, 2vw, 1.625rem);
+            color: var(--color-ink);
+            margin: 0 0 0.75rem;
+            line-height: 1.1;
+          }
+          .cg-process__step-body {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 2;
+            letter-spacing: 0.04em;
+            color: var(--color-ink-mute);
+            margin: 0;
+          }
+          @media (max-width: 768px) {
+            .cg-process__steps { grid-template-columns: 1fr; gap: 2.5rem; }
+            .cg-process__step:not(:first-child) { padding-left: 0; border-left: none; border-top: 1px solid var(--color-line); padding-top: 2.5rem; }
+          }
+
           /* ── CTA ───────────────────────────────────────────────────── */
           .cg-cta {
             background: var(--color-white);
             border-top: 1px solid var(--color-line);
-            padding: clamp(5rem, 9vw, 7.5rem) clamp(2rem, 6vw, 5.5rem);
+            padding: clamp(6rem, 11vw, 9rem) clamp(2rem, 6vw, 5.5rem);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -378,8 +459,19 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2.5rem;
+            gap: 2rem;
             text-align: center;
+            max-width: 680px;
+          }
+          .cg-cta__question {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.75rem, 3.5vw, 3rem);
+            line-height: 1.3;
+            color: var(--color-ink);
+            margin: 0;
+            letter-spacing: 0.01em;
           }
           .cg-cta__note {
             font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
@@ -457,6 +549,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             <p className="be-hero__label">{t(key('label'))}</p>
             <h1 className="be-hero__name">{t(key('name'))}</h1>
             <p className="be-hero__sub">{t(key('nameJa'))}</p>
+            <p className="be-hero__exclusivity">{t(key('exclusivity'))}</p>
           </div>
         </div>
 
@@ -476,11 +569,29 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           </div>
         </section>
 
+        {/* ── Process ── */}
+        <section className="be-process">
+          <div className="be-process__inner">
+            <p className="be-process__label">{t('processLabel')}</p>
+            <div className="be-process__steps">
+              {(['step1','step2','step3'] as const).map((step) => (
+                <div key={step} className="be-process__step">
+                  <div className="be-process__dot" aria-hidden="true" />
+                  <p className="be-process__step-label">{t(`process.${step}.label` as Parameters<typeof t>[0])}</p>
+                  <p className="be-process__step-body">{t(`process.${step}.body` as Parameters<typeof t>[0])}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA: private, left-aligned ── */}
         <section ref={ctaRef} className="be-cta">
           <div className={`be-cta__inner reveal${ctaInView ? ' is-in-view' : ''}`}>
+            <p className="be-cta__question">{t(key('ctaQuestion'))}</p>
+            <p className="be-cta__note">{t('ctaBodyNote')}</p>
             <Link href={contactHref} className="be-cta__link">
-              {t('enquireCta')}
+              {t('ctaLinkLabel')}
             </Link>
           </div>
         </section>
@@ -567,7 +678,17 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             font-size: 0.75rem;
             letter-spacing: 0.3em;
             color: rgba(240,240,238,0.28);
+            margin: 0 0 1rem;
+          }
+          .be-hero__exclusivity {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-weight: 400;
+            font-size: 0.75rem;
+            letter-spacing: 0.22em;
+            color: var(--color-accent);
+            opacity: 0.8;
             margin: 0;
+            text-transform: uppercase;
           }
 
           .be-statement {
@@ -604,10 +725,93 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           }
           .be-body__para:last-child { margin-bottom: 0; }
 
+          .be-process {
+            border-top: 1px solid var(--color-line);
+            padding: clamp(5rem, 9vw, 7rem) clamp(2rem, 8vw, 10rem);
+          }
+          .be-process__inner { max-width: 900px; }
+          .be-process__label {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-weight: 400;
+            font-size: 0.6875rem;
+            letter-spacing: 0.46em;
+            text-transform: uppercase;
+            color: var(--color-ink-mute);
+            opacity: 0.55;
+            margin: 0 0 3rem;
+          }
+          .be-process__steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+          }
+          .be-process__step {
+            padding: 0 clamp(1.5rem, 3vw, 3rem) 0 0;
+          }
+          .be-process__step:not(:first-child) {
+            padding-left: clamp(1.5rem, 3vw, 3rem);
+            border-left: 1px solid var(--color-line);
+          }
+          .be-process__dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-ink-mute);
+            opacity: 0.4;
+            margin-bottom: 1.25rem;
+          }
+          .be-process__step-label {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.25rem, 2vw, 1.625rem);
+            color: var(--color-ink);
+            margin: 0 0 0.75rem;
+            line-height: 1.1;
+          }
+          .be-process__step-body {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 2;
+            letter-spacing: 0.04em;
+            color: var(--color-ink-mute);
+            margin: 0;
+          }
+          @media (max-width: 768px) {
+            .be-process__steps { grid-template-columns: 1fr; gap: 2.5rem; }
+            .be-process__step:not(:first-child) { padding-left: 0; border-left: none; border-top: 1px solid var(--color-line); padding-top: 2.5rem; }
+          }
+
           .be-cta {
             padding: clamp(7rem, 12vw, 11rem) clamp(2rem, 8vw, 10rem);
+            border-top: 1px solid var(--color-line);
           }
-          .be-cta__inner {}
+          .be-cta__inner {
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+          }
+          .be-cta__question {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.75rem, 3.5vw, 3rem);
+            line-height: 1.3;
+            color: var(--color-ink);
+            margin: 0;
+            letter-spacing: 0.01em;
+          }
+          .be-cta__note {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 400;
+            font-size: 0.9375rem;
+            line-height: 2;
+            letter-spacing: 0.05em;
+            color: var(--color-ink-mute);
+            margin: 0;
+          }
           .be-cta__link {
             font-family: var(--font-cormorant), "Cormorant Garamond", serif;
             font-style: italic;
@@ -692,11 +896,28 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           </div>
         </section>
 
+        {/* ── Process ── */}
+        <section className="sm-process">
+          <div className="sm-process__inner">
+            <p className="sm-process__label">{t('processLabel')}</p>
+            <div className="sm-process__steps">
+              {(['step1','step2','step3'] as const).map((step) => (
+                <div key={step} className="sm-process__step">
+                  <div className="sm-process__dot" aria-hidden="true" />
+                  <p className="sm-process__step-label">{t(`process.${step}.label` as Parameters<typeof t>[0])}</p>
+                  <p className="sm-process__step-body">{t(`process.${step}.body` as Parameters<typeof t>[0])}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA ── */}
         <section ref={ctaRef} className="sm-cta">
           <div className={`sm-cta__inner reveal${ctaInView ? ' is-in-view' : ''}`}>
-            <p className="sm-cta__note">{t('enquireCtaHeadline')}</p>
-            <Link href={contactHref} className="sm-cta__link">{t('enquireCta')}</Link>
+            <p className="sm-cta__question">{t(key('ctaQuestion'))}</p>
+            <p className="sm-cta__note">{t('ctaBodyNote')}</p>
+            <Link href={contactHref} className="sm-cta__link">{t('ctaLinkLabel')}</Link>
           </div>
         </section>
 
@@ -891,17 +1112,93 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           }
           .sm-scope__item:first-child { border-top: 1px solid var(--color-line); }
 
+          .sm-process {
+            border-top: 1px solid var(--color-line);
+            padding: clamp(5rem, 9vw, 7rem) clamp(2rem, 6vw, 5rem);
+            display: flex;
+            justify-content: center;
+          }
+          .sm-process__inner {
+            max-width: 720px;
+            width: 100%;
+          }
+          .sm-process__label {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-weight: 400;
+            font-size: 0.6875rem;
+            letter-spacing: 0.46em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            opacity: 0.72;
+            margin: 0 0 3rem;
+            text-align: center;
+          }
+          .sm-process__steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+          }
+          .sm-process__step {
+            padding: 0 clamp(1.25rem, 2.5vw, 2rem) 0 0;
+            text-align: center;
+          }
+          .sm-process__step:not(:first-child) {
+            padding-left: clamp(1.25rem, 2.5vw, 2rem);
+            border-left: 1px solid var(--color-line);
+          }
+          .sm-process__dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            opacity: 0.5;
+            margin: 0 auto 1.25rem;
+          }
+          .sm-process__step-label {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+            color: var(--color-ink);
+            margin: 0 0 0.75rem;
+            line-height: 1.1;
+          }
+          .sm-process__step-body {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 400;
+            font-size: 0.8125rem;
+            line-height: 2;
+            letter-spacing: 0.04em;
+            color: var(--color-ink-mute);
+            margin: 0;
+          }
+          @media (max-width: 640px) {
+            .sm-process__steps { grid-template-columns: 1fr; gap: 2rem; }
+            .sm-process__step:not(:first-child) { padding-left: 0; border-left: none; border-top: 1px solid var(--color-line); padding-top: 2rem; }
+          }
+
           .sm-cta {
             padding: clamp(6rem, 11vw, 9rem) clamp(2rem, 6vw, 5rem);
             display: flex;
             justify-content: center;
+            border-top: 1px solid var(--color-line);
           }
           .sm-cta__inner {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2.5rem;
+            gap: 2rem;
             text-align: center;
+            max-width: 620px;
+          }
+          .sm-cta__question {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            line-height: 1.35;
+            color: var(--color-ink);
+            margin: 0;
+            letter-spacing: 0.01em;
           }
           .sm-cta__note {
             font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
@@ -1019,13 +1316,30 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           </div>
         </section>
 
+        {/* ── Process ── */}
+        <section className="cs-process">
+          <div className="cs-process__inner">
+            <p className="cs-process__label">{t('processLabel')}</p>
+            <div className="cs-process__steps">
+              {(['step1','step2','step3'] as const).map((step) => (
+                <div key={step} className="cs-process__step">
+                  <div className="cs-process__dot" aria-hidden="true" />
+                  <p className="cs-process__step-label">{t(`process.${step}.label` as Parameters<typeof t>[0])}</p>
+                  <p className="cs-process__step-body">{t(`process.${step}.body` as Parameters<typeof t>[0])}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA ── */}
         <section ref={ctaRef} className="cs-cta">
           <div className="cs-cta__photo" style={{ backgroundImage: `url(${accent.src})` }} />
           <div className="cs-cta__overlay" />
           <div className={`cs-cta__inner reveal${ctaInView ? ' is-in-view' : ''}`}>
-            <p className="cs-cta__note">{t('enquireCtaHeadline')}</p>
-            <Link href={contactHref} className="cs-cta__link">{t('enquireCta')}</Link>
+            <p className="cs-cta__question">{t(key('ctaQuestion'))}</p>
+            <p className="cs-cta__note">{t('ctaBodyNote')}</p>
+            <Link href={contactHref} className="cs-cta__link">{t('ctaLinkLabel')}</Link>
           </div>
         </section>
 
@@ -1283,6 +1597,67 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           }
           .cs-scope__item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
 
+          /* Process */
+          .cs-process {
+            background: var(--color-ink);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: clamp(5rem, 9vw, 7rem) clamp(2rem, 6vw, 5rem);
+          }
+          .cs-process__inner {
+            max-width: 1000px;
+            margin: 0 auto;
+          }
+          .cs-process__label {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-weight: 400;
+            font-size: 0.6875rem;
+            letter-spacing: 0.46em;
+            text-transform: uppercase;
+            color: rgba(240,240,238,0.3);
+            margin: 0 0 3rem;
+          }
+          .cs-process__steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+          }
+          .cs-process__step {
+            padding: 0 clamp(1.5rem, 3vw, 3rem) 0 0;
+          }
+          .cs-process__step:not(:first-child) {
+            padding-left: clamp(1.5rem, 3vw, 3rem);
+            border-left: 1px solid rgba(255,255,255,0.08);
+          }
+          .cs-process__dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            opacity: 0.45;
+            margin-bottom: 1.25rem;
+          }
+          .cs-process__step-label {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+            color: rgba(240,240,238,0.75);
+            margin: 0 0 0.75rem;
+            line-height: 1.1;
+          }
+          .cs-process__step-body {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 300;
+            font-size: 0.8125rem;
+            line-height: 2;
+            letter-spacing: 0.04em;
+            color: rgba(240,240,238,0.38);
+            margin: 0;
+          }
+          @media (max-width: 768px) {
+            .cs-process__steps { grid-template-columns: 1fr; gap: 2.5rem; }
+            .cs-process__step:not(:first-child) { padding-left: 0; border-left: none; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2.5rem; }
+          }
+
           /* CTA */
           .cs-cta {
             position: relative;
@@ -1307,7 +1682,18 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             z-index: 2;
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 2rem;
+          }
+          .cs-cta__question {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.75rem, 3.5vw, 3rem);
+            line-height: 1.3;
+            color: rgba(240,240,238,0.9);
+            margin: 0;
+            letter-spacing: 0.01em;
+            max-width: 720px;
           }
           .cs-cta__note {
             font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
@@ -1418,11 +1804,28 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           </div>
         </section>
 
+        {/* ── Process ── */}
+        <section className="hb-process">
+          <div className="hb-process__inner">
+            <p className="hb-process__label">{t('processLabel')}</p>
+            <div className="hb-process__steps">
+              {(['step1','step2','step3'] as const).map((step) => (
+                <div key={step} className="hb-process__step">
+                  <div className="hb-process__dot" aria-hidden="true" />
+                  <p className="hb-process__step-label">{t(`process.${step}.label` as Parameters<typeof t>[0])}</p>
+                  <p className="hb-process__step-body">{t(`process.${step}.body` as Parameters<typeof t>[0])}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA ── */}
         <section ref={ctaRef} className="hb-cta">
           <div className={`hb-cta__inner reveal${ctaInView ? ' is-in-view' : ''}`}>
-            <p className="hb-cta__note">{t('enquireCtaHeadline')}</p>
-            <Link href={contactHref} className="hb-cta__link">{t('enquireCta')}</Link>
+            <p className="hb-cta__question">{t(key('ctaQuestion'))}</p>
+            <p className="hb-cta__note">{t('ctaBodyNote')}</p>
+            <Link href={contactHref} className="hb-cta__link">{t('ctaLinkLabel')}</Link>
           </div>
         </section>
 
@@ -1617,19 +2020,90 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           }
           .hb-scope__item:first-child { border-top: 1px solid var(--color-line); }
 
+          /* Process */
+          .hb-process {
+            background: var(--color-white);
+            border-top: 1px solid var(--color-line);
+            padding: clamp(5rem, 9vw, 7rem) clamp(2rem, 8vw, 8rem);
+          }
+          .hb-process__inner { max-width: 960px; }
+          .hb-process__label {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-weight: 400;
+            font-size: 0.6875rem;
+            letter-spacing: 0.46em;
+            text-transform: uppercase;
+            color: var(--color-ink-mute);
+            opacity: 0.55;
+            margin: 0 0 3rem;
+          }
+          .hb-process__steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+          }
+          .hb-process__step {
+            padding: 0 clamp(1.5rem, 3vw, 3rem) 0 0;
+          }
+          .hb-process__step:not(:first-child) {
+            padding-left: clamp(1.5rem, 3vw, 3rem);
+            border-left: 1px solid var(--color-line);
+          }
+          .hb-process__dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            opacity: 0.55;
+            margin-bottom: 1.25rem;
+          }
+          .hb-process__step-label {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+            color: var(--color-ink);
+            margin: 0 0 0.75rem;
+            line-height: 1.1;
+          }
+          .hb-process__step-body {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 2;
+            letter-spacing: 0.04em;
+            color: var(--color-ink-mute);
+            margin: 0;
+          }
+          @media (max-width: 768px) {
+            .hb-process__steps { grid-template-columns: 1fr; gap: 2.5rem; }
+            .hb-process__step:not(:first-child) { padding-left: 0; border-left: none; border-top: 1px solid var(--color-line); padding-top: 2.5rem; }
+          }
+
           /* CTA */
           .hb-cta {
             padding: clamp(6rem, 11vw, 9rem) clamp(2rem, 8vw, 8rem);
             display: flex;
             align-items: center;
             justify-content: center;
+            border-top: 1px solid var(--color-line);
           }
           .hb-cta__inner {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2.5rem;
+            gap: 2rem;
             text-align: center;
+            max-width: 680px;
+          }
+          .hb-cta__question {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.75rem, 3.5vw, 2.875rem);
+            line-height: 1.35;
+            color: var(--color-ink);
+            margin: 0;
+            letter-spacing: 0.01em;
           }
           .hb-cta__note {
             font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
@@ -1786,12 +2260,29 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
         </div>
       </section>
 
+      {/* ── Process ─────────────────────────────────────────────── */}
+      <section className="pp-process-section">
+        <div className="pp-process-inner">
+          <p className="pp-process-label">{t('processLabel')}</p>
+          <div className="pp-process-steps">
+            {(['step1','step2','step3'] as const).map((step) => (
+              <div key={step} className="pp-process-step">
+                <div className="pp-process-dot" aria-hidden="true" />
+                <p className="pp-process-step-label">{t(`process.${step}.label` as Parameters<typeof t>[0])}</p>
+                <p className="pp-process-step-body">{t(`process.${step}.body` as Parameters<typeof t>[0])}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ─────────────────────────────────────────────────── */}
       <section ref={ctaRef} className="pp-cta-section">
         <div className={`pp-cta-inner reveal${ctaInView ? ' is-in-view' : ''}`}>
-          <p className="pp-cta-note">{t('enquireCtaHeadline')}</p>
+          <p className="pp-cta-question">{t(key('ctaQuestion'))}</p>
+          <p className="pp-cta-note">{t('ctaBodyNote')}</p>
           <Link href={contactHref} className="pp-cta-link">
-            {t('enquireCta')}
+            {t('ctaLinkLabel')}
           </Link>
         </div>
       </section>
@@ -2035,6 +2526,68 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           border-top: 1px solid var(--color-line);
         }
 
+        /* ── Process ────────────────────────────────────────────────── */
+        .pp-process-section {
+          background: var(--color-white);
+          border-top: 1px solid var(--color-line);
+          padding: clamp(5rem, 9vw, 7rem) clamp(2rem, 6vw, 5rem);
+        }
+        .pp-process-inner {
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+        .pp-process-label {
+          font-family: var(--font-jost), Jost, sans-serif;
+          font-weight: 400;
+          font-size: 0.6875rem;
+          letter-spacing: 0.46em;
+          text-transform: uppercase;
+          color: var(--color-accent);
+          opacity: 0.72;
+          margin: 0 0 3rem;
+        }
+        .pp-process-steps {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .pp-process-step {
+          padding: 0 clamp(1.5rem, 3vw, 3rem) 0 0;
+        }
+        .pp-process-step:not(:first-child) {
+          padding-left: clamp(1.5rem, 3vw, 3rem);
+          border-left: 1px solid var(--color-line);
+        }
+        .pp-process-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: var(--color-accent);
+          opacity: 0.55;
+          margin-bottom: 1.25rem;
+        }
+        .pp-process-step-label {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+          color: var(--color-ink);
+          margin: 0 0 0.75rem;
+          line-height: 1.1;
+        }
+        .pp-process-step-body {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 400;
+          font-size: 0.875rem;
+          line-height: 2;
+          letter-spacing: 0.04em;
+          color: var(--color-ink-mute);
+          margin: 0;
+        }
+        @media (max-width: 768px) {
+          .pp-process-steps { grid-template-columns: 1fr; gap: 2.5rem; }
+          .pp-process-step:not(:first-child) { padding-left: 0; border-left: none; border-top: 1px solid var(--color-line); padding-top: 2.5rem; }
+        }
+
         /* ── CTA ────────────────────────────────────────────────────── */
         .pp-cta-section {
           border-top: 1px solid var(--color-line);
@@ -2048,8 +2601,19 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 2.5rem;
+          gap: 2rem;
           text-align: center;
+          max-width: 680px;
+        }
+        .pp-cta-question {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1.75rem, 3.5vw, 3rem);
+          line-height: 1.3;
+          color: var(--color-ink);
+          margin: 0;
+          letter-spacing: 0.01em;
         }
         .pp-cta-note {
           font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;

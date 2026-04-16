@@ -77,7 +77,8 @@ export default function SustainabilityPageClient() {
         <div className="sp-cta-photo" />
         <div className="sp-cta-overlay" />
         <div className="sp-cta-inner">
-          <p className={`sp-cta-note reveal${ctaInView ? ' is-in-view' : ''}`}>{t('heroCaption')}</p>
+          <p className={`sp-cta-question reveal${ctaInView ? ' is-in-view' : ''}`}>{t('ctaQuestion')}</p>
+          <p className={`sp-cta-note reveal reveal-delay-1${ctaInView ? ' is-in-view' : ''}`}>{t('ctaNote')}</p>
           <Link href={contactHref} className={`sp-cta-btn reveal reveal-delay-1${ctaInView ? ' is-in-view' : ''}`}>
             {t('cta')}
           </Link>
@@ -261,7 +262,21 @@ export default function SustainabilityPageClient() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 3rem;
+          gap: 2rem;
+        }
+        .sp-cta-question {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1.75rem, 3.5vw, 3rem);
+          line-height: 1.3;
+          color: rgba(240,240,238,0.9);
+          margin: 0;
+          letter-spacing: 0.01em;
+          max-width: 700px;
+          text-align: center;
+          position: relative;
+          z-index: 2;
         }
         .sp-cta-note {
           font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;

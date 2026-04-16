@@ -81,7 +81,8 @@ export default function CraftPageClient() {
         <div className="cp-cta-photo" />
         <div className="cp-cta-overlay" />
         <div className="cp-cta-inner">
-          <p className={`cp-cta-note reveal${ctaInView ? ' is-in-view' : ''}`}>{t('heroCaption')}</p>
+          <p className={`cp-cta-question reveal${ctaInView ? ' is-in-view' : ''}`}>{t('ctaQuestion')}</p>
+          <p className={`cp-cta-note reveal reveal-delay-1${ctaInView ? ' is-in-view' : ''}`}>{t('ctaNote')}</p>
           <Link href={contactHref} className={`cp-cta-btn reveal reveal-delay-1${ctaInView ? ' is-in-view' : ''}`}>
             {t('cta')}
           </Link>
@@ -265,7 +266,20 @@ export default function CraftPageClient() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 3rem;
+          gap: 2rem;
+        }
+        .cp-cta-question {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1.75rem, 3.5vw, 3rem);
+          line-height: 1.3;
+          color: rgba(240,240,238,0.9);
+          margin: 0;
+          letter-spacing: 0.01em;
+          max-width: 680px;
+          position: relative;
+          z-index: 2;
         }
         .cp-cta-note {
           font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;

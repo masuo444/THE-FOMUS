@@ -76,9 +76,20 @@ export default function FounderPageClient() {
 
       {/* ── CTA ───────────────────────────────────── */}
       <div className="fp-cta">
+        <p className="fp-cta__question">
+          {locale === 'en'
+            ? 'The right partner for your project is the person who has stood in those rooms.'
+            : '40カ国の外交現場で、文化を手渡してきた人間が、あなたの構想と向き合います。'
+          }
+        </p>
+        <p className="fp-cta__note">
+          {locale === 'en'
+            ? 'Share your vision directly with the founder. No cost, no obligation.'
+            : 'まずはご構想をお聞かせください。費用は発生しません。'
+          }
+        </p>
         <Link href={contactHref} className="fp-cta__link">
-          <span>{locale === 'en' ? 'Begin the conversation' : '対話を始める'}</span>
-          <span className="fp-cta__arrow" aria-hidden="true">→</span>
+          <span>{locale === 'en' ? 'Speak directly with the founder →' : '代表に直接相談する →'}</span>
         </Link>
       </div>
 
@@ -257,13 +268,34 @@ export default function FounderPageClient() {
 
         /* ── CTA ─────────────────────────────────── */
         .fp-cta {
-          padding: clamp(4.5rem, 7vw, 6.5rem) clamp(2rem, 8vw, 8rem);
+          padding: clamp(5rem, 9vw, 8rem) clamp(2rem, 8vw, 8rem);
           border-top: 1px solid var(--color-line);
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          max-width: 760px;
+        }
+        .fp-cta__question {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1.5rem, 3vw, 2.5rem);
+          line-height: 1.4;
+          color: var(--color-ink);
+          margin: 0;
+          letter-spacing: 0.01em;
+        }
+        .fp-cta__note {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 400;
+          font-size: clamp(0.875rem, 1.1vw, 1rem);
+          line-height: 2;
+          letter-spacing: 0.06em;
+          color: var(--color-ink-mute);
+          margin: 0;
         }
         .fp-cta__link {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.8rem;
+          display: inline;
           font-family: var(--font-cormorant), "Cormorant Garamond", serif;
           font-style: italic;
           font-weight: 400;
@@ -280,15 +312,13 @@ export default function FounderPageClient() {
           position: absolute;
           bottom: 0;
           left: 0;
-          right: 2.5rem;
+          width: 100%;
           height: 1px;
           background: var(--color-line-dark);
           transition: background 0.35s ease;
         }
         .fp-cta__link:hover { color: var(--color-accent); }
         .fp-cta__link:hover::after { background: var(--color-accent); }
-        .fp-cta__arrow { transition: transform 0.35s ease; }
-        .fp-cta__link:hover .fp-cta__arrow { transform: translateX(5px); }
 
         /* ── Responsive ──────────────────────────── */
         @media (max-width: 900px) {

@@ -61,6 +61,8 @@ export default function CompanyPageClient({ locale }: { locale: string }) {
 
       {/* ── CTA ─────────────────────────────────── */}
       <div className="co-cta">
+        <p className="co-cta__question">{t('ctaQuestion')}</p>
+        <p className="co-cta__note">{t('ctaNote')}</p>
         <Link href={contactHref} className="co-cta__link">
           <span>{t('cta')}</span>
         </Link>
@@ -203,7 +205,30 @@ export default function CompanyPageClient({ locale }: { locale: string }) {
 
         /* CTA */
         .co-cta {
-          padding: clamp(4.5rem, 7vw, 6.5rem) clamp(2rem, 8vw, 8rem);
+          padding: clamp(5rem, 9vw, 8rem) clamp(2rem, 8vw, 8rem);
+          display: flex;
+          flex-direction: column;
+          gap: 1.75rem;
+          max-width: 720px;
+        }
+        .co-cta__question {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1.5rem, 3vw, 2.5rem);
+          line-height: 1.4;
+          color: var(--color-ink);
+          margin: 0;
+          letter-spacing: 0.01em;
+        }
+        .co-cta__note {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 400;
+          font-size: clamp(0.875rem, 1.1vw, 1rem);
+          line-height: 2;
+          letter-spacing: 0.06em;
+          color: var(--color-ink-mute);
+          margin: 0;
         }
         .co-cta__link {
           font-family: var(--font-cormorant), "Cormorant Garamond", serif;
