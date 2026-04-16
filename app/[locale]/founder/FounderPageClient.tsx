@@ -124,24 +124,12 @@ export default function FounderPageClient() {
           <span className="fp-stat__value">{t('stats.events.value')}</span>
           <span className="fp-stat__label">{t('stats.events.label')}</span>
         </div>
-        <div className="fp-stat__sep" aria-hidden="true" />
-        <div className="fp-stat">
-          <span className="fp-stat__value">{t('stats.embassy.value')}</span>
-          <span className="fp-stat__label">{t('stats.embassy.label')}</span>
-        </div>
       </div>
 
       {/* ── CTA ───────────────────────────────────── */}
       <div className="fp-cta">
-        <p className="fp-cta__question">{t('ctaQuestion')}</p>
-        <p className="fp-cta__note">
-          {locale === 'en'
-            ? 'Share your vision directly with the founder. No cost, no obligation.'
-            : 'まずはご構想をお聞かせください。費用は発生しません。'
-          }
-        </p>
-        <Link href={contactHref} className="fp-cta__link">
-          <span>{locale === 'en' ? 'Speak directly with the founder →' : '増尾に直接相談する →'}</span>
+        <Link href={contactHref} className="fp-cta__button">
+          {locale === 'en' ? 'Contact' : 'お問い合わせ'}
         </Link>
       </div>
 
@@ -476,34 +464,11 @@ export default function FounderPageClient() {
 
         /* ── CTA ─────────────────────────────────── */
         .fp-cta {
-          padding: clamp(5rem, 9vw, 8rem) clamp(2rem, 8vw, 8rem);
-          border-top: 1px solid var(--color-line);
+          padding: clamp(4rem, 7vw, 6rem) clamp(2rem, 8vw, 8rem);
           display: flex;
-          flex-direction: column;
-          gap: 2rem;
-          max-width: 760px;
+          justify-content: center;
         }
-        .fp-cta__question {
-          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: clamp(1.5rem, 3vw, 2.5rem);
-          line-height: 1.4;
-          color: var(--color-ink);
-          margin: 0;
-          letter-spacing: 0.01em;
-        }
-        .fp-cta__note {
-          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
-          font-weight: 300;
-          font-size: clamp(0.875rem, 1.1vw, 1rem);
-          line-height: 2;
-          letter-spacing: 0.06em;
-          color: var(--color-ink-mute);
-          margin: 0;
-        }
-        .fp-cta__link {
-          display: inline;
+        .fp-cta__button {
           font-family: var(--font-cormorant), "Cormorant Garamond", serif;
           font-style: italic;
           font-weight: 400;
@@ -511,22 +476,14 @@ export default function FounderPageClient() {
           color: var(--color-ink);
           text-decoration: none;
           letter-spacing: 0.02em;
-          position: relative;
-          padding-bottom: 0.2rem;
-          transition: color 0.35s ease;
+          padding-bottom: 0.25rem;
+          border-bottom: 1px solid var(--color-ink);
+          transition: color 0.35s ease, border-color 0.35s ease;
         }
-        .fp-cta__link::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 1px;
-          background: var(--color-line-dark);
-          transition: background 0.35s ease;
+        .fp-cta__button:hover {
+          color: var(--color-accent);
+          border-color: var(--color-accent);
         }
-        .fp-cta__link:hover { color: var(--color-accent); }
-        .fp-cta__link:hover::after { background: var(--color-accent); }
 
         /* ── Responsive ──────────────────────────── */
         @media (max-width: 900px) {
