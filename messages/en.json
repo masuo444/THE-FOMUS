@@ -106,19 +106,17 @@
   "founder": {
     "sectionLabel": "FOUNDER",
     "founderName": "Keisuke Masuo",
-    "founderTitle": "Founder & CEO, THE FOMUS",
+    "founderTitle": "Founder & CEO, FOMUS",
     "messageTitle": "A gift should be the beginning of a conversation.",
     "messageBody": [
-      "Across more than 40 countries of diplomatic and cultural exchange work, the same question kept returning: how do you hand Japanese culture from one person to another? The answer came when a craftsman's masu, held in both hands, was passed across a table — before any word was spoken.",
-      "THE FOMUS was born from that moment. The masu is redefined as a vessel for cultural experience, combining artisan craft with the sensibility of international exchange to design programmes for corporations, hotels, and embassies. The work is to create the kind of memory that the recipient carries home and speaks of for years.",
-      "A gift ought to be the beginning of a conversation. With that conviction, THE FOMUS designs experiences — one commission at a time — that live in memory."
+      "Across more than 40 countries of international exchange and on the hospitality floor of a luxury hotel, the same question kept returning: how do you hand Japanese culture from one person to another? The answer came the moment a craftsman's masu, held in both hands, was passed across a table.",
+      "THE FOMUS was born from that experience. In 2024 and 2025, we served as the official cultural programme partner of the Embassy of Japan in Ireland, and presented Japanese traditional craft at the Emperor's Birthday Celebration Reception held at the Embassy of Japan in Bahrain and Saudi Arabia.",
+      "With an international operational base through our Dubai entity, we redefine the masu as a vessel for cultural experience and continue to design, one commission at a time, experiences that live in memory."
     ],
     "stat1Value": "40+",
-    "stat1Label": "countries",
+    "stat1Label": "Countries",
     "stat2Value": "45+",
-    "stat2Label": "international events",
-    "stat3Value": "Embassy",
-    "stat3Label": "official partnership",
+    "stat2Label": "Annual Events",
     "link": "Read the story →"
   },
   "contact": {
@@ -206,78 +204,51 @@
   },
   "founderPage": {
     "meta": {
-      "title": "Founder Keisuke Masuo — THE FOMUS",
-      "description": "Hospitality training at a luxury hotel, cultural exchange across 40+ countries, and an official partnership with the Embassy of Ireland — the story of Keisuke Masuo and the founding of THE FOMUS."
+      "title": "Keisuke Masuo, Founder & CEO — THE FOMUS",
+      "description": "From luxury hotel hospitality to founding THE FOMUS. Official partnership with the Embassy of Ireland, Dubai incorporation (FOMUS Global FZ-LLC), and exhibition at the Emperor's Birthday Celebration Reception. The story of Keisuke Masuo."
     },
-    "label": "FOUNDER",
+    "label": "CEO PROFILE",
     "name": "Keisuke Masuo",
     "nameRoman": "Keisuke Masuo",
-    "title": "Founder & CEO, THE FOMUS",
-    "intro": "Keisuke Masuo is the founder and CEO of THE FOMUS, where he designs and delivers masu-centred cultural experience programmes for corporations, luxury hotels, and embassies. His work draws on hospitality training at a luxury hotel and cultural sensibility developed across more than 40 countries.",
-    "careerLabel": "CAREER",
-    "career": [
-      {
-        "period": "Hospitality",
-        "title": "French Restaurant Service at a Luxury Hotel",
-        "body": "Keisuke Masuo began his career in the French restaurant of a luxury hotel in Tokyo. The ability to anticipate what a guest needs before it is spoken — cultivated on the hospitality floor — remains the foundation of every programme he designs today."
-      },
-      {
-        "period": "Foundation",
-        "title": "Establishment of FOMUS LLC",
-        "body": "After going independent, Keisuke Masuo encountered the traditional Japanese craft of the masu and recognised its potential immediately. The texture of domestic hinoki, 1,300 years of history, and the freedom of its form — he redefined the masu as a vessel for cultural experience and began designing programmes for corporate clients."
-      },
-      {
-        "period": "Domestic Expansion",
-        "title": "Cultural Events Across Japan",
-        "body": "Between 2021 and 2023, Keisuke Masuo organised regular cultural events across Japan, combining sake and masu. He built a nationwide network of breweries and artisans, and this network informs every THE FOMUS programme."
-      },
-      {
-        "period": "International Expansion",
-        "title": "Ireland Base & International Exchange",
-        "body": "Based in Ireland, Keisuke Masuo planned and delivered more than 45 international cultural exchange events in a single year. In 2024 and 2025, an official partnership with the Embassy of Ireland was established, and THE FOMUS provided masu cultural experience programmes at embassy-hosted events."
-      },
-      {
-        "period": "Global Entity",
-        "title": "Dubai Entity & International Business Hub",
-        "body": "Keisuke Masuo established a company in Dubai as an international business hub connecting the Middle East, Europe, and Asia. Supported by a government-backed start-up programme, THE FOMUS is building its international operational base. In 2025, Keisuke Masuo is visiting approximately 20 countries, forging relationships with hotels, corporations, and cultural institutions worldwide."
-      }
+    "title": "Founder & CEO, FOMUS",
+    "profileLabel": "CEO Profile",
+    "profile": [
+      "Keisuke Masuo began his career as a service professional in the French restaurant of a luxury hotel in Tokyo, where he honed the ability to anticipate a client's intent before it is spoken. Following an independent career as a photographer, he identified the commercial and cultural potential of the traditional Japanese masu and founded THE FOMUS.",
+      "From 2021, he built a robust network of breweries and artisans across Japan, relocating his operational base to Europe in 2023. Based in Ireland, he personally planned and delivered more than 45 international cultural exchange events per year. In recognition of this track record, he was appointed as an official cultural programme partner of the Embassy of Japan in Ireland in both 2024 and 2025.",
+      "In 2025, he established FOMUS Global FZ-LLC in Dubai as a business hub connecting the Middle East, Europe, and Asia. Accepted into a government-backed start-up support programme, the entity strengthens the international operational foundation of the brand. In the same year, he led exhibitions and cultural services representing Japanese traditional craft at the Emperor's Birthday Celebration Reception held at the Embassy of Japan in Bahrain and Saudi Arabia.",
+      "Today, he advocates a distinctive management philosophy that combines human conviction — face-to-face engagement, relentless travel, and personal intensity — with cutting-edge technology, including AI-driven operational efficiency and multilingual capability. Visiting approximately 20 countries each year, he collaborates with government bodies, luxury hotels, and international cultural institutions to localise Japanese traditional culture for the global market and to create enduring new value."
     ],
-    "achievementsLabel": "ACHIEVEMENTS",
-    "achievements": [
-      "Cultural exchange and event production across 40+ countries",
-      "Official partnership with the Embassy of Ireland (2024 & 2025)",
-      "45+ international cultural exchange events delivered in a single year",
-      "Dubai entity established as an international business hub",
-      "Partnerships with breweries and masu manufacturers across Japan"
+    "messageLabel": "CEO Message",
+    "messageHeadline": "Analogue conviction and cutting-edge AI — bridging Japanese tradition to the world",
+    "message": [
+      "In an era in which the world is digitalising and AI is dissolving the barriers of language and distance, the quality most demanded of a business leader is, we are convinced, the quality of trust.",
+      "We define the traditional Japanese masu not merely as a vessel, but as an experiential platform that generates dialogue across nationality and language. To realise this vision, we have deliberately chosen a management style that refuses to remain in one place — an address-hopping approach in which the founder walks the world in person.",
+      "Operating from a historic castle in Ireland, establishing a business in Dubai, presenting masu to dignitaries at embassy receptions across the Middle East — the intensity and trust that can only be earned on the ground form the core of our enterprise. In parallel, AI is deployed at full capacity across back-office and creative functions, maintaining the agility of a lean team that competes on a global stage.",
+      "The analogue origin of anticipatory hospitality, and the acceleration that AI provides. By turning both wheels simultaneously, we are opening a future in which Japanese traditional craft enriches the daily lives of people around the world and serves as a new bridge between cultures."
     ],
-    "projectsLabel": "CURRENT FOCUS",
-    "projects": [
-      {
-        "name": "THE FOMUS",
-        "body": "THE FOMUS designs and delivers masu-centred cultural experience programmes for corporations, hotels, and embassies. Four programmes are offered: Corporate Gift, Cultural Space, Hotel Branding, and Bespoke."
-      },
-      {
-        "name": "International Cultural Exchange",
-        "body": "From bases in Ireland and Dubai, Keisuke Masuo continues to build exchange events and partnerships that bring Japanese culture to the world. Collaborations with embassies, government bodies, and international cultural institutions are ongoing."
-      }
+    "messageSignature": "Founder & CEO, FOMUS",
+    "messageSignatureName": "Keisuke Masuo",
+    "businessLabel": "THE FOMUS",
+    "businessLabelSub": "PROGRAMMES & APPROACH",
+    "business": [
+      "THE FOMUS is the brand that crystallises this management philosophy into tangible service. In response to the challenge faced by corporations, hotels, and embassies — how to deliver Japanese culture as lived experience — we offer four masu-centred programmes.",
+      "The Corporate Gift Programme embeds a company's values and narrative within a masu, designing a gifting experience that the recipient retains in memory long after the occasion. The Cultural Space Programme introduces masu-based spatial experiences of Japanese culture into hotel lobbies, lounges, and shared commercial spaces. The Hotel Branding Programme integrates masu into guest-room amenities and on-property experiences, adding the depth of Japanese culture to the stay itself. The Bespoke Programme offers a strictly limited number of fully commissioned, one-of-a-kind masu each year.",
+      "Every programme is produced in direct collaboration with a specialist masu manufacturer in Ogaki, Gifu Prefecture (established 1950, approximately 80 per cent of domestic market share). Keisuke Masuo personally conducts the briefing — purpose, recipient, occasion — and specifies dimensions, form, and marking method for each individual commission.",
+      "International experience spanning more than 40 countries, official partnership with embassies, and an international operational base through the Dubai entity. What THE FOMUS delivers is not a craft object alone, but a cultural experience programme designed within a framework of global trust."
     ],
-    "messageLabel": "MESSAGE",
-    "message": "A gift ought to be the beginning of a conversation, not an object consumed and forgotten. To design the moment when the giver and the recipient stand together before the same culture — regardless of nationality or language — that is the work of THE FOMUS. Every programme draws on the instinct for hospitality cultivated on the hotel floor and the international experience accumulated across the world.",
     "stats": {
       "countries": {
         "value": "40+",
-        "label": "countries visited"
+        "label": "Countries"
       },
       "events": {
         "value": "45+",
-        "label": "international events"
-      },
-      "embassy": {
-        "value": "Embassy",
-        "label": "embassy partnership"
+        "label": "Annual Events"
       }
     },
-    "ctaQuestion": "Speak directly with Keisuke Masuo."
+    "cta": "Contact",
+    "profileLabelEn": "CEO Profile",
+    "messageLabelEn": "CEO Message"
   },
   "companyPage": {
     "meta": {
