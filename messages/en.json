@@ -1,0 +1,592 @@
+{
+  "homePage": {
+    "meta": {
+      "title": "THE FOMUS — Japanese Masu Corporate Gift & Cultural Experience",
+      "description": "Bespoke Japanese hinoki masu programmes for corporations, luxury hotels and embassies. Crafted by master artisans. Corporate gifts, hotel branding, cultural space design."
+    }
+  },
+  "nav": {
+    "logoAlt": "THE FOMUS",
+    "enquire": "Enquire →",
+    "programs": "Programs",
+    "craft": "Craft",
+    "sustainability": "Sustainability",
+    "founder": "Founder",
+    "company": "Company",
+    "languageSwitch": "日本語",
+    "languageSwitchHref": "/"
+  },
+  "hero": {
+    "tagline": "Japanese tradition\nneeds no translation.",
+    "slides": [
+      { "label": "THE FOMUS",    "title": "Japanese culture,\ndelivered as experience." },
+      { "label": "THE CRAFT",    "title": "The artisan's hand,\nin every memory." },
+      { "label": "THE MATERIAL", "title": "The scent of hinoki,\nleaves a mark." }
+    ],
+    "masuAlt": "Masu silhouette"
+  },
+  "statement": {
+    "line1": "Japanese tradition carries a force that needs no translation.",
+    "line2": "Time held in a craftsman's hands. The scent of hinoki. The weight of a masu, filled to the brim — this force is felt before it is understood.",
+    "line3": "THE FOMUS designs that moment.",
+    "line4": "Until the giver's intent becomes the recipient's memory."
+  },
+  "programs": {
+    "title": "Programmes",
+    "sectionLabel": "PROGRAMMES",
+    "sectionCaption": "five ways to translate culture into experience",
+    "items": {
+      "corporateGift": {
+        "name": "Corporate Gift",
+        "nameJa": "コーポレートギフト",
+        "price": "from ¥500,000",
+        "priceLabel": "from ¥500,000",
+        "description": "The lid opens. The sweet scent of hinoki cypress arrives before any word. In that moment, Japanese tradition is delivered — the memory formed belongs to the recipient, and quietly carries the client's name for years."
+      },
+      "culturalSpace": {
+        "name": "Cultural Space",
+        "nameJa": "文化空間プロデュース",
+        "price": "from ¥800,000",
+        "priceLabel": "from ¥800,000",
+        "description": "A visitor pauses before they are introduced. The composed stillness of masu on a shelf speaks for the organisation — before any word is offered. Craft communicates what a brochure cannot."
+      },
+      "hotelBranding": {
+        "name": "Hotel Branding",
+        "nameJa": "ホテルブランディング",
+        "price": "from ¥300,000",
+        "priceLabel": "from ¥300,000",
+        "description": "The guest lifts the masu from the table and feels something particular — the weight, the warmth of the wood, the sense that this belongs only here. The stay ends. That feeling travels home and does not fade."
+      },
+      "sakeMasu": {
+        "name": "Sake × Masu Experience",
+        "nameJa": "日本酒 × 枡体験",
+        "price": "from ¥200,000",
+        "priceLabel": "from ¥200,000",
+        "description": "Cup a hinoki masu in both hands. Sake rises to meet the wood's warmth. In that gesture — thirteen centuries of craft, present at once. The evening ends. Participants carry it home and find words for it long after."
+      },
+      "bespoke": {
+        "name": "Bespoke",
+        "nameJa": "ビスポーク",
+        "price": "from ¥5,000,000",
+        "priceLabel": "from ¥5,000,000",
+        "description": "There is nothing else like it in the world — and that is not a boast, it is the point. The recipient knows this was made for them alone. Craft, culture, and memory converge once, in one place, for one purpose."
+      }
+    },
+    "arrow": "→"
+  },
+  "philosophy": {
+    "sectionLabel": "PHILOSOPHY",
+    "quote": "The finest experience outlasts any advertisement.\nIt lives in the memory of the person who received it.",
+    "link": "Philosophy"
+  },
+  "aboutSection": {
+    "sectionLabel": "ABOUT",
+    "headerCaption": "The people and philosophy behind THE FOMUS",
+    "items": {
+      "founder": {
+        "name": "Founder",
+        "nameJa": "ファウンダー"
+      },
+      "company": {
+        "name": "Company",
+        "nameJa": "会社概要"
+      }
+    }
+  },
+  "founder": {
+    "sectionLabel": "FOUNDER",
+    "founderName": "Masuo",
+    "founderTitle": "Founder, THE FOMUS",
+    "messageTitle": "A gift should be the beginning of a conversation.",
+    "messageBody": [
+      "Across 40 countries and two decades of diplomatic work, the same question kept returning: how do you hand culture from one person to another? Not with words or film — a craftsman's masu, held in both hands and passed across a table, was the first thing that answered.",
+      "THE FOMUS was born from that moment. We redefine the masu as a vessel for cultural experience — combining the precision of traditional craft with the fluency of international exchange. Our work is to design the kind of memory that the recipient carries home and speaks of for years.",
+      "A gift should not be a transaction. It should open a conversation. That belief drives every programme we design."
+    ],
+    "stat1Value": "40+",
+    "stat1Label": "countries",
+    "stat2Value": "20+",
+    "stat2Label": "years",
+    "stat3Value": "Embassies",
+    "stat3Label": "governments & diplomatic stages",
+    "link": "Read the story →"
+  },
+  "contact": {
+    "sectionLabel": "CONTACT",
+    "headline": "Every commission begins with a single exchange.",
+    "headlineEn": "最初の対話が、設計の始まりだ。",
+    "cta": "Begin the conversation",
+    "note": "We accept a select number of new commissions each year"
+  },
+  "contactPage": {
+    "title": "Contact",
+    "headline": "Begin a Conversation",
+    "subheadline": "Every commission begins with a single enquiry.",
+    "fields": {
+      "company": "Company / Organisation",
+      "companyPlaceholder": "Your Company / Embassy of —",
+      "name": "Your Name",
+      "namePlaceholder": "Full Name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@company.com",
+      "program": "Programme of Interest",
+      "programPlaceholder": "Select a programme",
+      "message": "Message",
+      "messagePlaceholder": "Please share your enquiry or any relevant context."
+    },
+    "programs": {
+      "corporateGift": "Corporate Gift (from ¥500,000)",
+      "culturalSpace": "Cultural Space (from ¥800,000)",
+      "hotelBranding": "Hotel Branding (from ¥300,000)",
+      "sakeMasu": "Sake × Masu Experience (from ¥200,000)",
+      "bespoke": "Bespoke (from ¥5,000,000)",
+      "undecided": "Not yet decided"
+    },
+    "submit": "Send Enquiry →",
+    "submitting": "Sending…",
+    "note": "We respond within two business days. All enquiries are held in confidence.",
+    "required": "required",
+    "successTitle": "Thank You",
+    "successMessage": "Your enquiry has been received. We will be in touch within two business days.",
+    "errorMessage": "There was an error sending your enquiry. Please try again."
+  },
+  "craftSection": {
+    "eyebrow": "Our Approach",
+    "headline": "An intention to give.\nA person to receive it.",
+    "subheadline": "Between them, THE FOMUS designs an experience that holds Japanese tradition.\nCraftsman's skill, cultural context, Masuo's forty countries — all crystallised into one commission.",
+    "cta": "Read the philosophy"
+  },
+  "footer": {
+    "brand": "THE FOMUS",
+    "copyright": "© 2026 THE FOMUS. All rights reserved.",
+    "tagline": "Crafted to be given. Designed to be remembered."
+  },
+  "philosophyPage": {
+    "meta": {
+      "title": "Philosophy — THE FOMUS",
+      "description": "THE FOMUS redefines the masu as a vessel for experience and memory. The Win-Win-Win philosophy behind every cultural commission."
+    },
+    "label": "PHILOSOPHY",
+    "headline": "The masu was built to measure.",
+    "subheadline": "We built it to hold memory.",
+    "body": [
+      "For centuries, the masu measured rice and sake. Its precision guaranteed honest trade. Accuracy and integrity — that was the masu's original purpose.",
+      "THE FOMUS inherits that purpose and extends it. We no longer measure volume. We measure the weight of an intention, the depth of a memory, the density of culture held within a piece of wood. The vessel remains. What it contains has changed.",
+      "Every programme we design is structured so that three parties benefit simultaneously. The client delivers their values in a form that endures. The recipient receives not a transaction but an encounter — a memory that deepens with time. THE FOMUS exists as the bridge between them. Win-Win-Win is not a compromise. It is what happens when all three are fully served by the same cultural act.",
+      "To commission a masu is to commission someone's milestone. Long after the event has passed, the object remains. It holds the air of that day, the words exchanged, the feeling of the wood in the hand. Culture, we believe, travels this way.",
+      "Nothing surplus. Nothing decorative that does not carry meaning. Only what belongs. This is the discipline that governs every commission at THE FOMUS."
+    ],
+    "anchor": "The finest experiences need no translation.\nThey deepen with time.",
+    "winWinWin": {
+      "label": "WIN — WIN — WIN",
+      "headline": "Three parties. One cultural act. All served.",
+      "client": {
+        "label": "The Client",
+        "body": "ESG and SDGs documentation. Brand elevation. PR material with cultural substance. For corporations, hotels, and embassies — a measurable return on cultural investment."
+      },
+      "fomus": {
+        "label": "THE FOMUS",
+        "body": "To stand between client and recipient — and honour the trust of both. Each commission deepens that trust and opens the next. This is how THE FOMUS grows."
+      },
+      "endUser": {
+        "label": "The Recipient",
+        "body": "A genuine encounter with Japanese craft culture. Not a souvenir. A memory — carried home, retold for years, held in the hand again and again."
+      }
+    }
+  },
+  "founderPage": {
+    "meta": {
+      "title": "Founder — THE FOMUS | Masuo",
+      "description": "Diplomatic experience across 40+ countries. The stewardship of a masu workshop. Two origins. One philosophy. The story behind THE FOMUS."
+    },
+    "label": "FOUNDER",
+    "name": "Masuo",
+    "nameJa": "まっすー",
+    "title": "Founder, THE FOMUS",
+    "body": [
+      "Masuo has worked in diplomatic and international cultural exchange across more than forty countries. Embassies, government institutions, international events — in each setting, the same question arose. How do you pass culture from one hand to another?",
+      "Language can cross borders. Culture does not always follow. And yet a single object, placed without explanation, can change the atmosphere of a room. Through years of work on the international stage, Masuo came to understand the power of objects not as theory, but as lived experience.",
+      "He later took on the stewardship of a traditional masu workshop. The daily handling of wood — its grain, its smell, the honest weight of a finished box — gave form to what he had sensed in diplomacy. The masu, he came to understand, was precisely the vessel culture needed. Old enough to carry history. Simple enough to cross any border.",
+      "THE FOMUS was born from these two origins. Neither alone would have produced it. The diplomatic sensibility and the craftsman's floor together. Every programme Masuo designs carries both — the protocol of international exchange and the integrity of Japanese craft.",
+      "The future he is building toward is one where the masu is present at significant moments around the world. Not as an export or a novelty, but as a genuine encounter — where the person giving and the person receiving stand together before the same culture, regardless of nationality or language."
+    ],
+    "stats": {
+      "countries": {
+        "value": "40+",
+        "label": "countries"
+      },
+      "experience": {
+        "value": "20+",
+        "label": "years"
+      },
+      "programs": {
+        "value": "5",
+        "label": "programmes"
+      }
+    },
+    "closingStatement": "Giver and recipient, standing before the same culture —\nregardless of nationality or language.\nDesigning that encounter, one commission at a time.\nThat is the work of THE FOMUS."
+  },
+  "programPages": {
+    "meta": {
+      "corporateGift": {
+        "title": "Corporate Gift — THE FOMUS | from ¥500,000",
+        "description": "A company's values rendered as a crafted object. Bespoke masu gifts for VIPs, embassies, and milestone moments. From ¥500,000."
+      },
+      "culturalSpace": {
+        "title": "Cultural Space — THE FOMUS | from ¥800,000",
+        "description": "Transform any lobby, boardroom, or office into a cultural statement. THE FOMUS Cultural Space programme. From ¥800,000."
+      },
+      "hotelBranding": {
+        "title": "Hotel Branding — THE FOMUS | from ¥300,000",
+        "description": "The memory of a stay, held within a vessel of wood. Masu as hotel amenity, welcome gift, and cultural branding. From ¥300,000."
+      },
+      "sakeMasu": {
+        "title": "Sake × Masu Experience — THE FOMUS | from ¥200,000",
+        "description": "Japanese sake and the masu ritual, designed as a live cultural encounter. For corporate entertaining, embassies, and hotel events. From ¥200,000."
+      },
+      "bespoke": {
+        "title": "Bespoke — THE FOMUS | from ¥5,000,000",
+        "description": "No ceiling on scope or ambition. A wholly original cultural commission, built from the ground up. From ¥5,000,000."
+      }
+    },
+    "backLabel": "← Programmes",
+    "enquireCtaHeadline": "Every commission begins with a single exchange.",
+    "enquireCta": "Begin a conversation →",
+    "items": {
+      "corporateGift": {
+        "label": "PROGRAMME 01",
+        "name": "Corporate Gift",
+        "nameJa": "コーポレートギフト",
+        "priceLabel": "from ¥500,000",
+        "lead": "A gift does not end at the moment of giving. We design what remains on a desk ten years later.",
+        "body": [
+          "A gift chosen by budget and precedent — sent because it must be sent — is forgotten before the year ends. The recipient cannot recall the sender. The sender suspects as much and repeats the process next year. That cycle has a name: it is called safe, and it costs more than it saves.",
+          "THE FOMUS treats the corporate gift as a design problem. Who receives it. What occasion it marks. What the giving organisation actually stands for. Only when those answers are clear does the commission go to the artisan. What returns carries no surplus decoration — only the scent of hinoki, the weight of the wood, and the one mark that belongs.",
+          "The recipient does not discard it."
+        ],
+        "includes": {
+          "label": "What is included",
+          "items": [
+            "Dedicated consultation and concept design",
+            "Bespoke masu crafted by artisans — any quantity",
+            "Integrated packaging, wrapping, and accompanying letter design",
+            "ESG and SDGs documentation support",
+            "Post-delivery follow-up"
+          ]
+        },
+        "forWhom": {
+          "label": "This programme is suited for",
+          "items": [
+            "You present gifts to foreign officials, ambassadors, or global partners — and each time, you hand the decision to a department store buyer and feel, quietly, that something was missed. You want the gift to say something true about your organisation, and you have not yet found the means.",
+            "A merger, a centenary, a treaty signed — the occasion will not come again. This time, the gift must be equal to the moment. It is not a question of budget. It is a question of what, exactly, is placed in the other person's hands.",
+            "Each time you select from a catalogue, the same thought surfaces: this is not quite right. Your organisation has a philosophy. The gift should embody it. You have been looking for the right way to do that."
+          ]
+        }
+      },
+      "culturalSpace": {
+        "label": "PROGRAMME 02",
+        "name": "Cultural Space",
+        "nameJa": "文化空間プロデュース",
+        "priceLabel": "from ¥800,000",
+        "lead": "A space speaks before anyone does. The decision to trust an organisation is made before the meeting begins.",
+        "body": [
+          "The moment a visitor steps into an entrance, something is communicated — the quality of the silence, the intention behind what is placed and what is left bare. That impression becomes certainty or unease before a word is offered. Interior design can fill a space. It cannot give one meaning.",
+          "The cultural spaces THE FOMUS designs use the masu as material, but they are not displays of masu. At Sagishima Art Gallery in Hiroshima, visitors stopped in silence before a wall of them — not because they understood what they were seeing, but because the body responded before the mind caught up. That is the condition we design toward.",
+          "Your organisation's values, made material. Present in the room before anyone speaks."
+        ],
+        "includes": {
+          "label": "What is included",
+          "items": [
+            "On-site consultation and spatial concept development",
+            "Curation, bespoke commission, and procurement of masu and craft objects",
+            "Placement design and installation supervision",
+            "Cultural briefing materials for staff",
+            "Photography and documentation for ESG and brand communications",
+            "Ongoing maintenance and seasonal refresh proposals (optional)"
+          ]
+        },
+        "forWhom": {
+          "label": "This programme is suited for",
+          "items": [
+            "You regularly receive overseas executives, officials, or institutional investors, and the entrance or reception area does not reflect the level of the organisation. Each renovation ends the same way: technically accomplished, culturally thin. Something is always missing.",
+            "Your embassy, government institution, or cultural body requires a reception space that carries genuine depth — not decorative objects, but a space that communicates Japanese culture before the conversation begins.",
+            "A lobby or floor renovation is approaching. This time, you want to design the space properly — not as a cost exercise, but as a declaration of the organisation's character. You want it to be remembered."
+          ]
+        }
+      },
+      "hotelBranding": {
+        "label": "PROGRAMME 03",
+        "name": "Hotel Branding",
+        "nameJa": "ホテルブランディング",
+        "priceLabel": "from ¥300,000",
+        "lead": "If a guest is still thinking about your property the morning after checkout, it was not the thread count that did it.",
+        "body": [
+          "A guest picks something up, feels it, smells it. Most objects in a hotel room are forgotten by morning. One object kept — one thing carried home — changes the category of the stay entirely.",
+          "THE FOMUS designs the masu around your property's identity. A vessel that exists only here. A story a member of staff can offer in one sentence. A returning guest who asks, on arrival, what this season's design will be. The amenity becomes the mechanism by which your property and its guests build a relationship.",
+          "The masu taken home becomes the advertisement that never ends."
+        ],
+        "includes": {
+          "label": "What is included",
+          "items": [
+            "Brand consultation and concept design",
+            "Bespoke masu — commissioned or produced at scale for rooms, restaurants, and spa",
+            "Staff cultural training (English and Japanese)",
+            "Guest-facing experience cards and cultural content",
+            "Documentation for ESG and brand communications",
+            "Annual renewal contract (optional)"
+          ]
+        },
+        "forWhom": {
+          "label": "This programme is suited for",
+          "items": [
+            "You are the GM or marketing lead of a property with a high proportion of overseas guests. You want to offer 'authentic Japanese hospitality,' but the amenities you currently have feel decorative rather than genuine. You are aware of the gap.",
+            "You want returning guests to find something new at each visit — not new content or a changed menu, but a property whose aesthetic sensibility keeps evolving. You are looking for the mechanism to do that.",
+            "An opening, a rebrand, a renovation: the moment is approaching to design the defining experiential element of your property from the ground up. The amenity supplier catalogues have not given you what you need."
+          ]
+        }
+      },
+      "sakeMasu": {
+        "label": "PROGRAMME 04",
+        "name": "Sake × Masu Experience",
+        "nameJa": "日本酒 × 枡 体験",
+        "priceLabel": "from ¥200,000",
+        "lead": "The quality of an engagement is decided not by the food or the venue, but by how culture is handed across.",
+        "body": [
+          "The sake × masu combination is one of Japan's oldest forms of hospitality — a gesture that carries centuries of cultural meaning in a single act. THE FOMUS Sake × Masu Experience programme designs that gesture as a live event: a structured encounter in which guests receive sake poured into a hand-crafted masu, accompanied by the cultural context that gives the moment its meaning.",
+          "The programme is designed for corporate entertaining, embassy receptions, hotel events, and international hospitality contexts where the quality of the experience is inseparable from its cultural authenticity. Each session is calibrated to the audience and the occasion.",
+          "Guests do not simply drink sake. They participate in a ritual that is, for many, entirely unfamiliar — and for that reason, entirely memorable."
+        ],
+        "includes": {
+          "label": "What is included",
+          "items": [
+            "Concept and experience design (English and Japanese)",
+            "Sake curation and procurement",
+            "Bespoke masu for all participants (to take home)",
+            "Live cultural narration and facilitation by the founder",
+            "Post-event commemorative content (photography and cultural notes)",
+            "Documentation for ESG and PR use"
+          ]
+        },
+        "forWhom": {
+          "label": "This programme is suited for",
+          "items": [
+            "You are hosting an international delegation, embassy reception, or VIP corporate event and wish to offer a cultural experience with genuine depth.",
+            "Your hotel or venue holds regular events for overseas guests and is seeking a programme that distinguishes the experience from comparable offerings.",
+            "You are planning a product launch, brand activation, or press event and wish to anchor the occasion in a cultural gesture that guests will remember and recount.",
+            "You are responsible for international conferences, summits, or business forums and need a side programme that participants will recount long after they return home."
+          ]
+        }
+      },
+      "bespoke": {
+        "label": "PROGRAMME 05",
+        "name": "Bespoke",
+        "nameJa": "ビスポーク",
+        "priceLabel": "from ¥5,000,000",
+        "lead": "We discuss budget last. The first question is: what do you want to leave behind?",
+        "body": [
+          "Some commissions have no existing shape. A cultural programme spanning installation, publication, and live event. A brand identity built from a craft tradition. An experience designed for an audience that has encountered everything else. The Bespoke programme exists for exactly these.",
+          "The process begins with one question: what do you want to leave behind? When the answer to that is clear, scope, timeline, and budget can be designed around it. Artisans, artists, space, text, object — whatever the commission requires is assembled with one absolute condition: it will not be made again.",
+          "The number of Bespoke commissions accepted each year is deliberately limited. There is no other way to hold the standard."
+        ],
+        "includes": {
+          "label": "What is included (examples)",
+          "items": [
+            "Direct consultation and concept co-creation with the founder",
+            "Coordination with domestic and international artisans and artists",
+            "Integrated design of venue, space, and experience",
+            "Multilingual content and documentation production",
+            "Global procurement and logistics",
+            "Post-commission archive and documentation"
+          ]
+        },
+        "forWhom": {
+          "label": "This programme is suited for",
+          "items": [
+            "You have read through the five programmes and concluded that your commission does not fit any of them. The scale, the complexity, the significance of the occasion — it exceeds the available categories, and you know it.",
+            "A centenary, an IPO, a cultural diplomatic initiative — the moment will not come again. You do not want to look back and wonder why you did not act with the full weight of the occasion. You are in a position to make decisions based on what endures.",
+            "You are building something over years, not commissioning a single deliverable. You are looking for a partner who will think with you for the long term — not execute a brief, but help form one."
+          ]
+        }
+      }
+    }
+  },
+  "about": {
+    "short": "THE FOMUS redefines the traditional Japanese masu as a vessel for cultural experience, designing bespoke programmes for corporations, luxury hotels, and embassies worldwide."
+  },
+  "masuSection": {
+    "sectionLabel": "Craft",
+    "headerTitleJa": "About Masu",
+    "headerCaption": "A vessel shaped by domestic hinoki",
+    "items": {
+      "material": {
+        "title": "素材",
+        "titleEn": "Material",
+        "caption": "The Scent of Hinoki",
+        "body": "Natural domestic hinoki cypress. The phytoncide in the wood provides a relaxing, stress-reducing fragrance — the first thing a recipient notices when a gift is opened is not how it looks, but how it smells."
+      },
+      "craft": {
+        "title": "職人",
+        "titleEn": "Craft",
+        "caption": "The Tradition of Making",
+        "body": "Fourteen stages from timber to finished piece, with eye and hand verification at every step. Marking is available as branding iron, laser engraving, or silk-screen print — all handled in-house by Japan's largest masu manufacturer."
+      },
+      "dimension": {
+        "title": "寸法",
+        "titleEn": "Dimension",
+        "caption": "From One-Go to Bespoke",
+        "body": "Available in a range of sizes and forms — including octagonal, lidded, and stackable designs. For gifts, display, sake rituals, or hotel amenities: the optimal scale and form are proposed for each commission."
+      }
+    }
+  },
+  "sustainabilityPage": {
+    "meta": {
+      "title": "Sustainability — THE FOMUS | Environment, Society, International",
+      "description": "Sustainable hinoki sourcing, artisan heritage, and the social value of craft across 40 countries. THE FOMUS approach to responsible practice."
+    },
+    "backLabel": "← Home",
+    "heroLabel": "SUSTAINABILITY",
+    "heroTitle": "The Responsibility to Continue",
+    "heroCaption": "Forest, Craft, Culture — Three Inheritances",
+    "lead": "To make something beautiful is, itself, a responsibility. From material sourcing to artisan partnership to how we reach the world, THE FOMUS approaches its work through three axes of accountable practice.",
+    "sections": {
+      "environment": {
+        "label": "Environment",
+        "title": "Responsibility to the Forest",
+        "body": [
+          "The domestic hinoki cypress used in every THE FOMUS masu comes from offcuts generated by Japan's construction and timber industry. By sourcing from this waste stream, we avoid dependence on new felling while maintaining consistent material quality.",
+          "Japan's hinoki forestry is built on a generational cycle: trees planted for the next generation, harvested and replanted again. THE FOMUS sources from within this cycle, participating in the sustainable use of forest resources rather than depleting them.",
+          "The masu itself is not a disposable object. Durable, long-kept, and valued for years — a masu given as a commemorative gift embodies a culture of preservation rather than consumption. That quality aligns directly with our environmental position."
+        ]
+      },
+      "society": {
+        "label": "Society",
+        "title": "Preserving Artisan Heritage",
+        "body": [
+          "Every THE FOMUS masu is produced by Ohashi Ryoki Co., Ltd. — established in 1950 in Ogaki, Gifu Prefecture, and responsible for approximately 80% of Japan's domestic masu production. A single maker sustains an entire craft tradition.",
+          "Artisan skill is preserved through use. When commissions come in, craftspeople work; when that work continues across generations, techniques survive. THE FOMUS's ongoing relationship with Ohashi Ryoki is not merely a supply arrangement — it is participation in the life of a craft community.",
+          "A single corporate commission from a hotel or embassy in Tokyo connects directly to a craftsperson's working day in Ogaki. That chain is the social impact THE FOMUS is designed to create."
+        ]
+      },
+      "international": {
+        "label": "International",
+        "title": "When Craft Crosses Borders",
+        "body": [
+          "THE FOMUS founder Masuo has worked across more than 40 countries in diplomatic, governmental, and cultural contexts. The consistent lesson from those engagements: objects reach people before words do.",
+          "When a handmade masu is received and held in two hands, the resonance it produces crosses nationality and language. THE FOMUS exists to make that experience intentional — not dependent on diplomatic accident, but designed and delivered as a repeatable programme.",
+          "The presence of Japanese craft at meaningful moments around the world is the greatest return possible to the people who make it. That is THE FOMUS's definition of cultural sustainability."
+        ]
+      }
+    },
+    "ctaHeadline": "Discuss our sustainability approach.",
+    "cta": "Begin a conversation →"
+  },
+  "legacySection": {
+    "sectionLabel": "SUSTAINABILITY",
+    "headerTitleJa": "Sustainability",
+    "headerCaption": "Forest, Craft, Culture — Our Responsibility",
+    "items": {
+      "environment": {
+        "title": "Environment",
+        "titleJa": "Environment",
+        "caption": "Kiso hinoki and regenerative forestry"
+      },
+      "society": {
+        "title": "Society",
+        "titleJa": "Society",
+        "caption": "Preserving artisan heritage and communities"
+      },
+      "international": {
+        "title": "International",
+        "titleJa": "International",
+        "caption": "The social value of craft across 40 countries"
+      }
+    }
+  },
+  "craftPage": {
+    "meta": {
+      "title": "The Craft — THE FOMUS | Japanese Hinoki Masu",
+      "description": "The masu, crafted from domestic Japanese hinoki cypress. Manufacturer, material, process, and customisation — the vessel behind every THE FOMUS programme."
+    },
+    "backLabel": "← Home",
+    "heroLabel": "THE CRAFT",
+    "heroTitle": "The Masu",
+    "heroCaption": "A vessel shaped by craft, carried by culture",
+    "lead": "Born as a measure, the masu has become, over 1,300 years, a vessel for culture. The scent of hinoki and the weight in the hand leave a memory the moment it is given.",
+    "stats": [
+      { "value": "1,300 years", "label": "of masu history" },
+      { "value": "No.1 in Japan", "label": "our manufacturing partner" },
+      { "value": "14 stages", "label": "of artisan craft" }
+    ],
+    "sections": {
+      "history": {
+        "label": "About Masu",
+        "title": "What Is a Masu?",
+        "body": [
+          "The masu is believed to have come into use during the Nara period, approximately 1,300 years ago, as a tool for measuring rice and sake. The volume it held was a guarantee of fair dealing. Precision and trust were its original purpose.",
+          "That function has long since passed. But the scent of the wood and the weight in the hand have not changed. Today a masu carries meaning in a different register — not as a measure of volume, but as a vessel for an encounter, a moment, a memory.",
+          "THE FOMUS redefines the masu as a medium for cultural experience. Not to measure — but to hold."
+        ]
+      },
+      "partner": {
+        "label": "Manufacturing Partner",
+        "title": "Who Makes the Masu",
+        "body": [
+          "Every THE FOMUS masu is produced by Ohashi Ryoki Co., Ltd. — established in 1950 in Ogaki, Gifu Prefecture, and responsible for approximately 80% of Japan's domestic masu production. It is the country's largest masu specialist.",
+          "THE FOMUS chose Ohashi Ryoki not only for their production scale, but for their ability to handle bespoke commissions: custom dimensions, forms, and marking methods, with quality verification at every stage. They have the capacity to serve a single commission and a production run of several hundred with equal rigour.",
+          "For each order, THE FOMUS works directly with Ohashi Ryoki to specify the brief: the intended recipient, the occasion, the context. Dimensions, form, and marking method are decided together, one commission at a time."
+        ]
+      },
+      "material": {
+        "label": "Material",
+        "title": "Domestic Hinoki Cypress",
+        "body": [
+          "All masu are made from natural domestic hinoki cypress. The timber comes from offcuts generated by Japan's construction industry — a sustainable approach that avoids new felling while maintaining consistent material quality.",
+          "Hinoki contains phytoncide, a naturally occurring aromatic compound associated with relaxation and stress reduction. This is the source of the clean, cool scent that rises from a new masu. When a gift is unwrapped, the first thing the recipient encounters is not sight but this fragrance.",
+          "The wood is pale yellowish-white in tone, with natural variation in grain and hue. No two pieces are identical."
+        ]
+      },
+      "coating": {
+        "label": "Finishing",
+        "title": "Protective Coating & Foil",
+        "body": [
+          "THE FOMUS offers a proprietary protective coating as an optional finishing treatment. It enhances water resistance and heat tolerance, protecting the wood over the long term. For masu intended for active use — in hospitality, dining, or hotel amenity contexts — this coating is recommended.",
+          "The defining quality of this treatment is that the natural hinoki fragrance is fully preserved. Standard wood coatings seal the surface and eliminate the scent entirely. THE FOMUS formulation solves that problem: the masu gains its protective properties while the cool, clean scent of hinoki reaches the recipient the moment the piece is unwrapped — exactly as it should.",
+          "Gold, silver, and coloured foil application is available as a further option. Foil renders logos, family crests, and bespoke graphic elements with a depth and formality that other marking methods cannot match — suited to ceremonies, commemorations, and the most elevated gift contexts."
+        ]
+      },
+      "marking": {
+        "label": "Customisation",
+        "title": "Marking & Custom Options",
+        "body": [
+          "Three marking methods are available. A branding iron produces a burned impression — warm in appearance and suited to traditional gift contexts. Laser engraving works at finer detail, accommodating complex logotypes and crests. Silk-screen printing allows for colour. All three methods are handled in-house at Ohashi Ryoki, without subcontracting.",
+          "Size can be adjusted to suit the commission. The standard is one gō (180ml), but smaller and larger formats are available. Form is not limited to the standard square: octagonal, lidded, and stackable variants are also produced.",
+          "Company marks, family crests, and fully custom designs are all within scope. We are happy to discuss the specifics of your requirements."
+        ]
+      }
+    },
+    "process": {
+      "label": "Process",
+      "title": "Fourteen Stages",
+      "caption": "Eye and hand verification at every step",
+      "steps": [
+        { "num": "01", "title": "Timber & Drying", "body": "Natural domestic hinoki offcuts are sourced, dried, and milled into components sized for each piece." },
+        { "num": "02", "title": "Cutting", "body": "Side panels and base are cut to precise dimensions. Consistent thickness determines the quality of the finished form." },
+        { "num": "03", "title": "Mortising & Assembly", "body": "Components are mortised and assembled. Each stage is verified by eye and by hand throughout." },
+        { "num": "04", "title": "Base Attachment", "body": "The base is attached using a heat-compression machine, producing consistent quality at scale." },
+        { "num": "05", "title": "Finishing & Beveling", "body": "Surfaces are finished and edges beveled to produce a smooth, clean hand. The grain of the wood is brought forward." },
+        { "num": "06", "title": "Marking", "body": "Branding iron, laser engraving, or silk-screen print — all handled in-house, suited to the mark and the volume." }
+      ]
+    },
+    "history": {
+      "label": "History",
+      "title": "1,300 Years of the Masu",
+      "body": [
+        "The masu is believed to have come into use during the Nara period, approximately 1,300 years ago, as a tool for measuring rice and sake. The volume it held was a guarantee of fair dealing. Precision and trust were its original purpose.",
+        "That function has long since passed. But the scent of the wood and the weight in the hand have not changed. Today a masu carries meaning in a different register — not as a measure of volume, but as a vessel for an encounter, a moment, a memory.",
+        "THE FOMUS redefines the masu as a medium for cultural experience. Not to measure — but to hold."
+      ]
+    },
+    "ctaHeadline": "Discuss the masu with us.",
+    "cta": "Begin a conversation →"
+  }
+}
