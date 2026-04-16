@@ -49,36 +49,36 @@
       "corporateGift": {
         "name": "Corporate Gift",
         "nameJa": "コーポレートギフト",
-        "price": "from ¥500,000",
-        "priceLabel": "from ¥500,000",
+        "price": "By commission",
+        "priceLabel": "By commission",
         "description": "The lid opens. The sweet scent of hinoki cypress arrives before any word. In that moment, Japanese tradition is delivered — the memory formed belongs to the recipient, and quietly carries the client's name for years."
       },
       "culturalSpace": {
         "name": "Cultural Space",
         "nameJa": "文化空間プロデュース",
-        "price": "from ¥800,000",
-        "priceLabel": "from ¥800,000",
+        "price": "By commission",
+        "priceLabel": "By commission",
         "description": "A visitor pauses before they are introduced. The composed stillness of masu on a shelf speaks for the organisation — before any word is offered. Craft communicates what a brochure cannot."
       },
       "hotelBranding": {
         "name": "Hotel Branding",
         "nameJa": "ホテルブランディング",
-        "price": "from ¥300,000",
-        "priceLabel": "from ¥300,000",
+        "price": "By commission",
+        "priceLabel": "By commission",
         "description": "The guest lifts the masu from the table and feels something particular — the weight, the warmth of the wood, the sense that this belongs only here. The stay ends. That feeling travels home and does not fade."
       },
       "sakeMasu": {
         "name": "Sake × Masu Experience",
         "nameJa": "日本酒 × 枡体験",
-        "price": "from ¥200,000",
-        "priceLabel": "from ¥200,000",
+        "price": "By commission",
+        "priceLabel": "By commission",
         "description": "Cup a hinoki masu in both hands. Sake rises to meet the wood's warmth. In that gesture — thirteen centuries of craft, present at once. The evening ends. Participants carry it home and find words for it long after."
       },
       "bespoke": {
         "name": "Bespoke",
         "nameJa": "ビスポーク",
-        "price": "from ¥5,000,000",
-        "priceLabel": "from ¥5,000,000",
+        "price": "By commission",
+        "priceLabel": "By commission",
         "description": "There is nothing else like it in the world — and that is not a boast, it is the point. The recipient knows this was made for them alone. Craft, culture, and memory converge once, in one place, for one purpose."
       }
     },
@@ -145,11 +145,11 @@
       "messagePlaceholder": "Please share your enquiry or any relevant context."
     },
     "programs": {
-      "corporateGift": "Corporate Gift (from ¥500,000)",
-      "culturalSpace": "Cultural Space (from ¥800,000)",
-      "hotelBranding": "Hotel Branding (from ¥300,000)",
-      "sakeMasu": "Sake × Masu Experience (from ¥200,000)",
-      "bespoke": "Bespoke (from ¥5,000,000)",
+      "corporateGift": "Corporate Gift",
+      "culturalSpace": "Cultural Space",
+      "hotelBranding": "Hotel Branding",
+      "sakeMasu": "Sake × Masu Experience",
+      "bespoke": "Bespoke",
       "undecided": "Not yet decided"
     },
     "submit": "Send Enquiry →",
@@ -234,7 +234,8 @@
         "label": "programmes"
       }
     },
-    "closingStatement": "Giver and recipient, standing before the same culture —\nregardless of nationality or language.\nDesigning that encounter, one commission at a time.\nThat is the work of THE FOMUS."
+    "closingStatement": "Giver and recipient, standing before the same culture —\nregardless of nationality or language.\nDesigning that encounter, one commission at a time.\nThat is the work of THE FOMUS.",
+    "ctaQuestion": "Speak directly with the founder."
   },
   "companyPage": {
     "meta": {
@@ -273,24 +274,24 @@
   "programPages": {
     "meta": {
       "corporateGift": {
-        "title": "Corporate Gift — THE FOMUS | from ¥500,000",
-        "description": "A company's values rendered as a crafted object. Bespoke masu gifts for VIPs, embassies, and milestone moments. From ¥500,000."
+        "title": "Corporate Gift — THE FOMUS",
+        "description": "A company's values rendered as a crafted object. Bespoke masu gifts for VIPs, embassies, and milestone moments."
       },
       "culturalSpace": {
-        "title": "Cultural Space — THE FOMUS | from ¥800,000",
-        "description": "Transform any lobby, boardroom, or office into a cultural statement. THE FOMUS Cultural Space programme. From ¥800,000."
+        "title": "Cultural Space — THE FOMUS",
+        "description": "Transform any lobby, boardroom, or office into a cultural statement. THE FOMUS Cultural Space programme."
       },
       "hotelBranding": {
-        "title": "Hotel Branding — THE FOMUS | from ¥300,000",
-        "description": "The memory of a stay, held within a vessel of wood. Masu as hotel amenity, welcome gift, and cultural branding. From ¥300,000."
+        "title": "Hotel Branding — THE FOMUS",
+        "description": "The memory of a stay, held within a vessel of wood. Masu as hotel amenity, welcome gift, and cultural branding."
       },
       "sakeMasu": {
-        "title": "Sake × Masu Experience — THE FOMUS | from ¥200,000",
-        "description": "Japanese sake and the masu ritual, designed as a live cultural encounter. For corporate entertaining, embassies, and hotel events. From ¥200,000."
+        "title": "Sake × Masu Experience — THE FOMUS",
+        "description": "Japanese sake and the masu ritual, designed as a live cultural encounter. For corporate entertaining, embassies, and hotel events."
       },
       "bespoke": {
-        "title": "Bespoke — THE FOMUS | from ¥5,000,000",
-        "description": "No ceiling on scope or ambition. A wholly original cultural commission, built from the ground up. From ¥5,000,000."
+        "title": "Bespoke — THE FOMUS",
+        "description": "No ceiling on scope or ambition. A wholly original cultural commission, built from the ground up."
       }
     },
     "backLabel": "← Programmes",
@@ -301,7 +302,7 @@
         "label": "PROGRAMME 01",
         "name": "Corporate Gift",
         "nameJa": "コーポレートギフト",
-        "priceLabel": "from ¥500,000",
+        "priceLabel": "By commission",
         "lead": "A gift does not end at the moment of giving. We design what remains on a desk ten years later.",
         "body": [
           "A gift chosen by budget and precedent — sent because it must be sent — is forgotten before the year ends. The recipient cannot recall the sender. The sender suspects as much and repeats the process next year. That cycle has a name: it is called safe, and it costs more than it saves.",
@@ -311,11 +312,11 @@
         "includes": {
           "label": "What is included",
           "items": [
-            "Dedicated consultation and concept design",
-            "Bespoke masu crafted by artisans — any quantity",
-            "Integrated packaging, wrapping, and accompanying letter design",
-            "ESG and SDGs documentation support",
-            "Post-delivery follow-up"
+            "Your dedicated lead conducts a thorough consultation before a single concept is formed",
+            "Bespoke masu produced to the exacting specification of the brief — any quantity, by artisan hand",
+            "Packaging, wrapping, and accompanying letter designed as a single, integrated object",
+            "Cultural documentation for ESG and brand communications, prepared on request",
+            "Post-delivery follow-up and support"
           ]
         },
         "forWhom": {
@@ -332,7 +333,7 @@
         "label": "PROGRAMME 02",
         "name": "Cultural Space",
         "nameJa": "文化空間プロデュース",
-        "priceLabel": "from ¥800,000",
+        "priceLabel": "By commission",
         "lead": "A space speaks before anyone does. The decision to trust an organisation is made before the meeting begins.",
         "body": [
           "The moment a visitor steps into an entrance, something is communicated — the quality of the silence, the intention behind what is placed and what is left bare. That impression becomes certainty or unease before a word is offered. Interior design can fill a space. It cannot give one meaning.",
@@ -342,12 +343,12 @@
         "includes": {
           "label": "What is included",
           "items": [
-            "On-site consultation and spatial concept development",
-            "Curation, bespoke commission, and procurement of masu and craft objects",
-            "Placement design and installation supervision",
-            "Cultural briefing materials for staff",
-            "Photography and documentation for ESG and brand communications",
-            "Ongoing maintenance and seasonal refresh proposals (optional)"
+            "On-site study of the space followed by a detailed spatial concept developed specifically for it",
+            "Bespoke commission and procurement of masu and craft objects, curated to the space",
+            "Placement design and installation overseen directly by THE FOMUS",
+            "Cultural briefing prepared for staff — in Japanese and English",
+            "Photography and documentation for ESG and brand use (optional)",
+            "Maintenance and seasonal refresh proposals to keep the installation current (optional)"
           ]
         },
         "forWhom": {
@@ -364,7 +365,7 @@
         "label": "PROGRAMME 03",
         "name": "Hotel Branding",
         "nameJa": "ホテルブランディング",
-        "priceLabel": "from ¥300,000",
+        "priceLabel": "By commission",
         "lead": "If a guest is still thinking about your property the morning after checkout, it was not the thread count that did it.",
         "body": [
           "A guest picks something up, feels it, smells it. Most objects in a hotel room are forgotten by morning. One object kept — one thing carried home — changes the category of the stay entirely.",
@@ -374,12 +375,12 @@
         "includes": {
           "label": "What is included",
           "items": [
-            "Brand consultation and concept design",
-            "Bespoke masu — commissioned or produced at scale for rooms, restaurants, and spa",
-            "Staff cultural training (English and Japanese)",
-            "Guest-facing experience cards and cultural content",
+            "Brand consultation leading to a masu concept that exists only within your property",
+            "Bespoke masu produced at scale for rooms, restaurants, and spa — or in small quantities for select moments",
+            "Staff training in the cultural context of the masu — in English and Japanese",
+            "Guest-facing experience cards and cultural content, written to your tone of voice",
             "Documentation for ESG and brand communications",
-            "Annual renewal contract (optional)"
+            "Annual renewal contract to refresh the offering with each passing season (optional)"
           ]
         },
         "forWhom": {
@@ -396,7 +397,7 @@
         "label": "PROGRAMME 04",
         "name": "Sake × Masu Experience",
         "nameJa": "日本酒 × 枡 体験",
-        "priceLabel": "from ¥200,000",
+        "priceLabel": "By commission",
         "lead": "The quality of an engagement is decided not by the food or the venue, but by how culture is handed across.",
         "body": [
           "The sake × masu combination is one of Japan's oldest forms of hospitality — a gesture that carries centuries of cultural meaning in a single act. THE FOMUS Sake × Masu Experience programme designs that gesture as a live event: a structured encounter in which guests receive sake poured into a hand-crafted masu, accompanied by the cultural context that gives the moment its meaning.",
@@ -406,12 +407,12 @@
         "includes": {
           "label": "What is included",
           "items": [
-            "Concept and experience design (English and Japanese)",
-            "Sake curation and procurement",
-            "Bespoke masu for all participants (to take home)",
-            "Live cultural narration and facilitation by the founder",
-            "Post-event commemorative content (photography and cultural notes)",
-            "Documentation for ESG and PR use"
+            "Experience concept and event design — structured for the audience, calibrated to the occasion",
+            "Sake curated and procured to complement the cultural narrative of the evening",
+            "A bespoke masu for each participant, made for this occasion, to be carried home",
+            "Live cultural narration and facilitation by the founder throughout the session",
+            "Post-event photography and cultural notes for participants to keep",
+            "Documentation for ESG or PR use, prepared on request"
           ]
         },
         "forWhom": {
@@ -429,7 +430,7 @@
         "label": "PROGRAMME 05",
         "name": "Bespoke",
         "nameJa": "ビスポーク",
-        "priceLabel": "from ¥5,000,000",
+        "priceLabel": "By commission",
         "lead": "We discuss budget last. The first question is: what do you want to leave behind?",
         "body": [
           "Some commissions have no existing shape. A cultural programme spanning installation, publication, and live event. A brand identity built from a craft tradition. An experience designed for an audience that has encountered everything else. The Bespoke programme exists for exactly these.",
@@ -439,12 +440,12 @@
         "includes": {
           "label": "What is included (examples)",
           "items": [
-            "Direct consultation and concept co-creation with the founder",
-            "Coordination with domestic and international artisans and artists",
-            "Integrated design of venue, space, and experience",
-            "Multilingual content and documentation production",
-            "Global procurement and logistics",
-            "Post-commission archive and documentation"
+            "Direct consultation with the founder — from the first conversation through to completion",
+            "Coordination with domestic and international artisans and artists selected for the commission",
+            "Integrated design across venue, object, space, and experience — conceived as a single whole",
+            "Multilingual content, documentation, and narrative production",
+            "Global procurement and logistics, managed end to end",
+            "A complete archive and documentation of the finished work"
           ]
         },
         "forWhom": {

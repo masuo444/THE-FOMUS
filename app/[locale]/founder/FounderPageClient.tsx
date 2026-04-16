@@ -76,12 +76,7 @@ export default function FounderPageClient() {
 
       {/* ── CTA ───────────────────────────────────── */}
       <div className="fp-cta">
-        <p className="fp-cta__question">
-          {locale === 'en'
-            ? 'The right partner for your project is the person who has stood in those rooms.'
-            : '40カ国の外交現場で、文化を手渡してきた人間が、あなたの構想と向き合います。'
-          }
-        </p>
+        <p className="fp-cta__question">{t('ctaQuestion')}</p>
         <p className="fp-cta__note">
           {locale === 'en'
             ? 'Share your vision directly with the founder. No cost, no obligation.'
