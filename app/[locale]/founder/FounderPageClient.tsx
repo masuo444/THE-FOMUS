@@ -124,7 +124,7 @@ export default function FounderPageClient() {
           font-family: var(--font-cormorant), "Cormorant Garamond", serif;
           font-style: italic;
           font-weight: 400;
-          font-size: clamp(2.5rem, 7vw, 5.5rem);
+          font-size: clamp(3rem, 8vw, 6.5rem);
           line-height: 1;
           color: var(--color-ink);
           margin: 0 0 2.5rem;
@@ -148,7 +148,7 @@ export default function FounderPageClient() {
         /* Photo column */
         .fp-photo-col {
           border-right: 1px solid var(--color-line);
-          padding: clamp(3rem, 5vw, 5rem) clamp(2.5rem, 4vw, 4rem);
+          padding: clamp(4rem, 6vw, 6rem) clamp(2.5rem, 4vw, 4rem);
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -200,8 +200,8 @@ export default function FounderPageClient() {
         .fp-body__para {
           font-family: var(--font-noto-serif-jp), "Noto Sans JP", sans-serif;
           font-weight: 400;
-          font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
-          line-height: 2.2;
+          font-size: clamp(0.9375rem, 1.25vw, 1.125rem);
+          line-height: 2.35;
           letter-spacing: 0.04em;
           color: var(--color-ink-light);
           margin: 0;
@@ -210,7 +210,7 @@ export default function FounderPageClient() {
           font-family: var(--font-cormorant), "Cormorant Garamond", serif;
           font-style: italic;
           font-weight: 400;
-          font-size: clamp(1.375rem, 2.5vw, 2rem);
+          font-size: clamp(1.625rem, 3vw, 2.5rem);
           color: var(--color-ink-mute);
           margin: 3rem 0 0;
           letter-spacing: 0.04em;
@@ -257,30 +257,38 @@ export default function FounderPageClient() {
 
         /* ── CTA ─────────────────────────────────── */
         .fp-cta {
-          display: flex;
-          padding: clamp(3.5rem, 6vw, 5rem) clamp(2rem, 8vw, 8rem);
+          padding: clamp(4.5rem, 7vw, 6.5rem) clamp(2rem, 8vw, 8rem);
+          border-top: 1px solid var(--color-line);
         }
         .fp-cta__link {
           display: inline-flex;
           align-items: center;
           gap: 0.8rem;
-          font-family: var(--font-jost), Jost, sans-serif;
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
           font-weight: 400;
-          font-size: 0.875rem;
-          letter-spacing: 0.32em;
-          text-transform: uppercase;
+          font-size: clamp(1.25rem, 2vw, 1.625rem);
           color: var(--color-ink);
           text-decoration: none;
-          padding: 1.1rem 2.25rem;
-          border: 1px solid var(--color-ink);
-          transition: background 0.3s ease, color 0.3s ease;
+          letter-spacing: 0.02em;
+          position: relative;
+          padding-bottom: 0.2rem;
+          transition: color 0.35s ease;
         }
-        .fp-cta__link:hover {
-          background: var(--color-ink);
-          color: var(--color-white);
+        .fp-cta__link::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 2.5rem;
+          height: 1px;
+          background: var(--color-line-dark);
+          transition: background 0.35s ease;
         }
-        .fp-cta__arrow { transition: transform 0.3s ease; }
-        .fp-cta__link:hover .fp-cta__arrow { transform: translateX(4px); }
+        .fp-cta__link:hover { color: var(--color-accent); }
+        .fp-cta__link:hover::after { background: var(--color-accent); }
+        .fp-cta__arrow { transition: transform 0.35s ease; }
+        .fp-cta__link:hover .fp-cta__arrow { transform: translateX(5px); }
 
         /* ── Responsive ──────────────────────────── */
         @media (max-width: 900px) {

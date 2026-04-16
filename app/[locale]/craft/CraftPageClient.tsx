@@ -81,7 +81,8 @@ export default function CraftPageClient() {
         <div className="cp-cta-photo" />
         <div className="cp-cta-overlay" />
         <div className="cp-cta-inner">
-          <Link href={contactHref} className={`cp-cta-btn reveal${ctaInView ? ' is-in-view' : ''}`}>
+          <p className={`cp-cta-note reveal${ctaInView ? ' is-in-view' : ''}`}>{t('heroCaption')}</p>
+          <Link href={contactHref} className={`cp-cta-btn reveal reveal-delay-1${ctaInView ? ' is-in-view' : ''}`}>
             {t('cta')}
           </Link>
         </div>
@@ -212,16 +213,16 @@ export default function CraftPageClient() {
           font-family: var(--font-jost), Jost, sans-serif;
           font-weight: 400;
           font-size: 0.75rem;
-          letter-spacing: 0.32em;
+          letter-spacing: 0.38em;
           text-transform: uppercase;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           margin: 0 0 1.25rem;
         }
         .cp-section__title {
           font-family: var(--font-cormorant), "Cormorant Garamond", serif;
           font-style: italic;
           font-weight: 400;
-          font-size: clamp(2rem, 4vw, 3.25rem);
+          font-size: clamp(1.75rem, 3.5vw, 2.75rem);
           line-height: 1.05;
           color: var(--color-ink);
           margin: 0 0 2rem;
@@ -230,7 +231,8 @@ export default function CraftPageClient() {
           font-family: var(--font-noto-serif-jp), "Noto Sans JP", sans-serif;
           font-weight: 400;
           font-size: 1rem;
-          line-height: 2.1;
+          line-height: 2.2;
+          letter-spacing: 0.05em;
           color: var(--color-ink-light);
           margin: 0 0 1.5rem;
         }
@@ -265,22 +267,40 @@ export default function CraftPageClient() {
           align-items: center;
           gap: 3rem;
         }
-        .cp-cta-btn {
-          display: inline-block;
-          font-family: var(--font-noto-serif-jp), "Noto Sans JP", sans-serif;
+        .cp-cta-note {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
           font-weight: 400;
-          font-size: 0.9375rem;
-          letter-spacing: 0.14em;
-          color: #FFFFFF;
+          font-size: clamp(0.875rem, 1.2vw, 1rem);
+          letter-spacing: 0.12em;
+          color: rgba(240,240,238,0.5);
+          margin: 0;
+          position: relative;
+          z-index: 2;
+        }
+        .cp-cta-btn {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1.375rem, 2.2vw, 1.75rem);
+          color: rgba(240,240,238,0.88);
           text-decoration: none;
-          padding: 1rem 3rem;
-          border: 1px solid rgba(255,255,255,0.35);
-          transition: border-color 0.35s ease, background 0.35s ease;
+          letter-spacing: 0.03em;
+          position: relative;
+          padding-bottom: 0.25rem;
+          transition: color 0.35s ease;
         }
-        .cp-cta-btn:hover {
-          border-color: #FFFFFF;
-          background: rgba(255,255,255,0.08);
+        .cp-cta-btn::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background: rgba(240,240,238,0.4);
+          transition: background 0.35s ease;
         }
+        .cp-cta-btn:hover { color: #FFFFFF; }
+        .cp-cta-btn:hover::after { background: rgba(255,255,255,0.85); }
 
         /* ── Responsive ──────────────────────────── */
         @media (max-width: 860px) {

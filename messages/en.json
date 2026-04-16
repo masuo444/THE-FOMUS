@@ -226,6 +226,26 @@
     },
     "closingStatement": "Giver and recipient, standing before the same culture —\nregardless of nationality or language.\nDesigning that encounter, one commission at a time.\nThat is the work of THE FOMUS."
   },
+  "companyPage": {
+    "meta": {
+      "title": "Company — THE FOMUS",
+      "description": "About THE FOMUS. FOMUS LLC. Redefining the masu as a vessel for cultural experience, serving corporations, hotels, and embassies."
+    },
+    "label": "COMPANY",
+    "headline": "About THE FOMUS",
+    "body": [
+      "THE FOMUS is a brand that redefines the traditional Japanese craft of the masu as a vessel for cultural experience — designing and delivering fully bespoke experience programmes for corporations, hotels, and embassies.",
+      "The artisan craft of hinoki cypress and the essence of Japanese culture, arriving before words. Each programme is shaped by sensibilities refined across 40+ countries of diplomatic experience, and the hand-work of Gifu's master craftspeople."
+    ],
+    "details": {
+      "label": "Company Information",
+      "name": { "label": "Name", "value": "FOMUS LLC" },
+      "founded": { "label": "Founded", "value": "2024" },
+      "location": { "label": "Location", "value": "Tokyo, Japan" },
+      "business": { "label": "Business", "value": "Design and delivery of cultural experience programmes using masu" }
+    },
+    "cta": "Begin the conversation →"
+  },
   "programPages": {
     "meta": {
       "corporateGift": {

@@ -215,6 +215,26 @@
     },
     "closingStatement": "国籍も言語も超えて、贈る者と受け取る者が\n同じ一つの文化の前に立つ。\nその出会いを設計すること——それが、THE FOMUSの仕事だ。"
   },
+  "companyPage": {
+    "meta": {
+      "title": "Company — THE FOMUS",
+      "description": "THE FOMUSの会社概要。合同会社FOMUS。枡を文化体験の器として再定義し、企業・ホテル・大使館に向けて体験プログラムを提供。"
+    },
+    "label": "COMPANY",
+    "headline": "THE FOMUSについて",
+    "body": [
+      "THE FOMUSは、日本の伝統工芸「枡」を体験の器として再定義し、企業・ホテル・大使館に向けて文化体験プログラムをフルオーダーで設計・提供するブランドです。",
+      "国産ひのきの枡に宿る、職人の技術と日本文化の本質。THE FOMUSは、それを言葉より先に届ける体験として設計します。40カ国以上の外交現場で磨かれた感性と、岐阜の職人の手仕事が、一件ずつの依頼に結晶します。"
+    ],
+    "details": {
+      "label": "会社情報",
+      "name": { "label": "会社名", "value": "合同会社FOMUS" },
+      "founded": { "label": "設立", "value": "2024年" },
+      "location": { "label": "所在地", "value": "東京都" },
+      "business": { "label": "事業内容", "value": "枡を用いた文化体験プログラムの設計・提供" }
+    },
+    "cta": "ご相談を始める →"
+  },
   "programPages": {
     "meta": {
       "corporateGift": {

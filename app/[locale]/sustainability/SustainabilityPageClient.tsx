@@ -77,7 +77,8 @@ export default function SustainabilityPageClient() {
         <div className="sp-cta-photo" />
         <div className="sp-cta-overlay" />
         <div className="sp-cta-inner">
-          <Link href={contactHref} className={`sp-cta-btn reveal${ctaInView ? ' is-in-view' : ''}`}>
+          <p className={`sp-cta-note reveal${ctaInView ? ' is-in-view' : ''}`}>{t('heroCaption')}</p>
+          <Link href={contactHref} className={`sp-cta-btn reveal reveal-delay-1${ctaInView ? ' is-in-view' : ''}`}>
             {t('cta')}
           </Link>
         </div>
@@ -92,7 +93,7 @@ export default function SustainabilityPageClient() {
         /* ── Hero ───────────────────────────────── */
         .sp-hero {
           position: relative;
-          height: 88vh;
+          height: 92vh;
           min-height: 520px;
           max-height: 900px;
           overflow: hidden;
@@ -177,7 +178,7 @@ export default function SustainabilityPageClient() {
         .sp-section {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          min-height: 580px;
+          min-height: 640px;
           border-bottom: 1px solid var(--color-line);
         }
         .sp-section--alt { direction: rtl; }
@@ -217,7 +218,7 @@ export default function SustainabilityPageClient() {
           font-family: var(--font-cormorant), "Cormorant Garamond", serif;
           font-style: italic;
           font-weight: 400;
-          font-size: clamp(2rem, 4vw, 3.25rem);
+          font-size: clamp(1.75rem, 3.5vw, 2.75rem);
           line-height: 1.05;
           color: var(--color-ink);
           margin: 0 0 2rem;
@@ -226,7 +227,8 @@ export default function SustainabilityPageClient() {
           font-family: var(--font-noto-serif-jp), "Noto Sans JP", sans-serif;
           font-weight: 400;
           font-size: 1rem;
-          line-height: 2.1;
+          line-height: 2.3;
+          letter-spacing: 0.05em;
           color: var(--color-ink-light);
           margin: 0 0 1.5rem;
         }
@@ -261,22 +263,40 @@ export default function SustainabilityPageClient() {
           align-items: center;
           gap: 3rem;
         }
-        .sp-cta-btn {
-          display: inline-block;
-          font-family: var(--font-noto-serif-jp), "Noto Sans JP", sans-serif;
+        .sp-cta-note {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
           font-weight: 400;
-          font-size: 0.9375rem;
-          letter-spacing: 0.14em;
-          color: #FFFFFF;
+          font-size: clamp(0.875rem, 1.2vw, 1rem);
+          letter-spacing: 0.12em;
+          color: rgba(240,240,238,0.5);
+          margin: 0;
+          position: relative;
+          z-index: 2;
+        }
+        .sp-cta-btn {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1.375rem, 2.2vw, 1.75rem);
+          color: rgba(240,240,238,0.88);
           text-decoration: none;
-          padding: 1rem 3rem;
-          border: 1px solid rgba(255,255,255,0.35);
-          transition: border-color 0.35s ease, background 0.35s ease;
+          letter-spacing: 0.03em;
+          position: relative;
+          padding-bottom: 0.25rem;
+          transition: color 0.35s ease;
         }
-        .sp-cta-btn:hover {
-          border-color: #FFFFFF;
-          background: rgba(255,255,255,0.08);
+        .sp-cta-btn::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background: rgba(240,240,238,0.4);
+          transition: background 0.35s ease;
         }
+        .sp-cta-btn:hover { color: #FFFFFF; }
+        .sp-cta-btn:hover::after { background: rgba(255,255,255,0.85); }
 
         /* ── Responsive ──────────────────────────── */
         @media (max-width: 860px) {

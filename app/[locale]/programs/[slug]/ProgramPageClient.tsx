@@ -511,6 +511,511 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
     );
   }
 
+  /* ── BESPOKE: ultra-minimal typographic layout ───────────────────── */
+  if (programKey === 'bespoke') {
+    return (
+      <main className="be-main">
+
+        {/* ── Hero ── */}
+        <div ref={heroRef} className="be-hero">
+          <div
+            className="be-hero__photo"
+            style={{ backgroundImage: `url(${hero.src})`, backgroundPosition: hero.pos }}
+          />
+          <div className="be-hero__overlay" />
+          <Link href={servicesHref} className="be-back">← {t('backLabel')}</Link>
+          <div className={`be-hero__content reveal${heroInView ? ' is-in-view' : ''}`}>
+            <p className="be-hero__label">{t(key('label'))}</p>
+            <h1 className="be-hero__name">{t(key('name'))}</h1>
+            <p className="be-hero__sub">{t(key('nameJa'))}</p>
+          </div>
+        </div>
+
+        {/* ── Statement: large typographic anchor ── */}
+        <section ref={editRef} className="be-statement">
+          <div className={`be-statement__inner reveal${editInView ? ' is-in-view' : ''}`}>
+            <p className="be-statement__text">{t(key('lead'))}</p>
+          </div>
+        </section>
+
+        {/* ── Body: narrow centered column ── */}
+        <section className="be-body-section">
+          <div className="be-body-inner">
+            {bodyParagraphs.map((para, i) => (
+              <p key={i} className="be-body__para">{para}</p>
+            ))}
+          </div>
+        </section>
+
+        {/* ── CTA: private, left-aligned ── */}
+        <section ref={ctaRef} className="be-cta">
+          <div className={`be-cta__inner reveal${ctaInView ? ' is-in-view' : ''}`}>
+            <Link href={contactHref} className="be-cta__link">
+              {t('enquireCta')}
+            </Link>
+          </div>
+        </section>
+
+        <style>{`
+          .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1),
+                        transform 0.9s cubic-bezier(0.22,1,0.36,1);
+          }
+          .reveal.is-in-view { opacity: 1; transform: translateY(0); }
+          .reveal-delay-1 { transition-delay: 0.12s; }
+
+          .be-main { background: var(--color-white); padding-top: 64px; }
+
+          .be-back {
+            position: absolute;
+            top: 2.25rem;
+            left: clamp(2rem, 6vw, 5rem);
+            z-index: 3;
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-size: 0.8125rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: rgba(240,240,238,0.32);
+            text-decoration: none;
+            transition: color 0.3s ease;
+          }
+          .be-back:hover { color: var(--color-accent); }
+
+          .be-hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            max-height: 1080px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+          }
+          .be-hero__photo {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            transition: transform 20s ease;
+          }
+          .be-hero:hover .be-hero__photo { transform: scale(1.03); }
+          .be-hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+              to top,
+              rgba(4,3,2,0.97) 0%,
+              rgba(4,3,2,0.55) 45%,
+              rgba(4,3,2,0.12) 100%
+            );
+          }
+          .be-hero__content {
+            position: relative;
+            z-index: 2;
+            padding: 0 clamp(2rem, 8vw, 10rem) clamp(5rem, 8vw, 7.5rem);
+            width: 100%;
+          }
+          .be-hero__label {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-size: 0.625rem;
+            letter-spacing: 0.6em;
+            text-transform: uppercase;
+            color: rgba(240,240,238,0.35);
+            margin: 0 0 2rem;
+          }
+          .be-hero__name {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(4rem, 10vw, 9rem);
+            line-height: 0.87;
+            color: #F0F0EE;
+            letter-spacing: -0.02em;
+            margin: 0 0 2.5rem;
+          }
+          .be-hero__sub {
+            font-family: var(--font-noto-serif-jp), sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            color: rgba(240,240,238,0.28);
+            margin: 0;
+          }
+
+          .be-statement {
+            padding: clamp(7rem, 13vw, 12rem) clamp(2rem, 8vw, 10rem);
+            border-bottom: 1px solid var(--color-line);
+          }
+          .be-statement__inner { max-width: 960px; }
+          .be-statement__text {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.75rem, 3.5vw, 3.25rem);
+            line-height: 1.4;
+            color: var(--color-ink);
+            letter-spacing: 0.01em;
+            margin: 0;
+          }
+
+          .be-body-section {
+            border-bottom: 1px solid var(--color-line);
+            padding: clamp(5rem, 9vw, 8rem) clamp(2rem, 8vw, 10rem);
+          }
+          .be-body-inner {
+            max-width: 600px;
+          }
+          .be-body__para {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 400;
+            font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+            line-height: 2.4;
+            letter-spacing: 0.05em;
+            color: var(--color-ink-light);
+            margin: 0 0 2.75rem;
+          }
+          .be-body__para:last-child { margin-bottom: 0; }
+
+          .be-cta {
+            padding: clamp(7rem, 12vw, 11rem) clamp(2rem, 8vw, 10rem);
+          }
+          .be-cta__inner {}
+          .be-cta__link {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.25rem, 2vw, 1.625rem);
+            color: var(--color-ink);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding-bottom: 0.25rem;
+            transition: color 0.35s ease;
+          }
+          .be-cta__link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--color-line-dark);
+            transition: background 0.35s ease;
+          }
+          .be-cta__link:hover { color: var(--color-accent); }
+          .be-cta__link:hover::after { background: var(--color-accent); }
+
+          @media (max-width: 640px) {
+            .be-hero { height: 80vh; }
+            .be-hero__name { font-size: clamp(3rem, 14vw, 5rem); }
+          }
+        `}</style>
+      </main>
+    );
+  }
+
+  /* ── SAKE × MASU: ceremonial, atmospheric layout ────────────────── */
+  if (programKey === 'sakeMasu') {
+    return (
+      <main className="sm-main">
+
+        {/* ── Hero ── */}
+        <div ref={heroRef} className="sm-hero">
+          <div
+            className="sm-hero__photo"
+            style={{ backgroundImage: `url(${hero.src})`, backgroundPosition: hero.pos }}
+          />
+          <div className="sm-hero__overlay" />
+          <Link href={servicesHref} className="sm-back">← {t('backLabel')}</Link>
+          <div className={`sm-hero__content reveal${heroInView ? ' is-in-view' : ''}`}>
+            <p className="sm-hero__label">{t(key('label'))}</p>
+            <h1 className="sm-hero__name">{t(key('name'))}</h1>
+            <p className="sm-hero__sub">{t(key('nameJa'))}</p>
+          </div>
+          <div className="sm-hero__scroll" aria-hidden="true">↓</div>
+        </div>
+
+        {/* ── Ceremony: centered lead + body ── */}
+        <section ref={editRef} className="sm-ceremony">
+          <div className={`sm-ceremony__inner reveal${editInView ? ' is-in-view' : ''}`}>
+            <p className="sm-ceremony__eyebrow">{t(key('label'))}</p>
+            <p className="sm-ceremony__lead">{t(key('lead'))}</p>
+            <div className="sm-ceremony__rule" aria-hidden="true" />
+            {bodyParagraphs.map((para, i) => (
+              <p key={i} className="sm-ceremony__body">{para}</p>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Scope ── */}
+        <section ref={inclRef} className="sm-scope">
+          <div className={`sm-scope__inner reveal${inclInView ? ' is-in-view' : ''}`}>
+            <p className="sm-scope__eyebrow">{t(key('includes.label'))}</p>
+            <ul className="sm-scope__list">
+              {includesItems.map((item, i) => (
+                <li
+                  key={i}
+                  className={`sm-scope__item reveal reveal-delay-${Math.min(i + 1, 5)}${inclInView ? ' is-in-view' : ''}`}
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* ── CTA ── */}
+        <section ref={ctaRef} className="sm-cta">
+          <div className={`sm-cta__inner reveal${ctaInView ? ' is-in-view' : ''}`}>
+            <p className="sm-cta__note">{t('enquireCtaHeadline')}</p>
+            <Link href={contactHref} className="sm-cta__link">{t('enquireCta')}</Link>
+          </div>
+        </section>
+
+        <style>{`
+          .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1),
+                        transform 0.9s cubic-bezier(0.22,1,0.36,1);
+          }
+          .reveal.is-in-view { opacity: 1; transform: translateY(0); }
+          .reveal-delay-1 { transition-delay: 0.10s; }
+          .reveal-delay-2 { transition-delay: 0.20s; }
+          .reveal-delay-3 { transition-delay: 0.30s; }
+          .reveal-delay-4 { transition-delay: 0.40s; }
+          .reveal-delay-5 { transition-delay: 0.50s; }
+
+          .sm-main { background: var(--color-white); padding-top: 64px; }
+
+          .sm-back {
+            position: absolute;
+            top: 2.25rem;
+            left: clamp(2rem, 6vw, 5rem);
+            z-index: 3;
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-size: 0.8125rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: rgba(240,240,238,0.32);
+            text-decoration: none;
+            transition: color 0.3s ease;
+          }
+          .sm-back:hover { color: var(--color-accent); }
+
+          .sm-hero {
+            position: relative;
+            height: 100vh;
+            min-height: 580px;
+            max-height: 1080px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+          }
+          .sm-hero__photo {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            transition: transform 18s ease;
+          }
+          .sm-hero:hover .sm-hero__photo { transform: scale(1.03); }
+          .sm-hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+              to top,
+              rgba(6,5,4,0.95) 0%,
+              rgba(6,5,4,0.45) 50%,
+              rgba(6,5,4,0.08) 100%
+            );
+          }
+          .sm-hero__content {
+            position: relative;
+            z-index: 2;
+            padding: 0 clamp(2rem, 6vw, 5rem) clamp(4.5rem, 7vw, 6.5rem);
+            width: 100%;
+          }
+          .sm-hero__label {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-size: 0.6875rem;
+            letter-spacing: 0.52em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin: 0 0 1.5rem;
+            opacity: 0.9;
+          }
+          .sm-hero__name {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(3.5rem, 9vw, 8rem);
+            line-height: 0.87;
+            color: #F0F0EE;
+            letter-spacing: -0.015em;
+            margin: 0 0 2rem;
+          }
+          .sm-hero__sub {
+            font-family: var(--font-noto-serif-jp), sans-serif;
+            font-weight: 300;
+            font-size: 0.8125rem;
+            letter-spacing: 0.28em;
+            color: rgba(240,240,238,0.38);
+            margin: 0;
+          }
+          .sm-hero__scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            right: clamp(2rem, 6vw, 5rem);
+            z-index: 2;
+            font-size: 0.875rem;
+            color: var(--color-accent);
+            opacity: 0.3;
+            animation: sm-bob 3.5s ease-in-out infinite;
+          }
+          @keyframes sm-bob {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(8px); }
+          }
+
+          .sm-ceremony {
+            padding: clamp(6rem, 11vw, 10rem) clamp(2rem, 6vw, 5rem);
+            border-bottom: 1px solid var(--color-line);
+            display: flex;
+            justify-content: center;
+          }
+          .sm-ceremony__inner {
+            max-width: 680px;
+            width: 100%;
+            text-align: center;
+          }
+          .sm-ceremony__eyebrow {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-size: 0.6875rem;
+            letter-spacing: 0.48em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            opacity: 0.8;
+            margin: 0 0 2.5rem;
+          }
+          .sm-ceremony__lead {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            line-height: 1.5;
+            letter-spacing: 0.01em;
+            color: var(--color-ink);
+            margin: 0 0 3rem;
+          }
+          .sm-ceremony__rule {
+            width: 1px;
+            height: 3.5rem;
+            background: var(--color-line-dark);
+            opacity: 0.4;
+            margin: 0 auto 3rem;
+          }
+          .sm-ceremony__body {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-weight: 400;
+            font-size: clamp(0.875rem, 1.15vw, 1rem);
+            line-height: 2.3;
+            letter-spacing: 0.045em;
+            color: var(--color-ink-light);
+            margin: 0 0 2.25rem;
+            text-align: left;
+          }
+          .sm-ceremony__body:last-child { margin-bottom: 0; }
+
+          .sm-scope {
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-line);
+            padding: clamp(4.5rem, 8vw, 7rem) 0;
+          }
+          .sm-scope__inner {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 clamp(2rem, 6vw, 5rem);
+          }
+          .sm-scope__eyebrow {
+            font-family: var(--font-jost), Jost, sans-serif;
+            font-size: 0.6875rem;
+            letter-spacing: 0.46em;
+            text-transform: uppercase;
+            color: var(--color-ink-mute);
+            opacity: 0.55;
+            margin: 0 0 2.5rem;
+            text-align: center;
+          }
+          .sm-scope__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+          .sm-scope__item {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-size: clamp(0.875rem, 1.1vw, 1rem);
+            line-height: 1.75;
+            letter-spacing: 0.04em;
+            color: var(--color-ink-light);
+            padding: 1.1rem 0;
+            border-bottom: 1px solid var(--color-line);
+            text-align: center;
+          }
+          .sm-scope__item:first-child { border-top: 1px solid var(--color-line); }
+
+          .sm-cta {
+            padding: clamp(6rem, 11vw, 9rem) clamp(2rem, 6vw, 5rem);
+            display: flex;
+            justify-content: center;
+          }
+          .sm-cta__inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+            text-align: center;
+          }
+          .sm-cta__note {
+            font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+            font-size: clamp(0.875rem, 1.2vw, 1rem);
+            letter-spacing: 0.08em;
+            color: var(--color-ink-mute);
+            margin: 0;
+            line-height: 1.9;
+          }
+          .sm-cta__link {
+            font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.375rem, 2.2vw, 1.75rem);
+            color: var(--color-ink);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            position: relative;
+            padding-bottom: 0.25rem;
+            transition: color 0.35s ease;
+          }
+          .sm-cta__link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--color-ink);
+            transition: background 0.35s ease;
+          }
+          .sm-cta__link:hover { color: var(--color-accent); }
+          .sm-cta__link:hover::after { background: var(--color-accent); }
+
+          @media (max-width: 640px) {
+            .sm-hero { height: 80vh; }
+            .sm-hero__name { font-size: clamp(2.75rem, 13vw, 4.5rem); }
+          }
+        `}</style>
+      </main>
+    );
+  }
+
   return (
     <main className="pp-main">
 
@@ -587,61 +1092,28 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
         </section>
       )}
 
-      {/* ── Includes ──────────────────────────────────────────────────── */}
-      <section ref={inclRef} className="pp-incl-section">
-        <div className="pp-incl-layout">
-          <div className={`pp-incl-heading reveal${inclInView ? ' is-in-view' : ''}`}>
-            <p className="pp-incl-label-vert" aria-hidden="true">
-              {t(key('includes.label'))}
-            </p>
-            <p className="pp-incl-index">{t(key('label'))}</p>
-          </div>
-          <div className="pp-incl-body">
-            <p className={`pp-section-label reveal${inclInView ? ' is-in-view' : ''}`}>
-              {t(key('includes.label'))}
-            </p>
-            <ol className="pp-incl-list">
-              {includesItems.map((item, i) => (
-                <li
-                  key={i}
-                  className={`pp-incl-item reveal reveal-delay-${Math.min(i + 1, 5)}${inclInView ? ' is-in-view' : ''}`}
-                >
-                  <span className="pp-incl-num">{String(i + 1).padStart(2, '0')}</span>
-                  <span className="pp-incl-text">{item}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* ── For Whom ──────────────────────────────────────────────────── */}
-      <section ref={forWhomRef} className="pp-forwhom-section">
-        <div className="pp-forwhom-inner">
-          <div className={`pp-forwhom-header reveal${forWhomInView ? ' is-in-view' : ''}`}>
-            <p className="pp-section-label">{t(key('forWhom.label'))}</p>
-            <div className="pp-forwhom-rule" />
-          </div>
-          <div className="pp-forwhom-grid">
-            {forWhomItems.map((item, i) => (
-              <div
+      {/* ── Scope ────────────────────────────────────────────────── */}
+      <section ref={inclRef} className="pp-scope-section">
+        <div className={`pp-scope-inner reveal${inclInView ? ' is-in-view' : ''}`}>
+          <p className="pp-scope-eyebrow">{t(key('includes.label'))}</p>
+          <ul className="pp-scope-list">
+            {includesItems.map((item, i) => (
+              <li
                 key={i}
-                className={`pp-forwhom-item reveal reveal-delay-${Math.min(i + 1, 4)}${forWhomInView ? ' is-in-view' : ''}`}
+                className={`pp-scope-item reveal reveal-delay-${Math.min(i + 1, 5)}${inclInView ? ' is-in-view' : ''}`}
               >
-                <span className="pp-forwhom-num" aria-hidden="true">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <p className="pp-forwhom-text">{item}</p>
-              </div>
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────────────────── */}
+      {/* ── CTA ─────────────────────────────────────────────────── */}
       <section ref={ctaRef} className="pp-cta-section">
         <div className={`pp-cta-inner reveal${ctaInView ? ' is-in-view' : ''}`}>
-          <Link href={contactHref} className="pp-cta-btn">
+          <p className="pp-cta-note">{t('enquireCtaHeadline')}</p>
+          <Link href={contactHref} className="pp-cta-link">
             {t('enquireCta')}
           </Link>
         </div>
@@ -846,170 +1318,50 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           opacity: 0.75;
         }
 
-        /* ── Includes ───────────────────────────────────────────────── */
-        .pp-incl-section {
+        /* ── Scope ──────────────────────────────────────────────── */
+        .pp-scope-section {
           background: var(--color-white);
           border-top: 1px solid var(--color-line);
-          border-bottom: 1px solid var(--color-line);
-          padding: clamp(4rem, 8vw, 7rem) 0;
+          padding: clamp(4.5rem, 8vw, 7rem) 0;
         }
-        .pp-incl-layout {
-          max-width: 1200px;
+        .pp-scope-inner {
+          max-width: 800px;
           margin: 0 auto;
           padding: 0 clamp(2rem, 6vw, 5rem);
-          display: grid;
-          grid-template-columns: 1fr 2fr;
-          gap: clamp(3rem, 6vw, 7rem);
-          align-items: start;
         }
-        .pp-incl-heading {
-          position: sticky;
-          top: 100px;
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-          padding-top: 0.25rem;
-        }
-        /* Vertical text label — editorial accent */
-        .pp-incl-label-vert {
-          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: clamp(1.25rem, 2.5vw, 2rem);
-          line-height: 1.4;
-          color: var(--color-ink);
-          opacity: 0.15;
-          margin: 0;
-          writing-mode: vertical-rl;
-          text-orientation: mixed;
-          align-self: flex-start;
-          letter-spacing: 0.05em;
-        }
-        .pp-incl-index {
+        .pp-scope-eyebrow {
           font-family: var(--font-jost), Jost, sans-serif;
           font-weight: 400;
-          font-size: 0.75rem;
-          letter-spacing: 0.42em;
+          font-size: 0.6875rem;
+          letter-spacing: 0.46em;
           text-transform: uppercase;
-          color: var(--color-accent);
-          opacity: 0.65;
-          margin: 0;
+          color: var(--color-ink-mute);
+          opacity: 0.55;
+          margin: 0 0 2.5rem;
         }
-        .pp-incl-body {
-          padding-top: 0.25rem;
-        }
-        .pp-incl-list {
+        .pp-scope-list {
           list-style: none;
           padding: 0;
           margin: 0;
         }
-        .pp-incl-item {
-          display: flex;
-          align-items: baseline;
-          gap: 1.75rem;
-          padding: 1.5rem 0;
+        .pp-scope-item {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 400;
+          font-size: clamp(0.9375rem, 1.15vw, 1rem);
+          line-height: 1.75;
+          letter-spacing: 0.04em;
+          color: var(--color-ink-light);
+          padding: 1.1rem 0;
           border-bottom: 1px solid var(--color-line);
         }
-        .pp-incl-item:first-child {
+        .pp-scope-item:first-child {
           border-top: 1px solid var(--color-line);
-        }
-        .pp-incl-num {
-          font-family: var(--font-jost), Jost, sans-serif;
-          font-weight: 400;
-          font-size: 0.6875rem;
-          letter-spacing: 0.12em;
-          color: var(--color-accent);
-          flex-shrink: 0;
-          min-width: 1.75rem;
-          opacity: 0.8;
-        }
-        .pp-incl-text {
-          font-family: var(--font-noto-serif-jp), "Noto Sans JP", sans-serif;
-          font-weight: 400;
-          font-size: 1.0625rem;
-          line-height: 1.85;
-          letter-spacing: 0.03em;
-          color: var(--color-ink);
-        }
-
-        /* ── For Whom ───────────────────────────────────────────────── */
-        .pp-forwhom-section {
-          background: #F5F4F2;
-          padding: clamp(5rem, 9vw, 8rem) 0;
-        }
-        .pp-forwhom-inner {
-          max-width: 1100px;
-          margin: 0 auto;
-          padding: 0 clamp(2rem, 6vw, 5rem);
-        }
-        .pp-forwhom-header {
-          margin-bottom: clamp(3rem, 5vw, 4.5rem);
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
-        }
-        .pp-forwhom-rule {
-          width: 3rem;
-          height: 1px;
-          background: var(--color-accent);
-          opacity: 0.45;
-        }
-        .pp-forwhom-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 0;
-        }
-        .pp-forwhom-item {
-          display: flex;
-          gap: 1.75rem;
-          padding: clamp(1.75rem, 3vw, 2.5rem);
-          border-bottom: 1px solid rgba(0,0,0,0.08);
-          border-right: 1px solid rgba(0,0,0,0.08);
-          align-items: flex-start;
-          background: #F5F4F2;
-          transition: background 0.3s ease;
-        }
-        .pp-forwhom-item:hover {
-          background: #EEECEA;
-        }
-        /* Remove right border on even items (right column) */
-        .pp-forwhom-item:nth-child(2n) {
-          border-right: none;
-        }
-        /* Remove bottom border on last row (1 or 2 items) */
-        .pp-forwhom-item:last-child,
-        .pp-forwhom-item:nth-last-child(2):nth-child(odd) {
-          border-bottom: none;
-        }
-        .pp-forwhom-item:nth-last-child(-n+2):nth-child(even),
-        .pp-forwhom-item:nth-last-child(1) {
-          border-bottom: none;
-        }
-        .pp-forwhom-num {
-          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: 2rem;
-          line-height: 1;
-          color: var(--color-accent);
-          opacity: 0.35;
-          flex-shrink: 0;
-          margin-top: 0.2rem;
-        }
-        .pp-forwhom-text {
-          font-family: var(--font-noto-serif-jp), "Noto Sans JP", sans-serif;
-          font-weight: 400;
-          font-size: 0.9375rem;
-          line-height: 2.1;
-          letter-spacing: 0.04em;
-          color: var(--color-ink-light, #444);
-          margin: 0;
         }
 
         /* ── CTA ────────────────────────────────────────────────────── */
         .pp-cta-section {
           border-top: 1px solid var(--color-line);
-          padding: clamp(4rem, 8vw, 6rem) clamp(2rem, 6vw, 5rem);
+          padding: clamp(6rem, 11vw, 9rem) clamp(2rem, 6vw, 5rem);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1017,26 +1369,45 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
         }
         .pp-cta-inner {
           display: flex;
+          flex-direction: column;
           align-items: center;
-          justify-content: center;
+          gap: 2.5rem;
+          text-align: center;
         }
-        .pp-cta-btn {
-          display: inline-block;
-          font-family: var(--font-jost), Jost, sans-serif;
+        .pp-cta-note {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
           font-weight: 400;
-          font-size: 0.8125rem;
-          letter-spacing: 0.32em;
-          text-transform: uppercase;
+          font-size: clamp(0.875rem, 1.2vw, 1rem);
+          letter-spacing: 0.08em;
+          color: var(--color-ink-mute);
+          margin: 0;
+          line-height: 1.9;
+        }
+        .pp-cta-link {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1.375rem, 2.2vw, 1.75rem);
           color: var(--color-ink);
           text-decoration: none;
-          padding: 1rem 2.75rem;
-          border: 1px solid var(--color-ink);
-          transition: background 0.3s ease, color 0.3s ease;
+          letter-spacing: 0.03em;
+          position: relative;
+          padding-bottom: 0.25rem;
+          transition: color 0.35s ease;
         }
-        .pp-cta-btn:hover {
+        .pp-cta-link::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
           background: var(--color-ink);
-          color: var(--color-white);
+          transform-origin: left;
+          transition: background 0.35s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
         }
+        .pp-cta-link:hover { color: var(--color-accent); }
+        .pp-cta-link:hover::after { background: var(--color-accent); }
 
         /* ── Applicable Spaces ──────────────────────────────────────── */
         .pp-spaces-section {
@@ -1159,21 +1530,6 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             align-items: center;
             gap: 1.5rem;
           }
-          .pp-incl-layout {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-          }
-          .pp-incl-heading {
-            position: static;
-            flex-direction: row;
-            align-items: center;
-            gap: 1.5rem;
-          }
-          .pp-incl-label-vert {
-            writing-mode: horizontal-tb;
-            font-size: 1rem;
-            opacity: 0.2;
-          }
         }
         @media (max-width: 900px) {
           .pp-edit {
@@ -1205,21 +1561,6 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             border-bottom: 1px solid rgba(240,240,238,0.08);
           }
           .pp-metric:last-child { border-bottom: none; }
-          .pp-forwhom-grid {
-            grid-template-columns: 1fr;
-          }
-          .pp-forwhom-item:nth-child(2n) {
-            border-right: none;
-          }
-          .pp-forwhom-item:nth-last-child(-n+2) {
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-          }
-          .pp-forwhom-item:last-child {
-            border-bottom: none;
-          }
-          .pp-forwhom-item {
-            border-right: none;
-          }
         }
         @media (max-width: 640px) {
           .pp-spaces-grid {

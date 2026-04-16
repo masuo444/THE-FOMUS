@@ -5,6 +5,7 @@ const base = 'https://thefomus.com'
 const routes = [
   '',
   '/founder',
+  '/company',
   '/craft',
   '/sustainability',
   '/contact',

@@ -11,6 +11,12 @@ const ITEMS = [
     bgPosition: 'center top',
     bgOverlay: 'linear-gradient(140deg, rgba(230,220,200,0.38) 0%, rgba(210,200,175,0.38) 100%)',
   },
+  {
+    key: 'company',
+    bgImage: '/images/masu-lug-crop.jpg',
+    bgPosition: 'center 40%',
+    bgOverlay: 'linear-gradient(140deg, rgba(200,215,225,0.38) 0%, rgba(185,200,215,0.38) 100%)',
+  },
 ] as const;
 
 export default function AboutGrid() {
@@ -21,6 +27,7 @@ export default function AboutGrid() {
 
   const hrefs = {
     founder: `${base}/founder`,
+    company: `${base}/company`,
   };
 
   return (
@@ -83,7 +90,7 @@ export default function AboutGrid() {
         }
         .ab-grid {
           display: grid;
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr 1fr;
         }
 
         /* ── Header ─────────────────────────── */
