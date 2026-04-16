@@ -12,11 +12,9 @@ export default function FounderPageClient() {
 
   const profile  = t.raw('profile') as string[];
   const message  = t.raw('message') as string[];
-  const business = t.raw('business') as string[];
 
   const { ref: contentRef, inView: contentInView } = useInView<HTMLDivElement>();
   const { ref: msgRef,     inView: msgInView }     = useInView<HTMLDivElement>();
-  const { ref: bizRef,     inView: bizInView }     = useInView<HTMLDivElement>();
 
   return (
     <main className="fp-main">
@@ -67,13 +65,6 @@ export default function FounderPageClient() {
             <p className="fp-sig__title">{t('messageSignature')}</p>
             <p className="fp-sig__name">{t('messageSignatureName')}</p>
           </div>
-        </div>
-
-        {/* THE FOMUS 事業 — ラベルなしで自然に続く */}
-        <div ref={bizRef} className={`fp-prose fp-prose--biz reveal${bizInView ? ' is-in-view' : ''}`}>
-          {business.map((para, i) => (
-            <p key={`b${i}`} className="fp-prose__para">{para}</p>
-          ))}
         </div>
 
       </article>
@@ -216,11 +207,6 @@ export default function FounderPageClient() {
           border-top: 1px solid var(--color-line);
         }
 
-        /* ビジネス — ラベルなし、メッセージから自然に続く */
-        .fp-prose--biz {
-          padding-top: 0;
-          border-top: none;
-        }
 
         /* ── セクションラベル（小見出し）────── */
         .fp-section-label {
