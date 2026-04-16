@@ -125,7 +125,7 @@ export default function AboutGrid() {
           font-size: 0.8125rem;
           letter-spacing: 0.32em;
           text-transform: uppercase;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           margin: 0;
         }
         .ab-header__title {
@@ -228,25 +228,17 @@ export default function AboutGrid() {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          border: 1px solid var(--color-line);
           color: var(--color-ink-mute);
           font-style: normal;
           font-family: var(--font-jost), Jost, sans-serif;
-          font-size: 0.75rem;
+          font-size: 0.875rem;
           flex-shrink: 0;
           transition:
-            border-color 0.3s ease,
             color 0.3s ease,
-            background 0.3s ease,
             transform 0.3s ease;
         }
         .ab-cell:hover .ab-cell__chevron {
-          border-color: var(--color-accent);
           color: var(--color-accent);
-          background: rgba(28,58,95,0.08);
           transform: translateX(3px);
         }
         .ab-cell__name-ja {

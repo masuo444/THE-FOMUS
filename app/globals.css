@@ -266,40 +266,4 @@ body {
     linear-gradient(150deg, #221f18 0%, #16140f 100%);
 }
 
-/* ─── Pill CTA Button（Hacoa参照） ──────────────────────────── */
-.btn-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65em;
-  padding: 0.8rem 2.25rem;
-  border: 1px solid rgba(28,58,95, 0.42);
-  border-radius: 100px;
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--color-accent-mid);
-  transition:
-    border-color 0.45s var(--ease-out-expo),
-    color 0.45s var(--ease-out-expo),
-    background-color 0.45s var(--ease-out-expo);
-}
-
-.btn-pill:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  background-color: rgba(28,58,95, 0.07);
-}
-
-.btn-pill--ink {
-  border-color: rgba(26, 24, 20, 0.28);
-  color: var(--color-ink-light);
-}
-
-.btn-pill--ink:hover {
-  border-color: var(--color-ink);
-  color: var(--color-ink);
-  background-color: rgba(26, 24, 20, 0.04);
-}
 

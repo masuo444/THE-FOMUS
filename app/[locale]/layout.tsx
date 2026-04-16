@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Noto_Sans_JP, Cormorant_Garamond, Jost } from 'next/font/google';
+import { Noto_Serif_JP, Cormorant_Garamond, Jost } from 'next/font/google';
 import Script from 'next/script';
 import '../globals.css';
 import { routing } from '@/i18n/routing';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
-const notoSansJP = Noto_Sans_JP({
+const notoSerifJP = Noto_Serif_JP({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
+  weight: ['300', '400', '500', '700'],
   variable: '--font-noto-serif-jp',
   display: 'swap',
 });
@@ -154,7 +154,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${notoSansJP.variable} ${cormorantGaramond.variable} ${jost.variable}`}
+      className={`${notoSerifJP.variable} ${cormorantGaramond.variable} ${jost.variable}`}
     >
       <body
         style={{

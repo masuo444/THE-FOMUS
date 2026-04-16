@@ -67,7 +67,7 @@ export default function CraftVisual({ locale }: CraftVisualProps) {
             fontSize: '0.625rem',
             letterSpacing: '0.32em',
             textTransform: 'uppercase',
-            color: 'var(--color-accent)',
+            color: 'rgba(240,240,238,0.35)',
             margin: '0 0 1.75rem',
           }}
         >
@@ -122,9 +122,21 @@ export default function CraftVisual({ locale }: CraftVisualProps) {
           ))}
         </p>
 
-        {/* ピルCTA（Hacoa参照） */}
+        {/* CTA link */}
         <div className={`reveal reveal-delay-3${inView ? ' is-in-view' : ''}`}>
-          <Link href={philosophyHref} className="btn-pill">
+          <Link
+            href={philosophyHref}
+            style={{
+              fontFamily: 'var(--font-cormorant), "Cormorant Garamond", serif',
+              fontStyle: 'italic',
+              fontSize: 'clamp(1.375rem, 2.2vw, 1.75rem)',
+              color: 'var(--color-white)',
+              textDecoration: 'none',
+              paddingBottom: '0.25rem',
+              borderBottom: '1px solid rgba(240,240,238,0.5)',
+              transition: 'border-color 0.35s ease',
+            }}
+          >
             {t('cta')}
           </Link>
         </div>

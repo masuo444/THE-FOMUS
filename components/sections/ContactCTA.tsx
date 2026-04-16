@@ -175,7 +175,7 @@ export default function ContactCTA({ locale }: ContactCTAProps) {
           font-size: 0.875rem;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          color: var(--color-accent);
+          color: rgba(240,240,238,0.35);
           margin: 0.5rem 0 0;
         }
         @media (max-width: 640px) {

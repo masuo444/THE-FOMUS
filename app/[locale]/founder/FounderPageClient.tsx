@@ -4,16 +4,33 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { useInView } from '@/lib/useInView';
 
+interface CareerItem {
+  period: string;
+  title: string;
+  body: string;
+}
+
+interface ProjectItem {
+  name: string;
+  body: string;
+}
+
 export default function FounderPageClient() {
   const t = useTranslations('founderPage');
   const locale = useLocale();
   const homeHref    = locale === 'en' ? '/en' : '/';
   const contactHref = locale === 'en' ? '/en/contact' : '/contact';
 
-  const bodyLines = t.raw('body') as string[];
+  const career       = t.raw('career') as CareerItem[];
+  const achievements = t.raw('achievements') as string[];
+  const projects     = t.raw('projects') as ProjectItem[];
 
-  const { ref: layoutRef, inView: layoutInView } = useInView<HTMLDivElement>();
-  const { ref: statsRef,  inView: statsInView  } = useInView<HTMLDivElement>();
+  const { ref: layoutRef,       inView: layoutInView }       = useInView<HTMLDivElement>();
+  const { ref: careerRef,       inView: careerInView }       = useInView<HTMLDivElement>();
+  const { ref: achievementsRef, inView: achievementsInView } = useInView<HTMLDivElement>();
+  const { ref: projectsRef,     inView: projectsInView }     = useInView<HTMLDivElement>();
+  const { ref: messageRef,      inView: messageInView }      = useInView<HTMLDivElement>();
+  const { ref: statsRef,        inView: statsInView }        = useInView<HTMLDivElement>();
 
   return (
     <main className="fp-main">
@@ -27,33 +44,73 @@ export default function FounderPageClient() {
       <div className="fp-heading">
         <p className="fp-heading__eyebrow">{t('label')}</p>
         <h1 className="fp-heading__title">
-          {locale === 'en' ? 'Founder Message' : 'ファウンダーメッセージ'}
+          {locale === 'en' ? 'Founder' : '代表メッセージ'}
         </h1>
         <div className="fp-heading__rule" />
       </div>
 
-      {/* ── 2-column: photo + message ─────────────── */}
+      {/* ── 2-column: photo + intro ──────────────── */}
       <div ref={layoutRef} className="fp-layout">
 
         {/* Photo */}
         <div className={`fp-photo-col reveal${layoutInView ? ' is-in-view' : ''}`}>
           <div className="fp-photo" />
-          <div className="fp-photo-caption">
-            <p className="fp-photo-caption__name">{t('name')}</p>
-            <p className="fp-photo-caption__title">{t('title')}</p>
-          </div>
         </div>
 
-        {/* Message */}
-        <div className={`fp-text-col reveal reveal-delay-1${layoutInView ? ' is-in-view' : ''}`}>
-          <div className="fp-body">
-            {bodyLines.map((para, i) => (
-              <p key={i} className="fp-body__para">{para}</p>
-            ))}
-          </div>
-          <p className="fp-signature">{t('nameRoman')}</p>
+        {/* Name + Title + Intro */}
+        <div className={`fp-intro-col reveal reveal-delay-1${layoutInView ? ' is-in-view' : ''}`}>
+          <p className="fp-intro__name">{t('name')}</p>
+          <p className="fp-intro__name-roman">{t('nameRoman')}</p>
+          <p className="fp-intro__title">{t('title')}</p>
+          <p className="fp-intro__text">{t('intro')}</p>
         </div>
 
+      </div>
+
+      {/* ── Career ────────────────────────────────── */}
+      <div ref={careerRef} className={`fp-career reveal${careerInView ? ' is-in-view' : ''}`}>
+        <p className="fp-career__label">{t('careerLabel')}</p>
+        <div className="fp-career__list">
+          {career.map((item, i) => (
+            <div key={i} className={`fp-career__item${i === career.length - 1 ? ' fp-career__item--last' : ''}`}>
+              <span className="fp-career__period">{item.period}</span>
+              <div className="fp-career__content">
+                <p className="fp-career__title">{item.title}</p>
+                <p className="fp-career__body">{item.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Achievements ──────────────────────────── */}
+      <div ref={achievementsRef} className={`fp-achievements reveal${achievementsInView ? ' is-in-view' : ''}`}>
+        <p className="fp-achievements__label">{t('achievementsLabel')}</p>
+        <div className="fp-achievements__list">
+          {achievements.map((item, i) => (
+            <p key={i} className="fp-achievements__item">{item}</p>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Current Focus ─────────────────────────── */}
+      <div ref={projectsRef} className={`fp-projects reveal${projectsInView ? ' is-in-view' : ''}`}>
+        <p className="fp-projects__label">{t('projectsLabel')}</p>
+        <div className="fp-projects__grid">
+          {projects.map((item, i) => (
+            <div key={i} className="fp-projects__card">
+              <p className="fp-projects__name">{item.name}</p>
+              <p className="fp-projects__body">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Message ───────────────────────────────── */}
+      <div ref={messageRef} className={`fp-message reveal${messageInView ? ' is-in-view' : ''}`}>
+        <p className="fp-message__label">{t('messageLabel')}</p>
+        <p className="fp-message__text">{t('message')}</p>
+        <p className="fp-message__signature">{t('nameRoman')}</p>
       </div>
 
       {/* ── Stats ─────────────────────────────────── */}
@@ -64,13 +121,13 @@ export default function FounderPageClient() {
         </div>
         <div className="fp-stat__sep" aria-hidden="true" />
         <div className="fp-stat">
-          <span className="fp-stat__value">{t('stats.experience.value')}</span>
-          <span className="fp-stat__label">{t('stats.experience.label')}</span>
+          <span className="fp-stat__value">{t('stats.events.value')}</span>
+          <span className="fp-stat__label">{t('stats.events.label')}</span>
         </div>
         <div className="fp-stat__sep" aria-hidden="true" />
         <div className="fp-stat">
-          <span className="fp-stat__value">{t('stats.programs.value')}</span>
-          <span className="fp-stat__label">{t('stats.programs.label')}</span>
+          <span className="fp-stat__value">{t('stats.embassy.value')}</span>
+          <span className="fp-stat__label">{t('stats.embassy.label')}</span>
         </div>
       </div>
 
@@ -84,7 +141,7 @@ export default function FounderPageClient() {
           }
         </p>
         <Link href={contactHref} className="fp-cta__link">
-          <span>{locale === 'en' ? 'Speak directly with the founder →' : '代表に直接相談する →'}</span>
+          <span>{locale === 'en' ? 'Speak directly with the founder →' : '増尾に直接相談する →'}</span>
         </Link>
       </div>
 
@@ -143,7 +200,7 @@ export default function FounderPageClient() {
           opacity: 0.45;
         }
 
-        /* ── 2-column layout ─────────────────────── */
+        /* ── 2-column layout: photo + intro ──────── */
         .fp-layout {
           display: grid;
           grid-template-columns: 420px 1fr;
@@ -167,58 +224,214 @@ export default function FounderPageClient() {
           background-size: cover;
           background-position: center top;
         }
-        .fp-photo-caption {
-          text-align: center;
+
+        /* Intro column */
+        .fp-intro-col {
+          padding: clamp(3rem, 5vw, 5rem) clamp(2.5rem, 5vw, 5.5rem);
           display: flex;
           flex-direction: column;
-          gap: 0.4rem;
+          justify-content: center;
+          gap: 0;
         }
-        .fp-photo-caption__name {
-          font-family: var(--font-noto-serif-jp), "Noto Sans JP", sans-serif;
+        .fp-intro__name {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
           font-weight: 400;
-          font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+          font-size: clamp(1.5rem, 3vw, 2rem);
           color: var(--color-ink);
           letter-spacing: 0.12em;
-          margin: 0;
+          margin: 0 0 0.5rem;
         }
-        .fp-photo-caption__title {
+        .fp-intro__name-roman {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1rem, 1.8vw, 1.25rem);
+          color: var(--color-ink-mute);
+          letter-spacing: 0.04em;
+          margin: 0 0 0.75rem;
+        }
+        .fp-intro__title {
           font-family: var(--font-jost), Jost, sans-serif;
           font-weight: 400;
           font-size: 0.8125rem;
           letter-spacing: 0.26em;
           text-transform: uppercase;
           color: var(--color-ink-mute);
-          margin: 0;
+          margin: 0 0 2.5rem;
         }
-
-        /* Text column */
-        .fp-text-col {
-          padding: clamp(3rem, 5vw, 5rem) clamp(2.5rem, 5vw, 5.5rem);
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-        }
-        .fp-body {
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-        }
-        .fp-body__para {
-          font-family: var(--font-noto-serif-jp), "Noto Sans JP", sans-serif;
-          font-weight: 400;
+        .fp-intro__text {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
           font-size: clamp(0.9375rem, 1.25vw, 1.125rem);
           line-height: 2.35;
           letter-spacing: 0.04em;
           color: var(--color-ink-light);
           margin: 0;
         }
-        .fp-signature {
+
+        /* ── Career ──────────────────────────────── */
+        .fp-career {
+          border-bottom: 1px solid var(--color-line);
+          padding: clamp(4rem, 6vw, 6rem) clamp(2rem, 8vw, 8rem);
+        }
+        .fp-career__label {
+          font-family: var(--font-jost), Jost, sans-serif;
+          font-weight: 400;
+          font-size: 0.75rem;
+          letter-spacing: 0.38em;
+          text-transform: uppercase;
+          color: var(--color-ink-mute);
+          margin: 0 0 2.5rem;
+        }
+        .fp-career__list {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+        }
+        .fp-career__item {
+          display: grid;
+          grid-template-columns: 180px 1fr;
+          gap: 2rem;
+          padding: 2rem 0;
+          border-bottom: 1px solid var(--color-line);
+        }
+        .fp-career__item--last {
+          border-bottom: none;
+        }
+        .fp-career__period {
+          font-family: var(--font-jost), Jost, sans-serif;
+          font-weight: 400;
+          font-size: 0.8125rem;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: var(--color-ink-mute);
+          padding-top: 0.25rem;
+        }
+        .fp-career__content {
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+        .fp-career__title {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 500;
+          font-size: clamp(1rem, 1.4vw, 1.125rem);
+          color: var(--color-ink);
+          margin: 0;
+          line-height: 1.6;
+        }
+        .fp-career__body {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
+          font-size: clamp(0.875rem, 1.1vw, 1rem);
+          line-height: 2.2;
+          color: var(--color-ink-light);
+          margin: 0;
+        }
+
+        /* ── Achievements ────────────────────────── */
+        .fp-achievements {
+          border-bottom: 1px solid var(--color-line);
+          padding: clamp(4rem, 6vw, 6rem) clamp(2rem, 8vw, 8rem);
+        }
+        .fp-achievements__label {
+          font-family: var(--font-jost), Jost, sans-serif;
+          font-weight: 400;
+          font-size: 0.75rem;
+          letter-spacing: 0.38em;
+          text-transform: uppercase;
+          color: var(--color-ink-mute);
+          margin: 0 0 2.5rem;
+        }
+        .fp-achievements__list {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .fp-achievements__item {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
+          font-size: clamp(0.9375rem, 1.25vw, 1.125rem);
+          line-height: 1.8;
+          color: var(--color-ink);
+          margin: 0;
+          padding-left: 0;
+        }
+
+        /* ── Projects (Current Focus) ────────────── */
+        .fp-projects {
+          border-bottom: 1px solid var(--color-line);
+          padding: clamp(4rem, 6vw, 6rem) clamp(2rem, 8vw, 8rem);
+        }
+        .fp-projects__label {
+          font-family: var(--font-jost), Jost, sans-serif;
+          font-weight: 400;
+          font-size: 0.75rem;
+          letter-spacing: 0.38em;
+          text-transform: uppercase;
+          color: var(--color-ink-mute);
+          margin: 0 0 2.5rem;
+        }
+        .fp-projects__grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+        }
+        .fp-projects__card {
+          border-top: 1px solid var(--color-line);
+          padding-top: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .fp-projects__name {
+          font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: clamp(1.25rem, 2vw, 1.5rem);
+          color: var(--color-ink);
+          margin: 0;
+          letter-spacing: 0.01em;
+        }
+        .fp-projects__body {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
+          font-size: clamp(0.875rem, 1.1vw, 1rem);
+          line-height: 2.2;
+          color: var(--color-ink-light);
+          margin: 0;
+        }
+
+        /* ── Message ─────────────────────────────── */
+        .fp-message {
+          border-bottom: 1px solid var(--color-line);
+          padding: clamp(4rem, 6vw, 6rem) clamp(2rem, 8vw, 8rem);
+          max-width: 760px;
+        }
+        .fp-message__label {
+          font-family: var(--font-jost), Jost, sans-serif;
+          font-weight: 400;
+          font-size: 0.75rem;
+          letter-spacing: 0.38em;
+          text-transform: uppercase;
+          color: var(--color-ink-mute);
+          margin: 0 0 2.5rem;
+        }
+        .fp-message__text {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
+          font-size: clamp(1rem, 1.3vw, 1.125rem);
+          line-height: 2.5;
+          color: var(--color-ink);
+          margin: 0 0 2.5rem;
+        }
+        .fp-message__signature {
           font-family: var(--font-cormorant), "Cormorant Garamond", serif;
           font-style: italic;
           font-weight: 400;
           font-size: clamp(1.625rem, 3vw, 2.5rem);
           color: var(--color-ink-mute);
-          margin: 3rem 0 0;
+          margin: 0;
           letter-spacing: 0.04em;
         }
 
@@ -282,7 +495,7 @@ export default function FounderPageClient() {
         }
         .fp-cta__note {
           font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
-          font-weight: 400;
+          font-weight: 300;
           font-size: clamp(0.875rem, 1.1vw, 1rem);
           line-height: 2;
           letter-spacing: 0.06em;
@@ -328,6 +541,10 @@ export default function FounderPageClient() {
             max-width: 320px;
             width: 70%;
           }
+          .fp-career__item {
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+          }
         }
         @media (max-width: 640px) {
           .fp-stats {
@@ -336,6 +553,9 @@ export default function FounderPageClient() {
             padding: 2.5rem 1.5rem;
           }
           .fp-stat__sep { width: 3rem; height: 1px; }
+          .fp-projects__grid {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
     </main>

@@ -157,12 +157,13 @@ export default function ProgramsGrid() {
           transform: translateY(-50%);
           font-family: var(--font-jost), Jost, sans-serif;
           font-size: 1.25rem;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           opacity: 0.5;
-          transition: opacity 0.3s ease, transform 0.3s ease;
+          transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
         }
         .pg-services-header:hover .pg-services-header__arrow {
           opacity: 1;
+          color: var(--color-accent);
           transform: translateY(-50%) translateX(4px);
         }
         @media (max-width: 640px) {
@@ -279,33 +280,24 @@ export default function ProgramsGrid() {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          border: 1px solid var(--color-line);
           color: var(--color-ink-mute);
           font-style: normal;
           font-family: var(--font-jost), Jost, sans-serif;
-          font-size: 0.75rem;
+          font-size: 0.875rem;
           flex-shrink: 0;
           transition:
-            border-color 0.3s ease,
             color 0.3s ease,
-            background 0.3s ease,
             transform 0.3s ease;
         }
         .pg-cell:hover .pg-cell__chevron {
-          border-color: var(--color-accent);
           color: var(--color-accent);
-          background: rgba(28,58,95,0.08);
           transform: translateX(3px);
         }
         .pg-cell--full .pg-cell__chevron {
-          border-color: rgba(28,58,95,0.4);
-          color: var(--color-accent);
+          color: rgba(240,240,238,0.5);
         }
         .pg-cell--full:hover .pg-cell__chevron {
-          background: rgba(28,58,95,0.15);
+          color: rgba(240,240,238,0.8);
         }
 
         /* ── Subtitle area ────────────────────────────── */
@@ -336,7 +328,7 @@ export default function ProgramsGrid() {
           font-weight: 400;
           font-size: 0.875rem;
           letter-spacing: 0.2em;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           margin: 0;
         }
 

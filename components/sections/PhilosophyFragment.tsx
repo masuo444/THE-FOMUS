@@ -170,7 +170,7 @@ export default function PhilosophyFragment() {
           font-size: 0.8125rem;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           margin: 0.5rem 0 0;
         }
         @media (max-width: 640px) {

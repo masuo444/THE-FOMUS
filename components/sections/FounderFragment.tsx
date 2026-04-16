@@ -84,7 +84,7 @@ export default function FounderFragment() {
           font-size: 0.75rem;
           letter-spacing: 0.38em;
           text-transform: uppercase;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           margin: 0.5rem 0 0;
         }
 

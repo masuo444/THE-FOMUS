@@ -81,7 +81,7 @@ export default function Statement() {
           font-size: 0.8125rem;
           letter-spacing: 0.32em;
           text-transform: uppercase;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           margin: 0 0 1.75rem;
         }
 

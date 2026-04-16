@@ -236,7 +236,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             font-size: 0.6875rem;
             letter-spacing: 0.52em;
             text-transform: uppercase;
-            color: var(--color-accent);
+            color: rgba(240,240,238,0.35);
             margin: 0 0 1.5rem;
           }
           .cg-hero__name {
@@ -357,7 +357,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             font-size: 0.6875rem;
             letter-spacing: 0.46em;
             text-transform: uppercase;
-            color: var(--color-accent);
+            color: var(--color-ink-mute);
             opacity: 0.72;
             margin: 0;
           }
@@ -398,7 +398,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             font-size: 0.6875rem;
             letter-spacing: 0.46em;
             text-transform: uppercase;
-            color: var(--color-accent);
+            color: var(--color-ink-mute);
             opacity: 0.72;
             margin: 0 0 3rem;
           }
@@ -678,7 +678,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             font-weight: 400;
             font-size: 0.75rem;
             letter-spacing: 0.22em;
-            color: var(--color-accent);
+            color: rgba(240,240,238,0.35);
             opacity: 0.8;
             margin: 0;
             text-transform: uppercase;
@@ -981,7 +981,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             font-size: 0.6875rem;
             letter-spacing: 0.52em;
             text-transform: uppercase;
-            color: var(--color-accent);
+            color: rgba(240,240,238,0.35);
             margin: 0 0 1.5rem;
             opacity: 0.9;
           }
@@ -1034,7 +1034,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             font-size: 0.6875rem;
             letter-spacing: 0.48em;
             text-transform: uppercase;
-            color: var(--color-accent);
+            color: var(--color-ink-mute);
             opacity: 0.8;
             margin: 0 0 2.5rem;
           }
@@ -1120,7 +1120,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             font-size: 0.6875rem;
             letter-spacing: 0.46em;
             text-transform: uppercase;
-            color: var(--color-accent);
+            color: var(--color-ink-mute);
             opacity: 0.72;
             margin: 0 0 3rem;
             text-align: center;
@@ -1497,7 +1497,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
             font-size: 0.625rem;
             letter-spacing: 0.46em;
             text-transform: uppercase;
-            color: var(--color-accent);
+            color: rgba(240,240,238,0.35);
             opacity: 0.65;
             margin: 0 0 1rem;
           }
@@ -2341,7 +2341,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           font-size: 0.75rem;
           letter-spacing: 0.48em;
           text-transform: uppercase;
-          color: var(--color-accent);
+          color: rgba(240,240,238,0.35);
           margin: 0 0 1.25rem;
           opacity: 0.9;
         }
@@ -2420,7 +2420,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           font-size: 0.75rem;
           letter-spacing: 0.42em;
           text-transform: uppercase;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           margin: 0 0 1.5rem;
           opacity: 0.85;
         }
@@ -2520,7 +2520,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           font-size: 0.6875rem;
           letter-spacing: 0.46em;
           text-transform: uppercase;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           opacity: 0.72;
           margin: 0 0 3rem;
         }
@@ -2656,7 +2656,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           font-size: 0.625rem;
           letter-spacing: 0.42em;
           text-transform: uppercase;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           opacity: 0.7;
         }
         .pp-spaces-title-ja {
@@ -2712,7 +2712,7 @@ export default function ProgramPageClient({ programKey, locale }: ProgramPageCli
           font-weight: 400;
           font-size: 0.625rem;
           letter-spacing: 0.18em;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           opacity: 0.55;
         }
         .pp-space-en {

@@ -162,12 +162,13 @@ export default function LegacyGrid() {
           z-index: 1;
           font-family: var(--font-jost), Jost, sans-serif;
           font-size: 1.25rem;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           opacity: 0.55;
-          transition: opacity 0.3s ease, transform 0.3s ease;
+          transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
         }
         .lg-header:hover .lg-header__arrow {
           opacity: 1;
+          color: var(--color-accent);
           transform: translateY(-50%) translateX(4px);
         }
 
@@ -270,9 +271,9 @@ export default function LegacyGrid() {
           right: 1.5rem;
           z-index: 2;
           font-size: 0.875rem;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           opacity: 0;
-          transition: opacity 0.3s ease, transform 0.3s ease;
+          transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
         }
         .lg-sub-cell:hover .lg-sub-cell__arrow {
           opacity: 1;

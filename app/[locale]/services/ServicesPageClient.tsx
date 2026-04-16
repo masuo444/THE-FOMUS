@@ -200,7 +200,7 @@ export default function ServicesPageClient() {
         /* Arrow */
         .sv-cell__arrow {
           font-size: 1.5rem;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           line-height: 1;
           align-self: flex-end;
           transition: transform 0.3s ease, color 0.3s ease;

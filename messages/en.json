@@ -25,11 +25,11 @@
       },
       {
         "label": "THE CRAFT",
-        "title": "The artisan's hand,\nin every memory."
+        "title": "The artisan's hand\nlives in every memory."
       },
       {
         "label": "THE MATERIAL",
-        "title": "The scent of hinoki,\nleaves a mark."
+        "title": "The scent of hinoki\nleaves its mark."
       }
     ],
     "masuAlt": "Masu silhouette"
@@ -39,7 +39,7 @@
     "heading": "THE FOMUS — the centrepiece of the FOMUS brand",
     "body": "THE FOMUS is the centrepiece of the FOMUS brand — a bespoke experience design practice. Corporate gifts, exhibition pieces, spatial direction: whatever the form, everything is designed as a single unified experience. Japanese artisan craft and cultural context are woven together with care, refined down to the finest detail until the experience reaches the recipient's heart. We go one step beyond what is asked, and stay committed until the giver's intent becomes the recipient's memory.",
     "closing1": "There are moments when Japanese tradition arrives as lived experience.",
-    "closing2": "For those who know true value — we deliver true experience."
+    "closing2": "We deliver experience that speaks to those who recognise its worth."
   },
   "programs": {
     "title": "Programmes",
@@ -105,20 +105,20 @@
   },
   "founder": {
     "sectionLabel": "FOUNDER",
-    "founderName": "Masuo",
-    "founderTitle": "Founder, THE FOMUS",
+    "founderName": "Keisuke Masuo",
+    "founderTitle": "Founder & CEO, THE FOMUS",
     "messageTitle": "A gift should be the beginning of a conversation.",
     "messageBody": [
-      "Across 40 countries and two decades of diplomatic work, the same question kept returning: how do you hand culture from one person to another? Not with words or film — a craftsman's masu, held in both hands and passed across a table, was the first thing that answered.",
-      "THE FOMUS was born from that moment. We redefine the masu as a vessel for cultural experience — combining the precision of traditional craft with the fluency of international exchange. Our work is to design the kind of memory that the recipient carries home and speaks of for years.",
-      "A gift should not be a transaction. It should open a conversation. That belief drives every programme we design."
+      "Across more than 40 countries of diplomatic and cultural exchange work, the same question kept returning: how do you hand Japanese culture from one person to another? The answer came when a craftsman's masu, held in both hands, was passed across a table — before any word was spoken.",
+      "THE FOMUS was born from that moment. The masu is redefined as a vessel for cultural experience, combining artisan craft with the sensibility of international exchange to design programmes for corporations, hotels, and embassies. The work is to create the kind of memory that the recipient carries home and speaks of for years.",
+      "A gift ought to be the beginning of a conversation. With that conviction, THE FOMUS designs experiences — one commission at a time — that live in memory."
     ],
     "stat1Value": "40+",
     "stat1Label": "countries",
-    "stat2Value": "20+",
-    "stat2Label": "years",
-    "stat3Value": "Embassies",
-    "stat3Label": "governments & diplomatic stages",
+    "stat2Value": "45+",
+    "stat2Label": "international events",
+    "stat3Value": "Embassy",
+    "stat3Label": "official partnership",
     "link": "Read the story →"
   },
   "contact": {
@@ -163,7 +163,7 @@
   "craftSection": {
     "eyebrow": "Our Approach",
     "headline": "An intention to give.\nA person to receive it.",
-    "subheadline": "Between them, THE FOMUS designs an experience that holds Japanese tradition.\nCraftsman's skill, cultural context, Masuo's forty countries — all crystallised into one commission.",
+    "subheadline": "Between them, THE FOMUS designs an experience that holds Japanese tradition.\nCraftsman's skill, cultural context, Keisuke Masuo's forty countries — all crystallised into one commission.",
     "cta": "Read the philosophy"
   },
   "footer": {
@@ -206,36 +206,78 @@
   },
   "founderPage": {
     "meta": {
-      "title": "Founder — THE FOMUS | Masuo",
-      "description": "Diplomatic experience across 40+ countries. The stewardship of a masu workshop. Two origins. One philosophy. The story behind THE FOMUS."
+      "title": "Founder Keisuke Masuo — THE FOMUS",
+      "description": "Hospitality training at a luxury hotel, cultural exchange across 40+ countries, and an official partnership with the Embassy of Ireland — the story of Keisuke Masuo and the founding of THE FOMUS."
     },
     "label": "FOUNDER",
-    "name": "Masuo",
-    "nameJa": "まっすー",
-    "title": "Founder, THE FOMUS",
-    "body": [
-      "Masuo has worked in diplomatic and international cultural exchange across more than forty countries. Embassies, government institutions, international events — in each setting, the same question arose. How do you pass culture from one hand to another?",
-      "Language can cross borders. Culture does not always follow. And yet a single object, placed without explanation, can change the atmosphere of a room. Through years of work on the international stage, Masuo came to understand the power of objects not as theory, but as lived experience.",
-      "He later took on the stewardship of a traditional masu workshop. The daily handling of wood — its grain, its smell, the honest weight of a finished box — gave form to what he had sensed in diplomacy. The masu, he came to understand, was precisely the vessel culture needed. Old enough to carry history. Simple enough to cross any border.",
-      "THE FOMUS was born from these two origins. Neither alone would have produced it. The diplomatic sensibility and the craftsman's floor together. Every programme Masuo designs carries both — the protocol of international exchange and the integrity of Japanese craft.",
-      "The future he is building toward is one where the masu is present at significant moments around the world. Not as an export or a novelty, but as a genuine encounter — where the person giving and the person receiving stand together before the same culture, regardless of nationality or language."
+    "name": "Keisuke Masuo",
+    "nameRoman": "Keisuke Masuo",
+    "title": "Founder & CEO, THE FOMUS",
+    "intro": "Keisuke Masuo is the founder and CEO of THE FOMUS, where he designs and delivers masu-centred cultural experience programmes for corporations, luxury hotels, and embassies. His work draws on hospitality training at a luxury hotel and cultural sensibility developed across more than 40 countries.",
+    "careerLabel": "CAREER",
+    "career": [
+      {
+        "period": "Hospitality",
+        "title": "French Restaurant Service at a Luxury Hotel",
+        "body": "Keisuke Masuo began his career in the French restaurant of a luxury hotel in Tokyo. The ability to anticipate what a guest needs before it is spoken — cultivated on the hospitality floor — remains the foundation of every programme he designs today."
+      },
+      {
+        "period": "Foundation",
+        "title": "Establishment of FOMUS LLC",
+        "body": "After going independent, Keisuke Masuo encountered the traditional Japanese craft of the masu and recognised its potential immediately. The texture of domestic hinoki, 1,300 years of history, and the freedom of its form — he redefined the masu as a vessel for cultural experience and began designing programmes for corporate clients."
+      },
+      {
+        "period": "Domestic Expansion",
+        "title": "Cultural Events Across Japan",
+        "body": "Between 2021 and 2023, Keisuke Masuo organised regular cultural events across Japan, combining sake and masu. He built a nationwide network of breweries and artisans, and this network informs every THE FOMUS programme."
+      },
+      {
+        "period": "International Expansion",
+        "title": "Ireland Base & International Exchange",
+        "body": "Based in Ireland, Keisuke Masuo planned and delivered more than 45 international cultural exchange events in a single year. In 2024 and 2025, an official partnership with the Embassy of Ireland was established, and THE FOMUS provided masu cultural experience programmes at embassy-hosted events."
+      },
+      {
+        "period": "Global Entity",
+        "title": "Dubai Entity & International Business Hub",
+        "body": "Keisuke Masuo established a company in Dubai as an international business hub connecting the Middle East, Europe, and Asia. Supported by a government-backed start-up programme, THE FOMUS is building its international operational base. In 2025, Keisuke Masuo is visiting approximately 20 countries, forging relationships with hotels, corporations, and cultural institutions worldwide."
+      }
     ],
+    "achievementsLabel": "ACHIEVEMENTS",
+    "achievements": [
+      "Cultural exchange and event production across 40+ countries",
+      "Official partnership with the Embassy of Ireland (2024 & 2025)",
+      "45+ international cultural exchange events delivered in a single year",
+      "Dubai entity established as an international business hub",
+      "Partnerships with breweries and masu manufacturers across Japan"
+    ],
+    "projectsLabel": "CURRENT FOCUS",
+    "projects": [
+      {
+        "name": "THE FOMUS",
+        "body": "THE FOMUS designs and delivers masu-centred cultural experience programmes for corporations, hotels, and embassies. Four programmes are offered: Corporate Gift, Cultural Space, Hotel Branding, and Bespoke."
+      },
+      {
+        "name": "International Cultural Exchange",
+        "body": "From bases in Ireland and Dubai, Keisuke Masuo continues to build exchange events and partnerships that bring Japanese culture to the world. Collaborations with embassies, government bodies, and international cultural institutions are ongoing."
+      }
+    ],
+    "messageLabel": "MESSAGE",
+    "message": "A gift ought to be the beginning of a conversation, not an object consumed and forgotten. To design the moment when the giver and the recipient stand together before the same culture — regardless of nationality or language — that is the work of THE FOMUS. Every programme draws on the instinct for hospitality cultivated on the hotel floor and the international experience accumulated across the world.",
     "stats": {
       "countries": {
         "value": "40+",
-        "label": "countries"
+        "label": "countries visited"
       },
-      "experience": {
-        "value": "20+",
-        "label": "years"
+      "events": {
+        "value": "45+",
+        "label": "international events"
       },
-      "programs": {
-        "value": "5",
-        "label": "programmes"
+      "embassy": {
+        "value": "Embassy",
+        "label": "embassy partnership"
       }
     },
-    "closingStatement": "Giver and recipient, standing before the same culture —\nregardless of nationality or language.\nDesigning that encounter, one commission at a time.\nThat is the work of THE FOMUS.",
-    "ctaQuestion": "Speak directly with the founder."
+    "ctaQuestion": "Speak directly with Keisuke Masuo."
   },
   "companyPage": {
     "meta": {
@@ -299,15 +341,15 @@
     "enquireCta": "Begin a conversation →",
     "items": {
       "corporateGift": {
-        "label": "PROGRAMME 01",
+        "label": "PROGRAMME",
         "name": "Corporate Gift",
         "nameJa": "コーポレートギフト",
         "priceLabel": "By commission",
         "lead": "We design gifts that remain with the recipient for years to come.",
         "body": [
-          "A gift chosen by budget and precedent — sent because it must be sent — is forgotten before the year ends. The recipient cannot recall the sender. The sender suspects as much and repeats the process next year. That cycle has a name: it is called safe, and it costs more than it saves.",
+          "A corporate gift from THE FOMUS begins with hinoki — its clean, natural scent is the first thing the recipient notices when they open the box.",
           "The finished masu holds the scent of hinoki, the weight of the wood, and the intent of your organisation. When the box is opened, it arrives before words do.",
-          "The recipient does not discard it."
+          "The masu remains on their desk for years to come."
         ],
         "includes": {
           "label": "What is included",
@@ -319,18 +361,10 @@
             "Post-delivery follow-up and support"
           ]
         },
-        "forWhom": {
-          "label": "This programme is suited for",
-          "items": [
-            "You present gifts to foreign officials, ambassadors, or global partners — and each time, you hand the decision to a department store buyer and feel, quietly, that something was missed. You want the gift to say something true about your organisation, and you have not yet found the means.",
-            "A merger, a centenary, a treaty signed — the occasion will not come again. This time, the gift must be equal to the moment. It is not a question of budget. It is a question of what, exactly, is placed in the other person's hands.",
-            "Each time you select from a catalogue, the same thought surfaces: this is not quite right. Your organisation has a philosophy. The gift should embody it. You have been looking for the right way to do that."
-          ]
-        },
         "ctaQuestion": "We design gifts that remain on the recipient's desk for years to come."
       },
       "culturalSpace": {
-        "label": "PROGRAMME 02",
+        "label": "PROGRAMME",
         "name": "Cultural Space",
         "nameJa": "文化空間プロデュース",
         "priceLabel": "By commission",
@@ -338,7 +372,7 @@
         "body": [
           "The moment visitors enter, what they see and feel shapes their trust in your organisation. The objects chosen, the composition of the space, the quality of materials — these combine to form the conviction that this organisation can be trusted.",
           "THE FOMUS designs cultural spaces using the masu as a core material. We create spaces where visitors naturally pause, and where conversations about the place begin. That is the space we build.",
-          "We give your organisation's philosophy a physical presence in space. That is the THE FOMUS cultural space programme."
+          "We give your organisation's philosophy a physical presence in space. That is THE FOMUS cultural space programme."
         ],
         "includes": {
           "label": "What is included",
@@ -351,18 +385,10 @@
             "Maintenance and seasonal refresh proposals to keep the installation current (optional)"
           ]
         },
-        "forWhom": {
-          "label": "This programme is suited for",
-          "items": [
-            "You regularly receive overseas executives, officials, or institutional investors, and the entrance or reception area does not reflect the level of the organisation. Each renovation ends the same way: technically accomplished, culturally thin. Something is always missing.",
-            "Your embassy, government institution, or cultural body requires a reception space that carries genuine depth — not decorative objects, but a space that communicates Japanese culture before the conversation begins.",
-            "A lobby or floor renovation is approaching. This time, you want to design the space properly — not as a cost exercise, but as a declaration of the organisation's character. You want it to be remembered."
-          ]
-        },
         "ctaQuestion": "We create spaces where visitors sense trust before a word is spoken."
       },
       "hotelBranding": {
-        "label": "PROGRAMME 03",
+        "label": "PROGRAMME",
         "name": "Hotel Branding",
         "nameJa": "ホテルブランディング",
         "priceLabel": "By commission",
@@ -383,18 +409,10 @@
             "Annual renewal contract to refresh the offering with each passing season (optional)"
           ]
         },
-        "forWhom": {
-          "label": "This programme is suited for",
-          "items": [
-            "You are the GM or marketing lead of a property with a high proportion of overseas guests. You want to offer 'authentic Japanese hospitality,' but the amenities you currently have feel decorative rather than genuine. You are aware of the gap.",
-            "You want returning guests to find something new at each visit — not new content or a changed menu, but a property whose aesthetic sensibility keeps evolving. You are looking for the mechanism to do that.",
-            "An opening, a rebrand, a renovation: the moment is approaching to design the defining experiential element of your property from the ground up. The amenity supplier catalogues have not given you what you need."
-          ]
-        },
         "ctaQuestion": "We design experiences that guests carry with them long after checkout."
       },
       "sakeMasu": {
-        "label": "PROGRAMME 04",
+        "label": "PROGRAMME",
         "name": "Sake × Masu Experience",
         "nameJa": "日本酒 × 枡 体験",
         "priceLabel": "By commission",
@@ -415,19 +433,10 @@
             "Documentation for ESG or PR use, prepared on request"
           ]
         },
-        "forWhom": {
-          "label": "This programme is suited for",
-          "items": [
-            "You are hosting an international delegation, embassy reception, or VIP corporate event and wish to offer a cultural experience with genuine depth.",
-            "Your hotel or venue holds regular events for overseas guests and is seeking a programme that distinguishes the experience from comparable offerings.",
-            "You are planning a product launch, brand activation, or press event and wish to anchor the occasion in a cultural gesture that guests will remember and recount.",
-            "You are responsible for international conferences, summits, or business forums and need a side programme that participants will recount long after they return home."
-          ]
-        },
         "ctaQuestion": "We design cultural experiences that guests speak of long after returning home."
       },
       "bespoke": {
-        "label": "PROGRAMME 05",
+        "label": "PROGRAMME",
         "name": "Bespoke",
         "nameJa": "ビスポーク",
         "priceLabel": "By commission",
@@ -446,14 +455,6 @@
             "Multilingual content, documentation, and narrative production",
             "Global procurement and logistics, managed end to end",
             "A complete archive and documentation of the finished work"
-          ]
-        },
-        "forWhom": {
-          "label": "This programme is suited for",
-          "items": [
-            "You have read through the five programmes and concluded that your commission does not fit any of them. The scale, the complexity, the significance of the occasion — it exceeds the available categories, and you know it.",
-            "A centenary, an IPO, a cultural diplomatic initiative — the moment will not come again. You do not want to look back and wonder why you did not act with the full weight of the occasion. You are in a position to make decisions based on what endures.",
-            "You are building something over years, not commissioning a single deliverable. You are looking for a partner who will think with you for the long term — not execute a brief, but help form one."
           ]
         },
         "ctaQuestion": "We design one-of-a-kind experiences from the ground up.",
@@ -539,7 +540,7 @@
         "label": "International",
         "title": "When Craft Crosses Borders",
         "body": [
-          "THE FOMUS founder Masuo has worked across more than 40 countries in diplomatic, governmental, and cultural contexts. The consistent lesson from those engagements: objects reach people before words do.",
+          "THE FOMUS founder Keisuke Masuo has worked across more than 40 countries in diplomatic, governmental, and cultural contexts. The consistent lesson from those engagements: objects reach people before words do.",
           "When a handmade masu is received and held in two hands, the resonance it produces crosses nationality and language. THE FOMUS exists to make that experience intentional — not dependent on diplomatic accident, but designed and delivered as a repeatable programme.",
           "The presence of Japanese craft at meaningful moments around the world is the greatest return possible to the people who make it. That is THE FOMUS's definition of cultural sustainability."
         ]
@@ -649,32 +650,32 @@
       "caption": "Eye and hand verification at every step",
       "steps": [
         {
-          "num": "01",
+          "num": "1",
           "title": "Timber & Drying",
           "body": "Natural domestic hinoki offcuts are sourced, dried, and milled into components sized for each piece."
         },
         {
-          "num": "02",
+          "num": "2",
           "title": "Cutting",
           "body": "Side panels and base are cut to precise dimensions. Consistent thickness determines the quality of the finished form."
         },
         {
-          "num": "03",
+          "num": "3",
           "title": "Mortising & Assembly",
           "body": "Components are mortised and assembled. Each stage is verified by eye and by hand throughout."
         },
         {
-          "num": "04",
+          "num": "4",
           "title": "Base Attachment",
           "body": "The base is attached using a heat-compression machine, producing consistent quality at scale."
         },
         {
-          "num": "05",
+          "num": "5",
           "title": "Finishing & Beveling",
           "body": "Surfaces are finished and edges beveled to produce a smooth, clean hand. The grain of the wood is brought forward."
         },
         {
-          "num": "06",
+          "num": "6",
           "title": "Marking",
           "body": "Branding iron, laser engraving, or silk-screen print — all handled in-house, suited to the mark and the volume."
         }

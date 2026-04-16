@@ -70,7 +70,7 @@ export default function MasuGrid() {
           font-size: 0.8125rem;
           letter-spacing: 0.32em;
           text-transform: uppercase;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           margin: 0;
         }
         .mg-header__title {
@@ -95,14 +95,15 @@ export default function MasuGrid() {
         .mg-header__arrow {
           font-family: var(--font-jost), Jost, sans-serif;
           font-size: 1rem;
-          color: var(--color-accent);
+          color: var(--color-ink-mute);
           opacity: 0.5;
-          transition: opacity 0.3s ease, transform 0.3s ease;
+          transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
           display: inline-block;
           margin-top: 0.5rem;
         }
         .mg-header:hover .mg-header__arrow {
           opacity: 1;
+          color: var(--color-accent);
           transform: translateX(5px);
         }
 
