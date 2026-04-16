@@ -1,31 +1,27 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { useState, FormEvent } from 'react';
+import Link from 'next/link';
 
 export default function ContactForm() {
   const t = useTranslations('contactPage');
+  const locale = useLocale();
+  const isJa = locale === 'ja';
+  const [form, setForm] = useState({ company: '', name: '', email: '', phone: '', program: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus('submitting');
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      company: formData.get('company'),
-      name:    formData.get('name'),
-      email:   formData.get('email'),
-      program: formData.get('program'),
-      message: formData.get('message'),
-    };
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(form),
       });
       setStatus(res.ok ? 'success' : 'error');
+      if (res.ok) setForm({ company: '', name: '', email: '', phone: '', program: '', message: '' });
     } catch {
       setStatus('error');
     }
@@ -34,195 +30,257 @@ export default function ContactForm() {
   if (status === 'success') {
     return (
       <div className="cf-success">
-        <span className="cf-success__line" aria-hidden="true" />
+        <div className="cf-success__icon">✓</div>
         <h2 className="cf-success__title">{t('successTitle')}</h2>
         <p className="cf-success__body">{t('successMessage')}</p>
-        <style>{successStyle}</style>
+        <Link href={isJa ? '/' : '/en'} className="cf-success__link">
+          {isJa ? '← トップページに戻る' : '← Back to home'}
+        </Link>
+        <style>{successCSS}</style>
       </div>
     );
   }
 
-  const fields: Array<{
-    name: string;
-    label: string;
-    required?: boolean;
-    type?: string;
-    placeholder?: string;
-    element?: 'textarea' | 'select';
-  }> = [
-    { name: 'company', label: t('fields.company'),  required: true,  type: 'text',  placeholder: t('fields.companyPlaceholder') },
-    { name: 'name',    label: t('fields.name'),     required: true,  type: 'text',  placeholder: t('fields.namePlaceholder') },
-    { name: 'email',   label: t('fields.email'),    required: true,  type: 'email', placeholder: t('fields.emailPlaceholder') },
-    { name: 'program', label: t('fields.program'),  required: false, element: 'select' },
-    { name: 'message', label: t('message'),         required: true,  element: 'textarea', placeholder: t('messagePlaceholder') },
-  ];
-
   return (
     <>
-      <form onSubmit={handleSubmit} noValidate className="cf-form">
-        <div className="cf-table">
-          {fields.map((field) => (
-            <div key={field.name} className="cf-row">
-              {/* ラベル列 */}
-              <div className="cf-row__label">
-                <span className="cf-row__label-text">{field.label}</span>
-                {field.required && (
-                  <span className="cf-row__required">{t('required')}</span>
-                )}
-              </div>
+      {/* Description card */}
+      <div className="cf-card cf-desc">
+        <p className="cf-desc__text">
+          {isJa
+            ? 'プログラムに関するご質問・ご相談は、以下のフォームよりお問い合わせください。内容を確認の上、2営業日以内にご連絡いたします。'
+            : 'For enquiries about our programmes, please use the form below. We will respond within two business days.'}
+        </p>
+      </div>
 
-              {/* 入力列 */}
-              <div className="cf-row__field">
-                {field.element === 'textarea' ? (
-                  <textarea
-                    name={field.name}
-                    required={field.required}
-                    rows={6}
-                    placeholder={field.placeholder}
-                    className={`cf-input cf-textarea${focusedField === field.name ? ' cf-input--focus' : ''}`}
-                    onFocus={() => setFocusedField(field.name)}
-                    onBlur={() => setFocusedField(null)}
-                  />
-                ) : field.element === 'select' ? (
-                  <select
-                    name={field.name}
-                    className={`cf-input cf-select${focusedField === field.name ? ' cf-input--focus' : ''}`}
-                    onFocus={() => setFocusedField(field.name)}
-                    onBlur={() => setFocusedField(null)}
-                  >
-                    <option value="">{t('fields.programPlaceholder')}</option>
-                    <option value="corporate-gift">{t('programs.corporateGift')}</option>
-                    <option value="cultural-space">{t('programs.culturalSpace')}</option>
-                    <option value="hotel-branding">{t('programs.hotelBranding')}</option>
-                    <option value="sake-masu">{t('programs.sakeMasu')}</option>
-                    <option value="bespoke">{t('programs.bespoke')}</option>
-                    <option value="undecided">{t('programs.undecided')}</option>
-                  </select>
-                ) : (
-                  <input
-                    type={field.type}
-                    name={field.name}
-                    required={field.required}
-                    placeholder={field.placeholder}
-                    className={`cf-input${focusedField === field.name ? ' cf-input--focus' : ''}`}
-                    onFocus={() => setFocusedField(field.name)}
-                    onBlur={() => setFocusedField(null)}
-                  />
-                )}
-              </div>
+      {/* Form card */}
+      <form onSubmit={handleSubmit} noValidate>
+        <div className="cf-card">
+          <div className="cf-fields">
+
+            {/* 会社名・組織名 */}
+            <div className="cf-field">
+              <label className="cf-label">
+                <span className="cf-label__text">{t('fields.company')}</span>
+                <span className="cf-badge">{t('required')}</span>
+              </label>
+              <input
+                type="text"
+                required
+                value={form.company}
+                onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
+                className="cf-input"
+                placeholder={t('fields.companyPlaceholder')}
+              />
             </div>
-          ))}
+
+            {/* お名前 */}
+            <div className="cf-field">
+              <label className="cf-label">
+                <span className="cf-label__text">{t('fields.name')}</span>
+                <span className="cf-badge">{t('required')}</span>
+              </label>
+              <input
+                type="text"
+                required
+                value={form.name}
+                onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                className="cf-input"
+                placeholder={t('fields.namePlaceholder')}
+              />
+            </div>
+
+            {/* メールアドレス */}
+            <div className="cf-field">
+              <label className="cf-label">
+                <span className="cf-label__text">{t('fields.email')}</span>
+                <span className="cf-badge">{t('required')}</span>
+              </label>
+              <input
+                type="email"
+                required
+                value={form.email}
+                onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                className="cf-input"
+                placeholder={t('fields.emailPlaceholder')}
+              />
+            </div>
+
+            {/* 電話番号 */}
+            <div className="cf-field">
+              <label className="cf-label">
+                <span className="cf-label__text">{isJa ? '電話番号' : 'Phone'}</span>
+              </label>
+              <input
+                type="tel"
+                value={form.phone}
+                onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
+                className="cf-input"
+                placeholder={isJa ? '090-XXXX-XXXX' : '+81 90-XXXX-XXXX'}
+              />
+            </div>
+
+            {/* プログラム */}
+            <div className="cf-field">
+              <label className="cf-label">
+                <span className="cf-label__text">{t('fields.program')}</span>
+              </label>
+              <select
+                value={form.program}
+                onChange={e => setForm(f => ({ ...f, program: e.target.value }))}
+                className="cf-input cf-select"
+              >
+                <option value="">{t('fields.programPlaceholder')}</option>
+                <option value="corporate-gift">{t('programs.corporateGift')}</option>
+                <option value="cultural-space">{t('programs.culturalSpace')}</option>
+                <option value="hotel-branding">{t('programs.hotelBranding')}</option>
+                <option value="sake-masu">{t('programs.sakeMasu')}</option>
+                <option value="bespoke">{t('programs.bespoke')}</option>
+                <option value="undecided">{t('programs.undecided')}</option>
+              </select>
+            </div>
+
+            {/* お問い合わせ内容 */}
+            <div className="cf-field">
+              <label className="cf-label">
+                <span className="cf-label__text">{t('message')}</span>
+              </label>
+              <textarea
+                value={form.message}
+                onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                rows={6}
+                className="cf-input cf-textarea"
+                placeholder={t('messagePlaceholder')}
+              />
+            </div>
+
+          </div>
         </div>
 
+        {/* Privacy card */}
+        <div className="cf-card cf-privacy">
+          <p className="cf-privacy__text">
+            {isJa
+              ? <>当社（合同会社FOMUS）は、お客様より取得する個人情報を、お問い合わせへの回答目的でのみ利用いたします。</>
+              : <>FOMUS LLC uses personal information collected through this form solely for the purpose of responding to your enquiry.</>}
+          </p>
+        </div>
+
+        {/* Error */}
         {status === 'error' && (
-          <p className="cf-error">{t('errorMessage')}</p>
+          <div className="cf-error">
+            {isJa ? '送信に失敗しました。時間をおいて再度お試しください。' : 'Submission failed. Please try again later.'}
+          </div>
         )}
 
-        <div className="cf-footer">
-          <p className="cf-note">{t('note')}</p>
+        {/* Submit */}
+        <div className="cf-submit-wrap">
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className={`cf-submit${status === 'submitting' ? ' cf-submit--busy' : ''}`}
+            className="cf-submit"
           >
-            {status === 'submitting' ? t('submitting') : t('submit')}
+            {status === 'submitting'
+              ? (isJa ? '送信中...' : 'Sending...')
+              : (isJa ? '送信する' : 'Submit')}
           </button>
         </div>
       </form>
 
-      <style>{formStyle}</style>
+      <style>{formCSS}</style>
     </>
   );
 }
 
-const formStyle = `
-  /* ── Form wrapper ────────────────────────────────────── */
-  .cf-form {
-    width: 100%;
+const formCSS = `
+  /* ── Card base ───────────────────────────── */
+  .cf-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-line);
+    padding: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 1.25rem;
   }
 
-  /* ── Table rows ──────────────────────────────────────── */
-  .cf-table {
-    border-top: 1px solid var(--color-line);
-  }
-  .cf-row {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    border-bottom: 1px solid var(--color-line);
-    min-height: 72px;
+  /* ── Description card ────────────────────── */
+  .cf-desc__text {
+    font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+    font-weight: 300;
+    font-size: clamp(0.875rem, 1.1vw, 0.9375rem);
+    line-height: 2;
+    color: var(--color-ink-light);
+    margin: 0;
   }
 
-  /* ── Label column ────────────────────────────────────── */
-  .cf-row__label {
+  /* ── Form fields ─────────────────────────── */
+  .cf-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .cf-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .cf-label {
     display: flex;
     align-items: center;
     gap: 0.625rem;
-    padding: 1.25rem 1.5rem 1.25rem 0;
-    background: var(--color-off-white);
-    border-right: 1px solid var(--color-line);
-    flex-shrink: 0;
   }
-  .cf-row__label-text {
+
+  .cf-label__text {
+    font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    color: var(--color-ink);
+    letter-spacing: 0.04em;
+  }
+
+  .cf-badge {
     font-family: var(--font-jost), Jost, sans-serif;
     font-weight: 400;
-    font-size: 1.0625rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-ink-light);
-    padding-left: 1.5rem;
-  }
-  .cf-row__required {
-    font-family: var(--font-jost), Jost, sans-serif;
-    font-weight: 400;
-    font-size: 0.8125rem;
-    letter-spacing: 0.12em;
+    font-size: 0.6875rem;
+    letter-spacing: 0.10em;
     text-transform: uppercase;
     color: var(--color-white);
     background: var(--color-accent);
-    padding: 0.2em 0.5em;
+    padding: 0.15em 0.5em;
     border-radius: 2px;
-    line-height: 1.5;
-    white-space: nowrap;
+    line-height: 1.6;
   }
 
-  /* ── Field column ────────────────────────────────────── */
-  .cf-row__field {
-    display: flex;
-    align-items: stretch;
-    padding: 1rem 0 1rem 1.5rem;
-    background: var(--color-white);
-  }
-
-  /* ── Input base ──────────────────────────────────────── */
+  /* ── Input base ──────────────────────────── */
   .cf-input {
     width: 100%;
-    background: transparent;
+    background: var(--color-white);
     border: 1px solid var(--color-line);
-    border-radius: 3px;
-    padding: 0.75rem 1rem;
+    padding: 0.85rem 1rem;
     font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
-    font-weight: 400;
-    font-size: 1.0625rem;
+    font-weight: 300;
+    font-size: 1rem;
     color: var(--color-ink);
     outline: none;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.25s ease;
     -webkit-appearance: none;
     letter-spacing: 0.03em;
+    min-height: 48px;
   }
   .cf-input::placeholder {
-    color: var(--color-line-dark);
+    color: var(--color-ink-mute);
     font-size: 0.8125rem;
+    opacity: 0.6;
   }
-  .cf-input:focus,
-  .cf-input--focus {
+  .cf-input:focus {
     border-color: var(--color-ink);
   }
+
   .cf-textarea {
     resize: vertical;
-    min-height: 140px;
-    align-self: stretch;
+    min-height: 160px;
     line-height: 1.85;
   }
+
   .cf-select {
     cursor: pointer;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%234A4740' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
@@ -231,106 +289,98 @@ const formStyle = `
     padding-right: 2.5rem;
   }
 
-  /* ── Footer ──────────────────────────────────────────── */
-  .cf-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.75rem;
-    padding-top: 2.5rem;
-  }
-  .cf-note {
-    font-family: var(--font-jost), Jost, sans-serif;
-    font-weight: 400;
-    font-size: 1.0625rem;
-    letter-spacing: 0.06em;
-    color: var(--color-ink-light);
-    line-height: 1.8;
+  /* ── Privacy card ────────────────────────── */
+  .cf-privacy__text {
+    font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+    font-weight: 300;
+    font-size: 0.8125rem;
+    line-height: 2;
+    color: var(--color-ink-mute);
     margin: 0;
   }
 
-  /* ── Submit button ───────────────────────────────────── */
+  /* ── Error ───────────────────────────────── */
+  .cf-error {
+    font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+    font-size: 0.875rem;
+    color: #8B4513;
+    padding: 1rem 1.25rem;
+    border: 1px solid #D4A574;
+    background: #FDF8F4;
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── Submit ──────────────────────────────── */
+  .cf-submit-wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+
   .cf-submit {
     background: var(--color-ink);
     border: 1px solid var(--color-ink);
     color: var(--color-white);
-    padding: 0.875rem 2.5rem;
+    padding: 1rem 3.5rem;
     font-family: var(--font-jost), Jost, sans-serif;
     font-weight: 400;
-    font-size: 1.0625rem;
+    font-size: 0.9375rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     cursor: pointer;
-    border-radius: 2px;
-    transition:
-      background 0.25s ease,
-      color 0.25s ease,
-      border-color 0.25s ease;
+    transition: background 0.3s ease, color 0.3s ease;
   }
   .cf-submit:hover:not(:disabled) {
     background: transparent;
     color: var(--color-ink);
   }
-  .cf-submit--busy {
+  .cf-submit:disabled {
     opacity: 0.5;
     cursor: wait;
   }
-  .cf-error {
-    font-family: var(--font-jost), Jost, sans-serif;
-    font-size: 1.0625rem;
-    letter-spacing: 0.05em;
-    color: #8B4513;
-    margin: 1.5rem 0 0;
-  }
-
-  /* ── Responsive ──────────────────────────────────────── */
-  @media (max-width: 640px) {
-    .cf-row {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
-    .cf-row__label {
-      padding: 0.875rem 1rem;
-      border-right: none;
-      border-bottom: 1px solid var(--color-line);
-    }
-    .cf-row__label-text {
-      padding-left: 0;
-    }
-    .cf-row__field {
-      padding: 0.875rem 0;
-    }
-  }
 `;
 
-const successStyle = `
+const successCSS = `
   .cf-success {
     text-align: center;
-    padding: 5rem 0;
+    padding: 4rem 0;
   }
-  .cf-success__line {
-    display: block;
-    width: 32px;
-    height: 1px;
+  .cf-success__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
     background: var(--color-accent);
-    margin: 0 auto 3rem;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    opacity: 0.85;
   }
   .cf-success__title {
     font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
     font-weight: 400;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: var(--color-ink);
-    margin: 0 0 1.25rem;
+    margin: 0 0 1rem;
     letter-spacing: 0.05em;
   }
   .cf-success__body {
     font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
-    font-weight: 400;
-    font-size: 1.0625rem;
+    font-weight: 300;
+    font-size: 0.9375rem;
     color: var(--color-ink-light);
     line-height: 2;
     letter-spacing: 0.04em;
-    white-space: pre-line;
-    margin: 0;
+    margin: 0 0 2rem;
   }
+  .cf-success__link {
+    font-family: var(--font-jost), Jost, sans-serif;
+    font-size: 0.8125rem;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .cf-success__link:hover { text-decoration: underline; }
 `;

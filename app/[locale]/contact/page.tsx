@@ -26,91 +26,77 @@ export default async function ContactPage({ params }: PageProps<'/[locale]/conta
   }
 
   const t = await getTranslations({ locale, namespace: 'contactPage' });
-
   const isJa = locale === 'ja';
 
   return (
-    <div style={{ paddingTop: '64px' }}>
-      {/* Page Header */}
-      <section
-        style={{
-          backgroundColor: 'var(--color-off-white)',
-          paddingTop: '6rem',
-          paddingBottom: '5rem',
-          borderBottom: '1px solid var(--color-line)',
-        }}
-      >
-        <div className="container-content" style={{ maxWidth: '700px' }}>
-          <p className="label-text" style={{ marginBottom: '2rem' }}>
-            {t('title')}
-          </p>
-          <h1
-            style={{
-              fontFamily: isJa
-                ? 'var(--font-noto-serif-jp), "Noto Serif JP", serif'
-                : 'var(--font-cormorant), "Cormorant Garamond", serif',
-              fontWeight: 300,
-              fontStyle: isJa ? 'normal' : 'italic',
-              fontSize: 'clamp(2rem, 4vw, 3rem)',
-              color: 'var(--color-ink)',
-              margin: '0 0 1.25rem',
-              letterSpacing: isJa ? '0.05em' : '0.02em',
-              lineHeight: 1.2,
-            }}
-          >
-            {t('headline')}
-          </h1>
-          <p
-            style={{
-              fontFamily: 'var(--font-noto-serif-jp), "Noto Serif JP", serif',
-              fontWeight: 300,
-              fontSize: '0.9375rem',
-              color: 'var(--color-ink-light)',
-              lineHeight: 1.8,
-              letterSpacing: '0.04em',
-            }}
-          >
-            {t('subheadline')}
-          </p>
-        </div>
+    <main className="ct-main">
+      {/* ── Header ──────────────────────────── */}
+      <section className="ct-header">
+        <p className="ct-header__eyebrow">{t('title')}</p>
+        <h1 className="ct-header__title">{t('headline')}</h1>
+        <p className="ct-header__sub">{t('subheadline')}</p>
       </section>
 
-      {/* Form Section */}
-      <section
-        className="section-gap"
-        style={{ backgroundColor: 'var(--color-white)' }}
-      >
-        <div className="container-content" style={{ maxWidth: '700px' }}>
+      {/* ── Form ────────────────────────────── */}
+      <section className="ct-form-section">
+        <div className="ct-form-inner">
           <ContactForm />
         </div>
       </section>
 
-      {/* Masu SVG — decorative bottom */}
-      <section
-        style={{
-          backgroundColor: 'var(--color-off-white)',
-          padding: '4rem 0',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderTop: '1px solid var(--color-line)',
-        }}
-      >
-        <svg
-          viewBox="0 0 200 200"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          style={{
-            width: '80px',
-            height: '80px',
-            color: 'var(--color-line)',
-          }}
-        >
-          <rect x="10" y="10" width="180" height="180" stroke="currentColor" strokeWidth="1" />
-          <rect x="30" y="30" width="140" height="140" stroke="currentColor" strokeWidth="0.5" />
-        </svg>
-      </section>
-    </div>
+      <style>{`
+        .ct-main {
+          background: #f8f8f6;
+          padding-top: 64px;
+          min-height: 100vh;
+        }
+
+        /* ── Header ─────────────────────────── */
+        .ct-header {
+          background: var(--color-white);
+          border-bottom: 1px solid var(--color-line);
+          padding: clamp(4rem, 8vw, 6rem) clamp(2rem, 8vw, 8rem) clamp(3rem, 6vw, 4.5rem);
+          max-width: 780px;
+        }
+        .ct-header__eyebrow {
+          font-family: var(--font-jost), Jost, sans-serif;
+          font-weight: 400;
+          font-size: 0.75rem;
+          letter-spacing: 0.40em;
+          text-transform: uppercase;
+          color: var(--color-ink-mute);
+          margin: 0 0 1.5rem;
+        }
+        .ct-header__title {
+          font-family: ${isJa
+            ? 'var(--font-noto-serif-jp), "Noto Serif JP", serif'
+            : 'var(--font-cormorant), "Cormorant Garamond", serif'};
+          font-weight: 300;
+          font-style: ${isJa ? 'normal' : 'italic'};
+          font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+          color: var(--color-ink);
+          margin: 0 0 1.25rem;
+          letter-spacing: ${isJa ? '0.05em' : '0.02em'};
+          line-height: 1.3;
+        }
+        .ct-header__sub {
+          font-family: var(--font-noto-serif-jp), "Noto Serif JP", serif;
+          font-weight: 300;
+          font-size: 0.9375rem;
+          color: var(--color-ink-light);
+          line-height: 1.9;
+          letter-spacing: 0.04em;
+          margin: 0;
+        }
+
+        /* ── Form section ───────────────────── */
+        .ct-form-section {
+          padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 6vw, 6rem);
+        }
+        .ct-form-inner {
+          max-width: 680px;
+        }
+      `}</style>
+    </main>
   );
 }
